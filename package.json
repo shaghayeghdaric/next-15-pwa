@@ -3,22 +3,42 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
+    "dev": "next dev --turbopack -p 3300",
+    "dev:https": "next dev -p 3300 --experimental-https",
+    "dev:https:local": "next dev -p 3300 --experimental-https --experimental-https-key certificates/localhost-key.pem --experimental-https-cert certificates/localhost.pem",
+    "prebuild": "echo 'Skipping lint on build for PWA service worker files'",
+    "build": "next build",
+    "build:with-codegen": "bun run codegen && next build",
+    "start": "next start -p 8900",
+    "lint": "biome lint",
+    "format": "biome format --write",
+    "lint:fix": "biome lint --write .",
+    "clear-all": "rm -rf node_modules .next out dist build",
+    "re-start": "rm -rf node_modules .next out dist build && bun install && bun run dev",
+    "re-build": "rm -rf node_modules .next out dist build && bun install && bun run build",
+    "codegen": "bun run scripts/codegenScript.ts && bun run format && bun run lint:fix",
+    "release": "bun run scripts/release-changelog.mjs",
+    "commit-check": "bunx --bun commitlint --from HEAD~1 --to HEAD --verbose",
+    "prepare": "husky || true"
   },
   "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.6"
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fontsource/roboto": "^5.2.8",
+    "@mui/material": "^7.3.4",
+    "@mui/material-nextjs": "^7.3.3",
+    "next": "^15.5.6",
+    "numeral": "^2.0.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@biomejs/biome": "2.2.0",
     "@types/node": "^20",
+    "@types/numeral": "^2.0.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@biomejs/biome": "2.2.0"
+    "typescript": "^5"
   }
 }
