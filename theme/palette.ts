@@ -1,4 +1,26 @@
-export type ColorSchema = "primary" | "secondary" | "background" | "grey";
+export type ColorSchema = "primary" | "secondary" | "tertiary" | "background" | "grey";
+
+declare module "@mui/material/styles" {
+  interface Palette {
+    gradients: {
+      primary: string;
+      secondary: string;
+      tertiary: string;
+      blue: string;
+      blueVertical: string;
+    };
+  }
+
+  interface PaletteOptions {
+    gradients?: {
+      primary?: string;
+      secondary?: string;
+      tertiary?: string;
+      blue?: string;
+      blueVertical?: string;
+    };
+  }
+}
 
 export const GREY = {
   900: "#2E384D",
@@ -24,16 +46,32 @@ export const SECONDARY = {
   main: "#95BACA",
   dark: "#54595E",
 };
+export const TERTIARY = {
+  light: "#FFD966",
+  main: "#FFAE00",
+  dark: "#CC8A00",
+  contrastText: "#000000",
+};
 
 export const BACKGROUND = {
   default: "#000000",
+};
+
+export const GRADIENTS = {
+  primary: "linear-gradient(135deg, #50ED8D, #00A5E8)",
+  secondary: "linear-gradient(135deg, #95BACA, #54595E)",
+  tertiary: "linear-gradient(135deg, #FFAE00, #FFD966)",
+  blue: "linear-gradient(135deg, #00A5E8, #0088CC)",
+  blueVertical: "linear-gradient(180deg, #00A5E8, #0088CC)",
 };
 
 export const palette = {
   mode: "dark" as const,
   primary: PRIMARY,
   secondary: SECONDARY,
+  tertiary: TERTIARY,
   background: BACKGROUND,
   grey: GREY,
+  gradients: GRADIENTS,
   text: { primary: "#FFFFFF", secondary: "#000000" },
 };

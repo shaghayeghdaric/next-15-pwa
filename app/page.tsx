@@ -4,9 +4,9 @@ import InvestSection from "./_components/InvestSection";
 
 export default function Page() {
   return (
-    <Stack sx={{ width: "100%" }}>
+    <Stack sx={{ width: "100%", gap: 30 }}>
       <HeroSection />
-      <InvestSection
+      <InvestSection />
     </Stack>
   );
 }

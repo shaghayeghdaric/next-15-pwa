@@ -4,6 +4,7 @@ import type { Theme, Components } from "@mui/material/styles";
 export const COLOR_KEYS = [
   "primary",
   "secondary",
+  "tertiary",
 ] as const;
 
 type ButtonColorSchema = typeof COLOR_KEYS[number];
@@ -13,6 +14,7 @@ declare module "@mui/material/Button" {
     special: true;
     "special-2": true;
     "primary-light": true;
+    tertiary: true;
   }
 
   interface ButtonPropsVariantOverrides {

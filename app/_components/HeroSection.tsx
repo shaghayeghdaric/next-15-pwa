@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
         sx={{
           position: "absolute",
           top: 110,
-          right: 150,
+          right: 90,
           width: "35%",
           height: "35%",
           zIndex: 0,
@@ -69,6 +69,7 @@ const HeroSection: React.FC = () => {
           sx={{
             justifyContent: "center",
             alignItems: "flex-start",
+            gap: 1,
           }}
         >
           <Typography
@@ -93,9 +94,9 @@ const HeroSection: React.FC = () => {
           </Typography>
         </Stack>
         <Typography variant="h4-regular">
-          JOIN THOUSANDS OF SUCCESSFUL TRADERS AND INVESTORS EARNINGCONSISTENT
-          PROFITS THROUGH OUR AI-POWERED TRADING SIGNALS,INVESTMENT PLANS, AND
-          COMPREHENSIVE CRYPTO EDUCATION PLATFORM
+          JOIN THOUSANDS OF SUCCESSFUL TRADERS AND INVESTORS EARNING <br />{" "}
+          CONSISTENT PROFITS THROUGH OUR AI-POWERED TRADING SIGNALS, <br />
+          INVESTMENT PLANS, AND COMPREHENSIVE CRYPTO EDUCATION PLATFORM
         </Typography>
       </Stack>
     </Stack>
