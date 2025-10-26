@@ -14,7 +14,7 @@ export const GREY = {
 };
 
 export const PRIMARY = {
-  light: "#FFAE00",
+  light: "#00A5E8",
   dark: "#000000",
   main: "#50ED8D",
 };

@@ -1,10 +1,11 @@
 import type { CSSProperties } from "react";
 import { toNumber } from "../utils/number";
-import { primaryFont } from "./localFonts";
+// import { primaryFont } from "./localFonts";
 
 declare module "@mui/material/styles" {
   interface TypographyVariants {
     // bold
+    "h0-bold": CSSProperties;
     "h1-bold": CSSProperties;
     "h2-bold": CSSProperties;
     "h3-bold": CSSProperties;
@@ -14,6 +15,7 @@ declare module "@mui/material/styles" {
     "p1-bold": CSSProperties;
     "p2-bold": CSSProperties;
     // medium
+    "h0-medium": CSSProperties;
     "h1-medium": CSSProperties;
     "h2-medium": CSSProperties;
     "h3-medium": CSSProperties;
@@ -23,6 +25,7 @@ declare module "@mui/material/styles" {
     "p1-medium": CSSProperties;
     "p2-medium": CSSProperties;
     // regular
+    "h0-regular": CSSProperties;
     "h1-regular": CSSProperties;
     "h2-regular": CSSProperties;
     "h3-regular": CSSProperties;
@@ -32,6 +35,7 @@ declare module "@mui/material/styles" {
     "p1-regular": CSSProperties;
     "p2-regular": CSSProperties;
     // light
+    "h0-light": CSSProperties;
     "h1-light": CSSProperties;
     "h2-light": CSSProperties;
     "h3-light": CSSProperties;
@@ -45,6 +49,7 @@ declare module "@mui/material/styles" {
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
     // bold
+    "h0-bold"?: CSSProperties;
     "h1-bold"?: CSSProperties;
     "h2-bold"?: CSSProperties;
     "h3-bold"?: CSSProperties;
@@ -54,6 +59,7 @@ declare module "@mui/material/styles" {
     "p1-bold"?: CSSProperties;
     "p2-bold"?: CSSProperties;
     // medium
+    "h0-medium"?: CSSProperties;
     "h1-medium"?: CSSProperties;
     "h2-medium"?: CSSProperties;
     "h3-medium"?: CSSProperties;
@@ -63,6 +69,7 @@ declare module "@mui/material/styles" {
     "p1-medium"?: CSSProperties;
     "p2-medium"?: CSSProperties;
     // regular
+    "h0-regular"?: CSSProperties;
     "h1-regular"?: CSSProperties;
     "h2-regular"?: CSSProperties;
     "h3-regular"?: CSSProperties;
@@ -72,6 +79,7 @@ declare module "@mui/material/styles" {
     "p1-regular"?: CSSProperties;
     "p2-regular"?: CSSProperties;
     // light
+    "h0-light"?: CSSProperties;
     "h1-light"?: CSSProperties;
     "h2-light"?: CSSProperties;
     "h3-light"?: CSSProperties;
@@ -101,6 +109,7 @@ declare module "@mui/material/Typography" {
     button: false;
 
     // bold
+    "h0-bold": true;
     "h1-bold": true;
     "h2-bold": true;
     "h3-bold": true;
@@ -110,6 +119,7 @@ declare module "@mui/material/Typography" {
     "p1-bold": true;
     "p2-bold": true;
     // medium
+    "h0-medium": true;
     "h1-medium": true;
     "h2-medium": true;
     "h3-medium": true;
@@ -119,6 +129,7 @@ declare module "@mui/material/Typography" {
     "p1-medium": true;
     "p2-medium": true;
     // regular
+    "h0-regular": true;
     "h1-regular": true;
     "h2-regular": true;
     "h3-regular": true;
@@ -128,6 +139,7 @@ declare module "@mui/material/Typography" {
     "p1-regular": true;
     "p2-regular": true;
     // light
+    "h0-light": true;
     "h1-light": true;
     "h2-light": true;
     "h3-light": true;
@@ -141,6 +153,7 @@ declare module "@mui/material/Typography" {
 
 export type Variant =
   // bold
+  | "h0-bold"
   | "h1-bold"
   | "h2-bold"
   | "h3-bold"
@@ -150,6 +163,7 @@ export type Variant =
   | "p1-bold"
   | "p2-bold"
   // medium
+  | "h0-medium"
   | "h1-medium"
   | "h2-medium"
   | "h3-medium"
@@ -159,6 +173,7 @@ export type Variant =
   | "p1-medium"
   | "p2-medium"
   // regular
+  | "h0-regular"
   | "h1-regular"
   | "h2-regular"
   | "h3-regular"
@@ -168,6 +183,7 @@ export type Variant =
   | "p1-regular"
   | "p2-regular"
   // light
+  | "h0-light"
   | "h1-light"
   | "h2-light"
   | "h3-light"
@@ -202,7 +218,7 @@ const fontVariant = (name: string, fontSize: number): Record<string, Style> =>
   }, {});
 
 const typography = {
-  fontFamily: primaryFont.style.fontFamily,
+  // fontFamily: primaryFont.style.fontFamily,
   fontWeightLight: 300,
   fontWeightRegular: 400,
   fontWeightMedium: 500,
@@ -218,6 +234,7 @@ const typography = {
   subtitle2: undefined,
   overline: undefined,
 
+  ...fontVariant("h0", 60),
   ...fontVariant("h1", 26),
   ...fontVariant("h2", 24),
   ...fontVariant("h3", 20),

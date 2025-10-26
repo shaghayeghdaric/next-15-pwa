@@ -12,6 +12,7 @@ declare module "@mui/material/Button" {
   interface ButtonPropsColorOverrides {
     special: true;
     "special-2": true;
+    "primary-light": true;
   }
 
   interface ButtonPropsVariantOverrides {
@@ -131,7 +132,7 @@ const createVariantsForColor = (color: ButtonColorSchema) => {
       props: { size: "xLarge" as const },
       style: ({ theme }: { theme: Theme }) => ({
         height: "48px",
-        padding: "14px 40px",
+        padding: "12px",
         ...theme.typography["h6-medium"],
       }),
     },
@@ -147,7 +148,7 @@ export const MuiButton: Components<Theme>["MuiButton"] = {
   },
   styleOverrides: {
     root: {
-      borderRadius: "32px",
+      borderRadius: "5px",
       border: "1px solid transparent",
       whiteSpace: "nowrap",
       textTransform: "none",
@@ -167,7 +168,40 @@ export const MuiButton: Components<Theme>["MuiButton"] = {
         },
       },
 
-      variants: COLOR_KEYS.flatMap((color) => createVariantsForColor(color)),
+      variants: [
+        ...COLOR_KEYS.flatMap((color) => createVariantsForColor(color)),
+        // Custom primary-light color variant
+        {
+          props: { variant: "outlined" as const, color: "primary-light" as const },
+          style: ({ theme }) => ({
+            backgroundColor: "transparent",
+            color: theme.palette.primary.light,
+            borderColor: theme.palette.primary.light,
+            "&:hover": {
+              backgroundColor: `${theme.palette.primary.light}0A`, // primary.light with opacity
+              borderColor: theme.palette.primary.light,
+            },
+            "&.Mui-disabled": {
+              borderColor: theme.palette.grey[500],
+              color: theme.palette.grey[500],
+            },
+          }),
+        },
+        {
+          props: { variant: "contained" as const, color: "primary-light" as const },
+          style: ({ theme }) => ({
+            backgroundColor: theme.palette.primary.light,
+            color: "#ffffff",
+            "&:hover": {
+              backgroundColor: theme.palette.primary.dark,
+            },
+            "&.Mui-disabled": {
+              backgroundColor: theme.palette.grey[200],
+              color: theme.palette.grey[600],
+            },
+          }),
+        },
+      ],
     },
 
     startIcon: { marginLeft: 4, marginRight: 0 },
@@ -175,12 +209,12 @@ export const MuiButton: Components<Theme>["MuiButton"] = {
 
     sizeLarge: ({ theme }) => ({
       height: "40px",
-      padding: "14px 32px",
+      padding: "12px",
       ...theme.typography["p1-medium"],
     }),
     sizeSmall: ({ theme }) => ({
       height: "32px",
-      padding: "14px 16px",
+      padding: "12px",
       ...theme.typography["p1-medium"],
     }),
   },
