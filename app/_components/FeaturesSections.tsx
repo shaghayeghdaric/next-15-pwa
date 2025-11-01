@@ -1,5 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
-import FeatureCard from "./featureCard";
+import FeaturesCard from "./FeaturesCard";
 
 const features = [
   {
@@ -85,7 +85,7 @@ const FeaturesSections = () => {
         sx={{ width: "100%", gap: 4, mb: 10, px: 6 }}
       >
         <Typography variant="h6-medium" sx={{ whiteSpace: "nowrap" }}>
-          OVER 50,000+ ACTIVE INVESTORS
+          WHY CHOOSE CRYPTOINVEST PRO
         </Typography>
         <Box
           sx={{
@@ -152,7 +152,7 @@ const FeaturesSections = () => {
         }}
       >
         {features.map((feature, index) => (
-          <FeatureCard
+          <FeaturesCard
             key={`feature-card-${index}-${feature.title}`}
             logo={feature.logo}
             title={feature.title}
