@@ -46,7 +46,7 @@ const createVariantsForColor = (color: ButtonColorSchema) => {
         // },
 
         "&:hover": {
-          backgroundColor: `var(${prefix}dark)`,
+          backgroundColor: `var(${prefix}light)`,
         },
 
         "&.Mui-disabled": {

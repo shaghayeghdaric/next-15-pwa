@@ -36,14 +36,14 @@ export const GREY = {
 };
 
 export const PRIMARY = {
-  light: "#00A5E8",
+  light: "#ABB5BE",
   dark: "#000000",
   main: "#50ED8D",
 };
 
 export const SECONDARY = {
-  light: "#ABB5BE",
-  main: "#95BACA",
+  light: "#95BACA",
+  main: "#00A5E8",
   dark: "#54595E",
 };
 export const TERTIARY = {

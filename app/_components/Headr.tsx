@@ -36,16 +36,16 @@ const Header: React.FC = () => {
             flexDirection: "row",
           }}
         >
-          <Button variant="outlined" color="primary-light">
+          <Button variant="outlined" color="secondary">
             INVESTMENTS
           </Button>
-          <Button variant="outlined" color="primary-light">
+          <Button variant="outlined" color="secondary">
             PAYMENT
           </Button>
-          <Button variant="outlined" color="primary-light">
+          <Button variant="outlined" color="secondary">
             SIGNALS
           </Button>
-          <Button variant="outlined" color="primary-light">
+          <Button variant="outlined" color="secondary">
             EDUCATION
           </Button>
         </Stack>
@@ -57,10 +57,10 @@ const Header: React.FC = () => {
             flexDirection: "row",
           }}
         >
-          <Button variant="outlined" color="primary-light">
+          <Button variant="outlined" color="secondary">
             SIGN IN
           </Button>
-          <Button variant="contained" color="primary-light">
+          <Button variant="contained" color="secondary">
             SIGN UP
           </Button>
         </Stack>

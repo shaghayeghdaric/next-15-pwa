@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import FeatureCard from "./FeaturesCard";
 import InvestmentTypesCard from "./InvestmentTypesCard";
+import CalculatorSection from "./CalculatorSection";
 
 const features = [
   {
@@ -40,7 +41,7 @@ const features = [
 ];
 const InvestmentPlansSections = () => {
   return (
-    <Stack justifyContent={"center"} alignItems="center" py={7}>
+    <Stack justifyContent={"center"} alignItems="center" py={7} gap={10}>
       <Stack
         flexDirection={"row"}
         justifyContent={"center"}
@@ -104,7 +105,7 @@ const InvestmentPlansSections = () => {
           mt: 10,
           display: "grid",
           gridTemplateColumns: "repeat(2, 1fr)",
-          gap: 8,
+          gap: 10,
           "@media (max-width: 900px)": {
             gridTemplateColumns: "repeat(2, 1fr)",
           },
@@ -127,6 +128,7 @@ const InvestmentPlansSections = () => {
           />
         ))}
       </Stack>
+      <CalculatorSection />
     </Stack>
   );
 };
