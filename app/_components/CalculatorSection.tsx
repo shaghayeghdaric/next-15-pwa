@@ -28,7 +28,7 @@ const CalculatorSection = () => {
       <Stack
         direction={"row"}
         justifyContent={"center"}
-        alignItems={"center"}
+        alignItems={"start"}
         gap={10}
       >
         <Stack justifyContent={"center"} gap={24}>
@@ -108,8 +108,9 @@ const CalculatorSection = () => {
               direction={"row"}
               justifyContent={"space-between"}
               alignItems={"center"}
+              gap={10}
             >
-              <Stack>
+              <Stack justifyContent={"center"} alignItems={"center"}>
                 <Typography variant="h1-bold" color="primary.dark">
                   $50.00
                 </Typography>
@@ -117,7 +118,7 @@ const CalculatorSection = () => {
                   Initial
                 </Typography>
               </Stack>
-              <Stack>
+              <Stack justifyContent={"center"} alignItems={"center"}>
                 <Typography variant="h1-bold" color="primary.dark">
                   $50.57
                 </Typography>
@@ -125,7 +126,7 @@ const CalculatorSection = () => {
                   Profit
                 </Typography>
               </Stack>
-              <Stack>
+              <Stack justifyContent={"center"} alignItems={"center"}>
                 <Typography variant="h1-bold" color="primary.dark">
                   101.14%
                 </Typography>

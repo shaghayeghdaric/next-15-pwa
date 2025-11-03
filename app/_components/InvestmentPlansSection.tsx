@@ -64,7 +64,7 @@ const InvestmentPlansSections = () => {
         flexDirection={"row"}
         gap={10}
         justifyContent={"center"}
-        alignItems={"center"}
+        alignItems={"start"}
         px={6}
       >
         <Stack
