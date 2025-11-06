@@ -1,5 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
-import SignalCard from "./signalCart";
+import SignalCard from "./SignalCard";
 
 const signals = [
   {

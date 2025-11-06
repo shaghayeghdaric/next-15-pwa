@@ -1,6 +1,6 @@
 import { error } from "console";
 
-export type ColorSchema = "primary" | "secondary" | "tertiary" | "background" | "grey" | "error";
+export type ColorSchema = "primary" | "secondary" | "tertiary" | "background" | "grey" | "error" | "info";
 
 declare module "@mui/material/styles" {
   interface Palette {
@@ -45,8 +45,9 @@ export const PRIMARY = {
 
 export const SECONDARY = {
   light: "#95BACA",
-  main: "#00A5E8",
+  main: "#2C2C2C",
   dark: "#54595E",
+  contrastText: "#50ED8D",
 };
 export const TERTIARY = {
   light: "#FFD966",
@@ -63,6 +64,11 @@ export const BACKGROUND = {
 
 export const ERROR = {
   main: "#AB001C",
+}
+
+export const INFO = {
+  main: "#00A5E8",
+  contrastText: "#FFFFFF",
 }
 export const GRADIENTS = {
   primary: "linear-gradient(135deg, #50ED8D, #00A5E8)",
@@ -82,4 +88,5 @@ export const palette = {
   gradients: GRADIENTS,
   text: { primary: "#FFFFFF", secondary: "#000000" },
   error: ERROR,
+  info: INFO,
 };

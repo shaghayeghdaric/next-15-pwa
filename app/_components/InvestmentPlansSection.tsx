@@ -1,5 +1,4 @@
 import { Box, Stack, Typography } from "@mui/material";
-import FeatureCard from "./FeaturesCard";
 import InvestmentTypesCard from "./InvestmentTypesCard";
 import CalculatorSection from "./CalculatorSection";
 

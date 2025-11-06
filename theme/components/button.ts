@@ -5,6 +5,7 @@ export const COLOR_KEYS = [
   "primary",
   "secondary",
   "tertiary",
+  "info",
 ] as const;
 
 type ButtonColorSchema = typeof COLOR_KEYS[number];
