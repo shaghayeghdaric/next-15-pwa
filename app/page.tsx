@@ -7,6 +7,7 @@ import TradingSignalsSection from "./_components/TradingSignalsSection";
 import SubscriptionPlansSection from "./_components/SubscriptionPlansSection";
 import EducationHubSection from "./_components/EducationHubSection";
 import SuccessStoriesSection from "./_components/SuccessStoriesSection";
+import StartJourneySection from "./_components/StartJourneySection";
 
 export default function Page() {
   return (
@@ -19,6 +20,7 @@ export default function Page() {
       <SubscriptionPlansSection />
       <EducationHubSection />
       <SuccessStoriesSection />
+      <StartJourneySection />
     </Stack>
   );
 }

@@ -1,5 +1,6 @@
 import { Stack } from "@mui/material";
 import Header from "./Headr";
+import Footer from "./Footer";
 
 interface ContainerProps {
   children?: React.ReactNode;
@@ -18,6 +19,7 @@ const ContainerComponent: React.FC<ContainerProps> = ({ children }) => {
     >
       <Header />
       {children}
+      <Footer />
     </Stack>
   );
 };

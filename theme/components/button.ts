@@ -134,8 +134,8 @@ const createVariantsForColor = (color: ButtonColorSchema) => {
     {
       props: { size: "xLarge" as const },
       style: ({ theme }: { theme: Theme }) => ({
-        height: "48px",
-        padding: "12px",
+        height: "40px",
+        padding: "20px",
         ...theme.typography["h6-medium"],
       }),
     },
@@ -212,12 +212,12 @@ export const MuiButton: Components<Theme>["MuiButton"] = {
 
     sizeLarge: ({ theme }) => ({
       height: "40px",
-      padding: "12px",
+      padding: "20px",
       ...theme.typography["p1-medium"],
     }),
     sizeSmall: ({ theme }) => ({
       height: "32px",
-      padding: "12px",
+      padding: "20px",
       ...theme.typography["p1-medium"],
     }),
   },

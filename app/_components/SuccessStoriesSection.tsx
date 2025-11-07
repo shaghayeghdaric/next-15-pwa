@@ -73,7 +73,7 @@ const SuccessStoriesSection = () => {
               whiteSpace: "nowrap",
             }}
           >
-            WHAT OUR INVESTORS SAV
+            WHAT OUR INVESTORS SAY
           </Typography>
         </Stack>
         <Typography variant="h4-regular">
