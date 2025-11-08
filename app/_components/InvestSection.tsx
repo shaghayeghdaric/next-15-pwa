@@ -1,8 +1,11 @@
 "use client";
 
 import { Button, Stack, Typography } from "@mui/material";
+import { useTranslations } from "next-intl";
+import PortfolioChart from "@/components/PortfolioChart";
 
 const InvestSection: React.FC = () => {
+  const t = useTranslations("invest");
   return (
     <Stack
       sx={{
@@ -33,7 +36,7 @@ const InvestSection: React.FC = () => {
               whiteSpace: "nowrap",
             }}
           >
-            SMART CRYPTO
+            {t("smartInvesting")}
           </Typography>
           <Typography
             sx={{
@@ -43,7 +46,7 @@ const InvestSection: React.FC = () => {
               whiteSpace: "nowrap",
             }}
           >
-            INVESTMENT WITH GUARANTEED RETURNS
+            {t("madeSimple")}
           </Typography>
         </Stack>
         <Stack
@@ -71,10 +74,10 @@ const InvestSection: React.FC = () => {
         </Stack>
         <Stack direction="row" sx={{ gap: 4, justifyContent: "space-between" }}>
           <Button variant="contained" color="primary">
-            START INVESTING NOW
+            {t("startInvesting")}
           </Button>
           <Button variant="contained" color="tertiary">
-            START INVESTING NOW
+            {t("viewPlans")}
           </Button>
         </Stack>
       </Stack>
@@ -86,7 +89,7 @@ const InvestSection: React.FC = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="h3-bold">Portfolio Balance</Typography>
+        <Typography variant="h3-bold">Portfolio Performance</Typography>
         <Stack sx={{ textAlign: "center", gap: 4 }}>
           <Typography variant="h1-bold" color="primary.main">
             $24,847.50

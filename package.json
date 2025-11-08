@@ -28,10 +28,12 @@
     "@mui/material": "^7.3.4",
     "@mui/material-nextjs": "^7.3.3",
     "next": "^15.5.6",
+    "next-intl": "^4.4.0",
     "numeral": "^2.0.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hook-form": "^7.66.0",
+    "recharts": "^3.3.0",
     "web-push": "^3.6.7"
   },
   "devDependencies": {
@@ -40,6 +42,7 @@
     "@types/numeral": "^2.0.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/recharts": "^2.0.1",
     "typescript": "^5"
   }
 }

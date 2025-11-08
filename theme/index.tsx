@@ -11,9 +11,17 @@ import { components } from "./components";
 import { palette } from "./palette";
 import typography from "./typography";
 
-export function ThemeProvider({ children }: PropsWithChildren) {
+interface ThemeProviderProps extends PropsWithChildren {
+  direction?: "ltr" | "rtl";
+}
+
+export function ThemeProvider({
+  children,
+  direction = "ltr",
+}: ThemeProviderProps) {
   const theme = createTheme({
     cssVariables: true,
+    direction, // MUI has built-in RTL support
     palette,
     typography,
     components,

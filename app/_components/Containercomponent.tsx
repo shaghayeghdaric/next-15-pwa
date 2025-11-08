@@ -7,18 +7,20 @@ interface ContainerProps {
 }
 const ContainerComponent: React.FC<ContainerProps> = ({ children }) => {
   return (
-    <Stack
-      sx={{
-        px: 23,
-        py: 34,
-        backgroundColor: "background.default",
-        height: "100%",
-        width: "100%",
-        flex: 1,
-      }}
-    >
+    <Stack>
       <Header />
-      {children}
+      <Stack
+        sx={{
+          px: 23,
+          py: 34,
+          backgroundColor: "background.default",
+          height: "100%",
+          width: "100%",
+          flex: 1,
+        }}
+      >
+        {children}
+      </Stack>
       <Footer />
     </Stack>
   );

@@ -1,81 +1,48 @@
 import { Box, Stack, Typography } from "@mui/material";
 import FeaturesCard from "./FeaturesCard";
+import { useTranslations } from "next-intl";
 
-const features = [
-  {
-    logo: "/images/icons/ai-powered-trading-signals.svg",
-    title: "AI-POWERED TRADING SIGNALS",
-    description:
-      "GET REAL-TIME TRADING SIGNALS POWERED BY ADVANCED AI ALGORITHMS AND MACHINE LEARNING, WITH 95%+ ACCURACY RATE.",
-    items: [
-      "Real-time signal notifications",
-      "Entry, exit, and stop-loss prices",
-      "Risk management included",
-      "Performance tracking & analytics",
-    ],
-  },
-  {
-    logo: "/images/icons/guaranteed-investment-returns.svg",
-    title: "GUARANTEDD INVESTMENT RETURNS",
-    description:
-      "SECURE INVESTMENT PLANS WITH GUARANTEED MONTHLY RETURNS AND FLEXIBLE WITHDRAWAL OPTIONS FOR PEACE OF MIND.",
-    items: [
-      "5% guaranteed monthly returns",
-      "Smart contract security",
-      "Flexible withdrawal anytime",
-      "Principal amount protected",
-    ],
-  },
-  {
-    logo: "/images/icons/complete-crypto-education.svg",
-    title: "COMPLETE CRYPTO EDUCATION",
-    description:
-      "LEARN FROM BEGGINER TO ADVANCED LEVEL WITH OUR STRUCTURED LEARNING PATHS, VIDEO COURCES AND CERTIFICATIONS.",
-    items: [
-      "Bginner to expert curriculum",
-      "Interactive video cources",
-      "Progress tracking and certifications",
-      "live mentorship sessions",
-    ],
-  },
-  {
-    logo: "/images/icons/bank-grade-security.svg",
-    title: "BANK-GRADE SECURITY",
-    description:
-      "YOUR INVESTMENTS AND DATA ARE PROTECTED WITH ENTERPRISE-LEVEL SECURITY, MULTI-FACTOR AUTHENTICATION, AND INSURANCE COVERAGE.",
-    items: [
-      "256-bit SSL encryption",
-      "Multi-factor authentication",
-      "Cold storage for funds",
-      "Insurance coverage included",
-    ],
-  },
-  {
-    logo: "/images/icons/mobile-first-experience.svg",
-    title: "MOBILE-FIRST EXPERIENCE",
-    description:
-      "TRADE AND INVEST ON-THE-GO WITH OUR RESPONSIVE WEB APP AND NATIVE MOBILE APPLICATIONS FOR IOS AND ANDROID.",
-    items: [
-      "Progressive Web App (PWA)",
-      "Real-time push notifications",
-      "Offline functionality",
-      "Biometric authentication",
-    ],
-  },
-  {
-    logo: "/images/icons/global-comunity.svg",
-    title: "GLOBAL COMMUNITY",
-    description:
-      "JOIN A THRIVING COMMUNITY OF CRYPTO INVESTORS, SHARE STRATEGIES, AND LEARN FROM SUCCESSFUL TRADERS WORLDWIDE.",
-    items: [
-      "Private investor community",
-      "Expert Q&A sessions",
-      "Strategy sharing platform",
-      "24/7 community support",
-    ],
-  },
-];
 const FeaturesSections = () => {
+  const t = useTranslations("features");
+
+  const features = [
+    {
+      logo: "/images/icons/ai-powered-trading-signals.svg",
+      title: t("aiTradingSignals.title"),
+      description: t("aiTradingSignals.description"),
+      items: t.raw("aiTradingSignals.features"),
+    },
+    {
+      logo: "/images/icons/guaranteed-investment-returns.svg",
+      title: t("guaranteedReturns.title"),
+      description: t("guaranteedReturns.description"),
+      items: t.raw("guaranteedReturns.features"),
+    },
+    {
+      logo: "/images/icons/complete-crypto-education.svg",
+      title: t("cryptoEducation.title"),
+      description: t("cryptoEducation.description"),
+      items: t.raw("cryptoEducation.features"),
+    },
+    {
+      logo: "/images/icons/bank-grade-security.svg",
+      title: t("bankSecurity.title"),
+      description: t("bankSecurity.description"),
+      items: t.raw("bankSecurity.features"),
+    },
+    {
+      logo: "/images/icons/mobile-first-experience.svg",
+      title: t("mobileFirst.title"),
+      description: t("mobileFirst.description"),
+      items: t.raw("mobileFirst.features"),
+    },
+    {
+      logo: "/images/icons/global-comunity.svg",
+      title: t("globalCommunity.title"),
+      description: t("globalCommunity.description"),
+      items: t.raw("globalCommunity.features"),
+    },
+  ];
   return (
     <Stack justifyContent={"center"} alignItems="center" py={7}>
       <Stack
@@ -85,7 +52,7 @@ const FeaturesSections = () => {
         sx={{ width: "100%", gap: 4, mb: 10, px: 6 }}
       >
         <Typography variant="h6-medium" sx={{ whiteSpace: "nowrap" }}>
-          WHY CHOOSE CRYPTOINVEST PRO
+          {t("title")}
         </Typography>
         <Box
           sx={{
@@ -117,7 +84,7 @@ const FeaturesSections = () => {
               whiteSpace: "nowrap",
             }}
           >
-            EVERYTHING
+            {t("subtitle")}
           </Typography>
           <Typography
             sx={{
@@ -127,14 +94,10 @@ const FeaturesSections = () => {
               whiteSpace: "nowrap",
             }}
           >
-            YOU NEED TO SUCCEED IN CRYPTO{" "}
+            {t("description")}
           </Typography>
         </Stack>
-        <Typography variant="h4-regular">
-          OUR COMPREHENSIVE PLATFORM COMBINES PROFESSIONAL TRADING SIGNALS,
-          GUARANTEED INVESTMENT RETURNS, AND WORD-CLASS EDUCATION TO MAXIMIZE
-          YOUR CRYPTO SUCCESS.
-        </Typography>
+        <Typography variant="h4-regular">{t("mainDescription")}</Typography>
       </Stack>
       <Stack
         sx={{

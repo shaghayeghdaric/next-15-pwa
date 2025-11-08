@@ -1,7 +1,7 @@
 import { Button, Stack, Typography } from "@mui/material";
 import { FC } from "react";
 
-interface PlanCardProps {
+export interface PlanCardProps {
   title: string;
   price: number;
   features: string[];

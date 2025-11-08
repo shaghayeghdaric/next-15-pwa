@@ -1,5 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import SignalCard from "./SignalCard";
+import { useTranslations } from "next-intl";
 
 const signals = [
   {
@@ -34,6 +35,7 @@ const signals = [
   },
 ];
 const TradingSignalsSection = () => {
+  const t = useTranslations("tradingSignals");
   return (
     <Stack justifyContent={"center"} alignItems="center" py={7} gap={10}>
       <Stack
@@ -43,7 +45,7 @@ const TradingSignalsSection = () => {
         sx={{ width: "100%", gap: 4, mb: 10, px: 6 }}
       >
         <Typography variant="h6-medium" sx={{ whiteSpace: "nowrap" }}>
-          TRADING SIGNALS
+          {t("title")}
         </Typography>
         <Box
           sx={{
@@ -75,9 +77,9 @@ const TradingSignalsSection = () => {
               whiteSpace: "nowrap",
             }}
           >
-            PROFESSIONAL
+            {t("subtitle")}
           </Typography>
-          <Typography variant="h2-bold">TRADING SIGNALS</Typography>
+          <Typography variant="h2-bold">{t("description")}</Typography>
           <Typography
             sx={{
               fontSize: "27px",
@@ -86,15 +88,11 @@ const TradingSignalsSection = () => {
               whiteSpace: "nowrap",
             }}
           >
-            LIVE SIGNAL FEED
+            {t("liveFeed")}
           </Typography>
         </Stack>
         <Stack>
-          <Typography variant="h4-regular">
-            GET ACCESS TO PREMIUM TRADING SIGNALS POWERED BY AI ALGORITHMS AND
-            EXPERT ANALYSIS, WITH REAL-TIME NOTIFICATIONS AND DETAILED
-            ENTRY/EXIT STRATEGIES.
-          </Typography>
+          <Typography variant="h4-regular">{t("mainDescription")}</Typography>
           <Stack
             direction={"row"}
             justifyContent={"space-between"}
@@ -103,15 +101,15 @@ const TradingSignalsSection = () => {
           >
             <Stack justifyContent={"center"} alignItems={"center"}>
               <Typography variant="h3-bold">95.7%</Typography>
-              <Typography variant="h4-light">ACCURACY</Typography>
+              <Typography variant="h4-light">{t("accuracy")}</Typography>
             </Stack>
             <Stack justifyContent={"center"} alignItems={"center"}>
               <Typography variant="h3-bold">2,847</Typography>
-              <Typography variant="h4-light">SIGNALS</Typography>
+              <Typography variant="h4-light">{t("signals")}</Typography>
             </Stack>
             <Stack justifyContent={"center"} alignItems={"center"}>
               <Typography variant="h3-bold">+23.4%</Typography>
-              <Typography variant="h4-light">AVG RETURN</Typography>
+              <Typography variant="h4-light">{t("avgReturn")}</Typography>
             </Stack>
           </Stack>
         </Stack>

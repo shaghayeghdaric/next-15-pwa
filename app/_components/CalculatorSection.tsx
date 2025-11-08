@@ -4,6 +4,7 @@ import { Stack, Typography } from "@mui/material";
 import { useForm, FormProvider } from "react-hook-form";
 import RHFAutocomplete from "@/theme/components/hook-form/rhf-autocomplete";
 import { getLabel } from "@/utils/get-label";
+import { useTranslations } from "next-intl";
 
 const amounts = [
   { id: 100, fa_title: "100 USDT" },
@@ -19,6 +20,7 @@ type Amount = {
 };
 
 const CalculatorSection = () => {
+  const t = useTranslations("invest");
   const methods = useForm();
   const { setValue, watch } = methods;
   const selectedAmountId = watch("amount");
@@ -39,14 +41,13 @@ const CalculatorSection = () => {
             }}
           >
             <Typography
+              variant="h0-bold"
               sx={{
-                fontSize: "72px",
-                fontWeight: 400,
                 lineHeight: "47px",
                 whiteSpace: "nowrap",
               }}
             >
-              LIFE INSURANCE
+              {t("investmentCalculator")}
             </Typography>
             <Typography
               sx={{
@@ -56,13 +57,13 @@ const CalculatorSection = () => {
                 whiteSpace: "nowrap",
               }}
             >
-              INVESTMENT CALCULATOR
+              {t("investmentAmount")}
             </Typography>
           </Stack>
           <RHFAutocomplete
-            name="INVESTMENT AMOUNT  (USDT)"
+            name="INVESTMENT AMOUNT (USDT)"
             sx={{ padding: 0 }}
-            label="INVESTMENT AMOUNT  (USDT)"
+            label={t("investmentAmount") + " (USDT)"}
             placeholder="choose an amount"
             options={amounts}
             value={
@@ -93,7 +94,7 @@ const CalculatorSection = () => {
             }}
           >
             <Typography variant="h2-medium" color="primary.dark">
-              Total Return After 5 Years
+              {t("totalAfter12Months").replace("12", "5")}
             </Typography>
             <Typography
               color="primary.main"

@@ -2,8 +2,10 @@
 
 import { Stack, Typography } from "@mui/material";
 import Image from "@/components/Image";
+import { useTranslations } from "next-intl";
 
 const HeroSection: React.FC = () => {
+  const t = useTranslations("hero");
   return (
     <Stack
       sx={{
@@ -80,7 +82,7 @@ const HeroSection: React.FC = () => {
               whiteSpace: "nowrap",
             }}
           >
-            SMART MONEY
+            {t("smartMoney")}
           </Typography>
           <Typography
             sx={{
@@ -90,14 +92,10 @@ const HeroSection: React.FC = () => {
               whiteSpace: "nowrap",
             }}
           >
-            RIGHT IN YOUR POCKET
+            {t("rightInYourPocket")}
           </Typography>
         </Stack>
-        <Typography variant="h4-regular">
-          JOIN THOUSANDS OF SUCCESSFUL TRADERS AND INVESTORS EARNING <br />{" "}
-          CONSISTENT PROFITS THROUGH OUR AI-POWERED TRADING SIGNALS, <br />
-          INVESTMENT PLANS, AND COMPREHENSIVE CRYPTO EDUCATION PLATFORM
-        </Typography>
+        <Typography variant="h4-regular">{t("description")}</Typography>
       </Stack>
     </Stack>
   );

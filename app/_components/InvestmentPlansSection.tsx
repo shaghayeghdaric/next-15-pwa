@@ -1,44 +1,33 @@
 import { Box, Stack, Typography } from "@mui/material";
 import InvestmentTypesCard from "./InvestmentTypesCard";
 import CalculatorSection from "./CalculatorSection";
+import { useTranslations } from "next-intl";
 
-const features = [
-  {
-    logo: "/images/icons/short-term-investment.svg",
-    title: "SHORT-TERM INVESTMENT",
-    description: "PERFECT FOR MONTHLY WITH FULL FLEXIBILITY",
-    items: [
-      "GUARANTEED 5% MONTHLY RETURNS",
-      "WITHDRAW ANYTIME WITHOUT PENALTY",
-      "SMART CONTRACT SECURITY",
-      "MINIMUM INVESTMENT: $100 USDT",
-      "COMPOUND OR WITHDRAW PROFITS",
-      "24/7 ACCOUNT MONITORING",
-    ],
-    percent: "5%",
-    returnType: "Guaranteed Monthly Returns",
-    buttonName: "START MONTHLY RETURNS",
-    modalKey: "short-term-investment",
-  },
-  {
-    logo: "/images/icons/life-insurance-plan.svg",
-    title: "LIFE INSURANCE PLAN",
-    description: "PERFECT FOR  STUDY  MONTHLY INCOME WITH FULL FLEXIBILITY",
-    items: [
-      " 15% ANNUAL COMPOUND RETURNS",
-      "INVESTMENT RANGE: $10 - $100 USDT",
-      "5-YEARS COMMITMENT PERIOD",
-      "LIFE INSURANCE COVERAGE INCLUDED",
-      "PRINCIPAL AMOUNT GUARANTEED",
-      "EARLY WITHDRAWAL OPTIONS AVAILABLE",
-    ],
-    percent: "15%",
-    returnType: "ANNUAL COMPOUND RETURNS",
-    buttonName: "CALCULATE MY RETURNS",
-    modalKey: "life-insurance-plan",
-  },
-];
 const InvestmentPlansSections = () => {
+  const t = useTranslations("investmentPlans");
+
+  const features = [
+    {
+      logo: "/images/icons/short-term-investment.svg",
+      title: t("shortTerm.title"),
+      description: t("shortTerm.description"),
+      items: t.raw("shortTerm.features"),
+      percent: t("shortTerm.percent"),
+      returnType: t("shortTerm.returnType"),
+      buttonName: t("shortTerm.buttonName"),
+      modalKey: "short-term-investment",
+    },
+    {
+      logo: "/images/icons/life-insurance-plan.svg",
+      title: t("lifeInsurance.title"),
+      description: t("lifeInsurance.description"),
+      items: t.raw("lifeInsurance.features"),
+      percent: t("lifeInsurance.percent"),
+      returnType: t("lifeInsurance.returnType"),
+      buttonName: t("lifeInsurance.buttonName"),
+      modalKey: "life-insurance-plan",
+    },
+  ];
   return (
     <Stack justifyContent={"center"} alignItems="center" py={7} gap={10}>
       <Stack
@@ -48,7 +37,7 @@ const InvestmentPlansSections = () => {
         sx={{ width: "100%", gap: 4, mb: 10, px: 6 }}
       >
         <Typography variant="h6-medium" sx={{ whiteSpace: "nowrap" }}>
-          INVESTMENT PLANS
+          {t("title")}
         </Typography>
         <Box
           sx={{
@@ -80,7 +69,7 @@ const InvestmentPlansSections = () => {
               whiteSpace: "nowrap",
             }}
           >
-            CHOOSE YOUR
+            {t("subtitle")}
           </Typography>
           <Typography
             sx={{
@@ -90,13 +79,10 @@ const InvestmentPlansSections = () => {
               whiteSpace: "nowrap",
             }}
           >
-            INVESTMENT STRATEGY
+            {t("description")}
           </Typography>
         </Stack>
-        <Typography variant="h4-regular">
-          WHETHER YOU PREFER GUARANTEED MONTHLY RETURNS OR LONG-TERM COMPOUND
-          GROWTH, WE HAVE THE PERFECT INVESTMENT PLAN FOR YOU GOALS.
-        </Typography>
+        <Typography variant="h4-regular">{t("mainDescription")}</Typography>
       </Stack>
       <Stack
         sx={{

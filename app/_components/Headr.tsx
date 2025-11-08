@@ -2,8 +2,22 @@
 
 import { Button, Stack } from "@mui/material";
 import Image from "@/components/Image";
+// import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header: React.FC = () => {
+  // const t = useTranslations("navigation");
+
+  // Temporary hardcoded text to test if the basic setup works
+  const nav = {
+    investments: "INVESTMENTS",
+    payment: "PAYMENT",
+    signals: "SIGNALS",
+    education: "EDUCATION",
+    signIn: "SIGN IN",
+    signUp: "SIGN UP",
+  };
+
   return (
     <Stack
       sx={{
@@ -11,7 +25,8 @@ const Header: React.FC = () => {
         alignItems: "center",
         width: "100%",
         flexDirection: "row",
-        py: 4,
+        pt: 34,
+        px: 23,
       }}
     >
       <Image
@@ -37,16 +52,16 @@ const Header: React.FC = () => {
           }}
         >
           <Button variant="outlined" color="info">
-            INVESTMENTS
+            {nav.investments}
           </Button>
           <Button variant="outlined" color="info">
-            PAYMENT
+            {nav.payment}
           </Button>
           <Button variant="outlined" color="info">
-            SIGNALS
+            {nav.signals}
           </Button>
           <Button variant="outlined" color="info">
-            EDUCATION
+            {nav.education}
           </Button>
         </Stack>
         <Stack
@@ -57,11 +72,12 @@ const Header: React.FC = () => {
             flexDirection: "row",
           }}
         >
+          <LanguageSwitcher />
           <Button variant="outlined" color="info">
-            SIGN IN
+            {nav.signIn}
           </Button>
           <Button variant="contained" color="info">
-            SIGN UP
+            {nav.signUp}
           </Button>
         </Stack>
       </Stack>

@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { FC } from "react";
 
-interface StoryCardProps {
+export interface StoryCardProps {
   story: string;
   title: string;
   username: string;

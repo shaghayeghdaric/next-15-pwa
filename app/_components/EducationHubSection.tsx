@@ -1,77 +1,70 @@
 import { Box, Stack, Typography } from "@mui/material";
 import LearningCard from "./LearningCard";
 import LearningFeature from "./LearningFeature";
-
-const learningJourneys = [
-  {
-    icon: "/images/icons/education/beginner.svg",
-    title: "BEGINNER",
-    complete: "8/12 COMPLETE",
-    description:
-      "LEARN CRYPTO BASICS, WALLET SECURITY, AND FUNDAMENTAL ANALYSIS",
-  },
-  {
-    icon: "/images/icons/education/intermediate.svg",
-    title: "INTERMEDIATE",
-    complete: "3/10 COMPLETE",
-    description: "TECHNICAL ANALYSIS, TRADING STRATEGIES, AND RISK MANAGEMENT",
-  },
-  {
-    icon: "/images/icons/education/advanced.svg",
-    title: "ADVANCED",
-    complete: "0/8 COMPLETE",
-    description:
-      "ADVANCED STRATEGIES, PORTFOLIO MANAGEMENT, AND MARKET PSYCHOLOGY",
-  },
-  {
-    icon: "/images/icons/education/expert.svg",
-    title: "EXPERT",
-    complete: "UNLOCKED AT 80%",
-    description:
-      "PROFESSIONAL TRADING, DeFi STRATEGIES, AND BLOCKCHAIN DEVELOPMENT",
-  },
-];
-
-const learningFeatures = [
-  {
-    icon: "/images/icons/education/structured-learning.svg",
-    title: "STRUCTURED LEARNING PATHS",
-    description:
-      "FOLLOW CAREFULLY DESIGNED CURRICULUMS THAT BUILD KNOWLEDGE PROGRESSIVELY FROM BASICS TO ADVANCED CONCEPTS.",
-  },
-  {
-    icon: "/images/icons/education/interactive-video.svg",
-    title: "INTERACTIVE VIDEO CONTENT",
-    description:
-      "LEARN THROUGH HIGH-QUALITY VIDEO LESSONS, TUTORIALS, AND REAL-WORLD CASE STUDIES FROM INDUSTRY EXPERTS.",
-  },
-  {
-    icon: "/images/icons/education/progress-tracking.svg",
-    title: "PROGRESS TRACKING",
-    description:
-      "MONITOR YOUR LEARNING PROGRESS WITH DETAILED ANALYTICS, QUIZZES, AND MILESTONE ACHIEVEMENTS.",
-  },
-  {
-    icon: "/images/icons/education/certificates-badges.svg",
-    title: "CERTIFICATES & BADGES",
-    description:
-      "EARN VERIFIED CERTIFICATES AND SKILL BADGES THAT DEMONSTRATE YOUR CRYPTO TRADING EXPERTISE.",
-  },
-  {
-    icon: "/images/icons/education/expert-mentorship.svg",
-    title: "EXPERT MENTORSHIP",
-    description:
-      "GET GUIDANCE FROM PROFESSIONAL TRADERS AND CRYPTO EXPERTS THROUGH LIVE SESSIONS AND Q&A.",
-  },
-  {
-    icon: "/images/icons/education/community-learning.svg",
-    title: "COMMUNITY LEARNING",
-    description:
-      "CONNECT WITH FELLOW LEARNERS, SHARE STRATEGIES, AND LEARN FROM THE EXPERIENCES OF SUCCESSFUL TRADERS.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 const EducationHubSection = () => {
+  const t = useTranslations("educationHub");
+
+  const learningJourneys = [
+    {
+      icon: "/images/icons/education/beginner.svg",
+      title: t("beginner.title"),
+      complete: t("beginner.complete"),
+      description: t("beginner.description"),
+    },
+    {
+      icon: "/images/icons/education/intermediate.svg",
+      title: t("intermediate.title"),
+      complete: t("intermediate.complete"),
+      description: t("intermediate.description"),
+    },
+    {
+      icon: "/images/icons/education/advanced.svg",
+      title: t("advanced.title"),
+      complete: t("advanced.complete"),
+      description: t("advanced.description"),
+    },
+    {
+      icon: "/images/icons/education/expert.svg",
+      title: t("expert.title"),
+      complete: t("expert.complete"),
+      description: t("expert.description"),
+    },
+  ];
+
+  const learningFeatures = [
+    {
+      icon: "/images/icons/education/structured-learning-paths.svg",
+      title: t("features.structuredLearning.title"),
+      description: t("features.structuredLearning.description"),
+    },
+    {
+      icon: "/images/icons/education/interactive-video-content.svg",
+      title: t("features.interactiveVideo.title"),
+      description: t("features.interactiveVideo.description"),
+    },
+    {
+      icon: "/images/icons/education/progress-tracking.svg",
+      title: t("features.progressTracking.title"),
+      description: t("features.progressTracking.description"),
+    },
+    {
+      icon: "/images/icons/education/certificates-and-badges.svg",
+      title: t("features.certificates.title"),
+      description: t("features.certificates.description"),
+    },
+    {
+      icon: "/images/icons/education/expert-mentorship.svg",
+      title: t("features.expertMentorship.title"),
+      description: t("features.expertMentorship.description"),
+    },
+    {
+      icon: "/images/icons/education/comunity-learning.svg",
+      title: t("features.communityLearning.title"),
+      description: t("features.communityLearning.description"),
+    },
+  ];
   return (
     <Stack justifyContent={"center"} alignItems="center" py={7} gap={10}>
       <Stack
@@ -81,7 +74,7 @@ const EducationHubSection = () => {
         sx={{ width: "100%", gap: 4, mb: 10, px: 6 }}
       >
         <Typography variant="h6-medium" sx={{ whiteSpace: "nowrap" }}>
-          EDUCATION HUB
+          {t("title")}
         </Typography>
         <Box
           sx={{
@@ -113,7 +106,7 @@ const EducationHubSection = () => {
               whiteSpace: "nowrap",
             }}
           >
-            MASTER CRYPTO
+            {t("subtitle")}
           </Typography>
           <Typography
             sx={{
@@ -123,14 +116,10 @@ const EducationHubSection = () => {
               whiteSpace: "nowrap",
             }}
           >
-            TRADING & INVESTMENT
+            {t("description")}
           </Typography>
         </Stack>
-        <Typography variant="h4-regular">
-          OUR COMPREHENSIVE EDUCATION PLATFORM TAKES YOU FROM BEGINNER TO EXPERT
-          WITH STRUCTURED LEARNING PATHS, PRACTICAL EXERCISES, AND EXPERT
-          MENTORSHIP.
-        </Typography>
+        <Typography variant="h4-regular">{t("mainDescription")}</Typography>
       </Stack>
       <Stack
         direction={"row"}
@@ -149,7 +138,7 @@ const EducationHubSection = () => {
             width: "50%",
           }}
         >
-          <Typography variant="h3-bold">YOUR LEARNING JOURNEY</Typography>
+          <Typography variant="h3-bold">{t("yourLearningJourney")}</Typography>
           <Stack justifyContent={"center"} gap={10}>
             {learningJourneys.map((journey, index) => (
               <LearningCard

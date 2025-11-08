@@ -1,37 +1,10 @@
 import { Box, Stack, Typography } from "@mui/material";
-import StoryCard from "./StoryCard";
+import StoryCard, { StoryCardProps } from "./StoryCard";
+import { useTranslations } from "next-intl";
 
-const stories = [
-  {
-    story:
-      "CryptoInvest Pro changed my financial life. The guaranteed 5% monthly returns are real, and the trading signals have helped me make consistent profits. The education platform taught me everything I needed to know.",
-    username: "Michael Rodriguez",
-    title: "Software Developer, 8 months investor",
-    logo: "M",
-  },
-  {
-    story:
-      "The trading signals are incredibly accurate. I've been following them for 6 months and my success rate is over 90%. The mobile app makes it so easy to stay updated and never miss an opportunity.",
-    username: "Sarah Chen",
-    title: "Marketing Manager, 6 months investor",
-    logo: "S",
-  },
-  {
-    story:
-      "I started with the life insurance plan with just $50. After learning through their education platform, I now manage a much larger portfolio. The compound returns are building real wealth for my family.",
-    username: "David Thompson",
-    title: "Teacher, 1 year investor",
-    logo: "D",
-  },
-  {
-    story:
-      "The security and transparency give me peace of mind. Smart contracts, insurance coverage, and 24/7 support - everything a serious investor needs. I've referred 12 friends and they're all happy.",
-    username: "Lisa Park",
-    title: "Financial Advisor, 10 months investor",
-    logo: "L",
-  },
-];
 const SuccessStoriesSection = () => {
+  const t = useTranslations("successStories");
+  const stories = t.raw("stories");
   return (
     <Stack justifyContent={"center"} alignItems="center" py={7} gap={10}>
       <Stack
@@ -41,7 +14,7 @@ const SuccessStoriesSection = () => {
         sx={{ width: "100%", gap: 4, mb: 10, px: 6 }}
       >
         <Typography variant="h6-medium" sx={{ whiteSpace: "nowrap" }}>
-          SUCCESS STORIES
+          {t("title")}
         </Typography>
         <Box
           sx={{
@@ -73,18 +46,15 @@ const SuccessStoriesSection = () => {
               whiteSpace: "nowrap",
             }}
           >
-            WHAT OUR INVESTORS SAY
+            {t("subtitle")}
           </Typography>
         </Stack>
-        <Typography variant="h4-regular">
-          JOIN THOUSANDS OF SATISFIED INVESTORS WHO ARE ALREADY EARNING
-          CONSISTENT PROFITS WITH CRYPTOINVEST PRO.
-        </Typography>
+        <Typography variant="h4-regular">{t("description")}</Typography>
       </Stack>
       <Stack direction={"row"} gap={9}>
-        {stories.map((story, index) => (
+        {stories.map((story: StoryCardProps) => (
           <StoryCard
-            key={`success-story-${index}-${story.username}`}
+            key={`success-story-${story.username}`}
             story={story.story}
             title={story.title}
             username={story.username}

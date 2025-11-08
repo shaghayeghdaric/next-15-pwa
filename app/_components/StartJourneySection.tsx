@@ -1,6 +1,8 @@
 import { Button, Stack, Typography } from "@mui/material";
+import { useTranslations } from "next-intl";
 
 const StartJourneySection = () => {
+  const t = useTranslations("startJourney");
   return (
     <Stack justifyContent={"center"} py={7} gap={25}>
       <Stack
@@ -24,9 +26,8 @@ const StartJourneySection = () => {
               whiteSpace: "nowrap",
             }}
           >
-            READY TO START YOUR
+            {t("title")}
           </Typography>
-          <Typography>CRYPTO SUCCESS JOURNEY?</Typography>
         </Stack>
         <Typography variant="h4-regular">
           JOIN OVER 50,000 INVESTORS ALREADY EARNING CONSISTENT PROFITS WITH OUR
@@ -41,10 +42,10 @@ const StartJourneySection = () => {
           alignItems={"center"}
         >
           <Button variant="contained" color="primary">
-            START INVESTING NOW
+            {t("getStarted")}
           </Button>
           <Button variant="contained" color="tertiary">
-            WATCH DEMO
+            {t("learnMore")}
           </Button>
         </Stack>
         <Stack
@@ -54,10 +55,9 @@ const StartJourneySection = () => {
           alignItems={"center"}
           sx={{ py: 10 }}
         >
-          <Typography variant="h1-bold">YOU DONT HAVE AN ACCOUNT?</Typography>
-          <Button variant="contained" color="info" sx={{ width: 150 }}>
-            SIGN UP
-          </Button>
+          <Typography variant="h1-bold">
+            Available on: {t("ios")}, {t("android")}, {t("webApp")}
+          </Typography>
         </Stack>
       </Stack>
     </Stack>
