@@ -1,5 +1,6 @@
-import SignalCard from "@/app/_components/SignalCard";
 import { Stack, Typography } from "@mui/material";
+import SignalsPieChart from "./_components/SignalsPieChart";
+import SignalCard from "@/app/_components/SignalCard";
 
 const signals = [
   {
@@ -33,13 +34,11 @@ const signals = [
     lastUpdated: "2024-06-01 13:00",
   },
 ];
-
-const LastPremiumSignals = () => {
+const SignalsPage = () => {
   return (
-    <Stack width={"100%"} gap={4} alignItems="start" py={7}>
-      <Typography variant="h3-medium" sx={{ mb: 3 }}>
-        LATST PREMIUM SIGNALS
-      </Typography>
+    <Stack justifyContent={"start"} alignItems={"start"} gap={7}>
+      <Typography variant="h1-bold">PROFESSIONAL TRADING SIGNALS</Typography>
+      <SignalsPieChart />
       {signals.map((signal, index) => (
         <Stack
           key={`trading-signal-${index}-${signal.signalName}`}
@@ -61,4 +60,4 @@ const LastPremiumSignals = () => {
   );
 };
 
-export default LastPremiumSignals;
+export default SignalsPage;
