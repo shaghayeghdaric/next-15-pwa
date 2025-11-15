@@ -71,29 +71,35 @@ export default function RHFAutocomplete<
       name={name}
       control={control}
       render={({ field, fieldState: { error } }) => (
-        <Stack sx={{ flex: 1 }}>
+        <Stack sx={{ flex: 1, gap: 0.5 }}>
           {label && (
             <InputLabel
               disabled={field.disabled}
               shrink
               htmlFor={id || name}
               required={required}
-              sx={{ color: "white" }}
+              sx={{ color: "white", mb: 0.5 }}
             >
               {label}
             </InputLabel>
           )}
           <Autocomplete
             {...field}
+            size="small"
             sx={{
               "& .MuiInputBase-sizeSmall": {
                 borderRadius: "10px",
+                minHeight: "42px",
+                height: "42px",
               },
               "& .MuiChip-deleteIcon": {
                 color: "red",
               },
               "& .MuiChip-label": {
                 color: "grey.900",
+              },
+              "& .MuiAutocomplete-inputRoot": {
+                padding: "4px 8px !important",
               },
             }}
             onChange={(_, newValue) =>
@@ -113,13 +119,22 @@ export default function RHFAutocomplete<
               renderInput ||
               ((params) => (
                 <TextField
+                  {...params}
                   name={name}
                   label={label ? undefined : name}
                   aria-label={label || name}
                   placeholder={placeholder}
                   error={!!error}
                   helperText={error ? error?.message : helperText}
-                  {...params}
+                  size="small"
+                  sx={{
+                    "& .MuiInputBase-root": {
+                      height: "42px",
+                    },
+                    "& .MuiFormHelperText-root": {
+                      margin: "4px 0 0 0",
+                    },
+                  }}
                 />
               ))
             }
