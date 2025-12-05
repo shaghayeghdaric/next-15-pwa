@@ -51,18 +51,11 @@ const TradingSignalsSection = () => {
           sx={{
             width: "100%",
             height: 4,
-            background:
-              "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
+            background: "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
           }}
         ></Box>
       </Stack>
-      <Stack
-        flexDirection={"row"}
-        gap={10}
-        justifyContent={"center"}
-        alignItems={"start"}
-        px={6}
-      >
+      <Stack flexDirection={"row"} gap={10} justifyContent={"center"} alignItems={"start"} px={6}>
         <Stack
           sx={{
             justifyContent: "center",
@@ -93,12 +86,7 @@ const TradingSignalsSection = () => {
         </Stack>
         <Stack>
           <Typography variant="h4-regular">{t("mainDescription")}</Typography>
-          <Stack
-            direction={"row"}
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            gap={10}
-          >
+          <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} gap={10}>
             <Stack justifyContent={"center"} alignItems={"center"}>
               <Typography variant="h3-bold">95.7%</Typography>
               <Typography variant="h4-light">{t("accuracy")}</Typography>
@@ -115,10 +103,7 @@ const TradingSignalsSection = () => {
         </Stack>
       </Stack>
       {signals.map((signal, index) => (
-        <Stack
-          key={`trading-signal-${index}-${signal.signalName}`}
-          width={"100%"}
-        >
+        <Stack key={`trading-signal-${index}-${signal.signalName}`} width={"100%"}>
           <SignalCard
             signalName={signal.signalName}
             entry={signal.entry}

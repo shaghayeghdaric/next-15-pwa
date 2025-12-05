@@ -55,9 +55,7 @@ export default function Image({
   if (fluid) {
     // We *must* have a numeric aspectWidth & aspectHeight in fluid mode
     if (typeof aspectWidth !== "number" || typeof aspectHeight !== "number") {
-      console.error(
-        "[SmartImage] When using fluid={true}, you must supply numeric aspectWidth & aspectHeight.",
-      );
+      console.error("[SmartImage] When using fluid={true}, you must supply numeric aspectWidth & aspectHeight.");
       return null;
     }
 
@@ -92,9 +90,9 @@ export default function Image({
 
   // ——— “Fixed” mode: must pass BOTH width & height ———
   if (typeof width !== "number" || typeof height !== "number") {
-    console.error(
-      "[Image] You must either use fluid={true} with aspectWidth/aspectHeight, OR pass numeric width & height.",
-    );
+    // console.error(
+    //   "[Image] You must either use fluid={true} with aspectWidth/aspectHeight, OR pass numeric width & height."
+    // );
     return null;
   }
 

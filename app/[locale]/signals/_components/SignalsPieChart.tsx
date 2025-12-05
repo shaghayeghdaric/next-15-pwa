@@ -63,12 +63,7 @@ const SignalsPieChart = () => {
   };
 
   return (
-    <Stack
-      justifyContent={"center"}
-      alignItems={"center"}
-      sx={{ width: "100%" }}
-      gap={4}
-    >
+    <Stack justifyContent={"center"} alignItems={"center"} sx={{ width: "100%" }} gap={4}>
       {/* Filters Section */}
       <Stack
         direction={"row"}
@@ -89,9 +84,7 @@ const SignalsPieChart = () => {
             label={"CURRENCY PAIR"}
             placeholder="choose a currency pair"
             options={amounts}
-            value={
-              amounts.find((amount) => amount.id === selectedAmountId) || null
-            }
+            value={amounts.find((amount) => amount.id === selectedAmountId) || null}
             onChange={(_, newValue) => {
               const selectedAmount = newValue as Option | null;
               setValue("amount", selectedAmount?.id || 0, {
@@ -106,9 +99,7 @@ const SignalsPieChart = () => {
             label={"RISK LEVEL"}
             placeholder="choose risk level"
             options={riskLevels}
-            value={
-              riskLevels.find((risk) => risk.id === selectedRiskId) || null
-            }
+            value={riskLevels.find((risk) => risk.id === selectedRiskId) || null}
             onChange={(_, newValue) => {
               const selectedRisk = newValue as Option | null;
               setValue("risk", selectedRisk?.id || 0, {
@@ -123,10 +114,7 @@ const SignalsPieChart = () => {
             label={"SIGNAL TYPE"}
             placeholder="choose signal type"
             options={signalTypes}
-            value={
-              signalTypes.find((signal) => signal.id === selectedSignalId) ||
-              null
-            }
+            value={signalTypes.find((signal) => signal.id === selectedSignalId) || null}
             onChange={(_, newValue) => {
               const selectedSignal = newValue as Option | null;
               setValue("signal", selectedSignal?.id || 0, {
@@ -141,9 +129,7 @@ const SignalsPieChart = () => {
             label={"TIME FRAME"}
             placeholder="choose time frame"
             options={timeFrames}
-            value={
-              timeFrames.find((time) => time.id === selectedTimeId) || null
-            }
+            value={timeFrames.find((time) => time.id === selectedTimeId) || null}
             onChange={(_, newValue) => {
               const selectedTime = newValue as Option | null;
               setValue("time", selectedTime?.id || 0, {
@@ -164,21 +150,11 @@ const SignalsPieChart = () => {
           padding: 6,
         }}
       >
-        <Stack
-          direction={"row"}
-          justifyContent={"space-between"}
-          alignItems={"center"}
-          mb={4}
-        >
+        <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} mb={4}>
           <Typography variant="h4-bold" sx={{ mb: 3 }} color="primary.main">
             SIGNAL PERFORMANCE ANALYSIS
           </Typography>
-          <Stack
-            direction={"row"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            gap={10}
-          >
+          <Stack direction={"row"} justifyContent={"center"} alignItems={"center"} gap={10}>
             <Stack justifyContent={"center"} alignItems={"center"} gap={1}>
               <Typography variant="h6-bold" color="primary.main">
                 94.7%

@@ -1,14 +1,9 @@
 import type { Theme, Components } from "@mui/material/styles";
 
 // Only use colors that are valid for MUI Button components
-export const COLOR_KEYS = [
-  "primary",
-  "secondary",
-  "tertiary",
-  "info",
-] as const;
+export const COLOR_KEYS = ["primary", "secondary", "tertiary", "info"] as const;
 
-type ButtonColorSchema = typeof COLOR_KEYS[number];
+type ButtonColorSchema = (typeof COLOR_KEYS)[number];
 
 declare module "@mui/material/Button" {
   interface ButtonPropsColorOverrides {
@@ -134,9 +129,13 @@ const createVariantsForColor = (color: ButtonColorSchema) => {
     {
       props: { size: "xLarge" as const },
       style: ({ theme }: { theme: Theme }) => ({
-        height: "40px",
-        padding: "20px",
-        ...theme.typography["h6-medium"],
+        fontWeight: 700,
+        fontSize: 12,
+        padding: theme.spacing(3),
+        [theme.breakpoints.up("lg")]: {
+          fontSize: 14,
+          padding: theme.spacing(4),
+        },
       }),
     },
   ];
@@ -150,11 +149,18 @@ export const MuiButton: Components<Theme>["MuiButton"] = {
     disableElevation: true,
   },
   styleOverrides: {
-    root: {
+    root: ({ theme }) => ({
       borderRadius: "5px",
       border: "1px solid transparent",
       whiteSpace: "nowrap",
       textTransform: "none",
+      fontWeight: 700,
+      fontSize: 12,
+      padding: theme.spacing(3),
+      [theme.breakpoints.up("lg")]: {
+        fontSize: 14,
+        padding: theme.spacing(4),
+      },
       "&.Mui-disabled": {
         color: "var(--mui-palette-grey-600)",
         ".MuiButton-icon": {
@@ -175,7 +181,10 @@ export const MuiButton: Components<Theme>["MuiButton"] = {
         ...COLOR_KEYS.flatMap((color) => createVariantsForColor(color)),
         // Custom primary-light color variant
         {
-          props: { variant: "outlined" as const, color: "primary-light" as const },
+          props: {
+            variant: "outlined" as const,
+            color: "primary-light" as const,
+          },
           style: ({ theme }) => ({
             backgroundColor: "transparent",
             color: theme.palette.primary.light,
@@ -191,7 +200,10 @@ export const MuiButton: Components<Theme>["MuiButton"] = {
           }),
         },
         {
-          props: { variant: "contained" as const, color: "primary-light" as const },
+          props: {
+            variant: "contained" as const,
+            color: "primary-light" as const,
+          },
           style: ({ theme }) => ({
             backgroundColor: theme.palette.primary.light,
             color: "#ffffff",
@@ -205,20 +217,28 @@ export const MuiButton: Components<Theme>["MuiButton"] = {
           }),
         },
       ],
-    },
+    }),
 
     startIcon: { marginLeft: 4, marginRight: 0 },
     endIcon: { marginRight: 4, marginLeft: 0 },
 
     sizeLarge: ({ theme }) => ({
-      height: "40px",
-      padding: "20px",
-      ...theme.typography["p1-medium"],
+      fontWeight: 700,
+      fontSize: 12,
+      padding: theme.spacing(3),
+      [theme.breakpoints.up("lg")]: {
+        fontSize: 14,
+        padding: theme.spacing(4),
+      },
     }),
     sizeSmall: ({ theme }) => ({
-      height: "32px",
-      padding: "20px",
-      ...theme.typography["p1-medium"],
+      fontWeight: 700,
+      fontSize: 12,
+      padding: theme.spacing(3),
+      [theme.breakpoints.up("lg")]: {
+        fontSize: 14,
+        padding: theme.spacing(4),
+      },
     }),
   },
 };

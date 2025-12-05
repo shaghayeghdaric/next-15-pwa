@@ -2,77 +2,65 @@
 
 import { Button, Stack, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
-import PortfolioChart from "@/components/PortfolioChart";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const InvestSection: React.FC = () => {
   const t = useTranslations("invest");
+  const isMobile = useIsMobile();
+
   return (
     <Stack
       sx={{
         width: "100%",
-        p: 5,
+        p: { xs: 2, md: 5 },
         alignItems: "self-start",
         justifyContent: "center",
-        gap: 20,
+        gap: { xs: 10, md: 15 },
         background: "url('/images/shadow.png') center/cover no-repeat",
       }}
-      flexDirection="row"
+      flexDirection={isMobile ? "column" : "row"}
     >
-      <Stack sx={{ gap: 20, width: "50%" }}>
+      <Stack sx={{ gap: { xs: 5, md: 15 }, width: { xs: "100%", md: "50%" } }}>
         <Stack
           sx={{
             justifyContent: "center",
             alignItems: "flex-start",
           }}
         >
-          <Typography variant="h6-medium" pb={10}>
+          <Typography variant="p4-medium" pb={10}>
             OVER 50,000+ ACTIVE INVESTORS
           </Typography>
           <Typography
+            variant={isMobile ? "h4-bold" : "h2-bold"}
             sx={{
-              fontSize: "78px",
-              fontWeight: 700,
-              lineHeight: "51px",
               whiteSpace: "nowrap",
             }}
           >
-            {t("smartInvesting")}
+            SMART CRYPTO
           </Typography>
-          <Typography
-            sx={{
-              fontSize: "27px",
-              fontWeight: 700,
-              lineHeight: "51px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {t("madeSimple")}
-          </Typography>
+          <Typography variant={isMobile ? "h6-bold" : "h4-bold"}>INVESTMENT WITH GUARANTEED RETURNS</Typography>
         </Stack>
-        <Stack
-          sx={{ pt: 6, gap: 8, justifyContent: "space-between" }}
-          direction="row"
-        >
+        <Stack sx={{ pt: 6, gap: { xs: 3, md: 8 }, justifyContent: "space-between" }} direction="row">
           <Stack sx={{ textAlign: "center", gap: 4 }}>
-            <Typography variant="h1-medium" color="primary.main">
+            <Typography variant={isMobile ? "p1-medium" : "h4-medium"} color="primary.main">
               95.7%
             </Typography>
-            <Typography variant="h5-regular">SIGNAL ACCURACY</Typography>
+            <Typography variant={isMobile ? "p3-regular" : "p1-regular"}>SIGNAL ACCURACY</Typography>
           </Stack>
           <Stack sx={{ textAlign: "center", gap: 4 }}>
-            <Typography variant="h1-medium" color="primary.main">
+            <Typography variant={isMobile ? "p1-medium" : "h4-medium"} color="primary.main">
               $2.4M+
             </Typography>
-            <Typography variant="h5-regular">INVESTOR PROFILE</Typography>
+            <Typography variant={isMobile ? "p3-regular" : "p1-regular"}>INVESTOR PROFILE</Typography>
           </Stack>
           <Stack sx={{ textAlign: "center", gap: 4 }}>
-            <Typography variant="h1-medium" color="primary.main">
+            <Typography variant={isMobile ? "p1-medium" : "h4-medium"} color="primary.main">
               24.7
             </Typography>
-            <Typography variant="h5-regular">LIVE SUPPORT</Typography>
+            <Typography variant={isMobile ? "p3-regular" : "p1-regular"}>LIVE SUPPORT</Typography>
           </Stack>
         </Stack>
-        <Stack direction="row" sx={{ gap: 4, justifyContent: "space-between" }}>
+        <Stack direction="row" sx={{ gap: 4 }}>
           <Button variant="contained" color="primary">
             {t("startInvesting")}
           </Button>
@@ -83,18 +71,18 @@ const InvestSection: React.FC = () => {
       </Stack>
       <Stack
         sx={{
-          gap: 20,
-          width: "50%",
+          gap: { xs: 8, md: 20 },
+          width: { xs: "100%", md: "50%" },
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Typography variant="h3-bold">Portfolio Performance</Typography>
+        <Typography variant={isMobile ? "p1-bold" : "h6-bold"}>Portfolio Performance</Typography>
         <Stack sx={{ textAlign: "center", gap: 4 }}>
-          <Typography variant="h1-bold" color="primary.main">
+          <Typography variant={isMobile ? "h6-bold" : "h4-bold"} color="primary.main">
             $24,847.50
           </Typography>
-          <Typography variant="h3-regular">+8.7% Today (+$1,983.40)</Typography>
+          <Typography variant={isMobile ? "p3-regular" : "p1-regular"}>+8.7% Today (+$1,983.40)</Typography>
         </Stack>
         <Stack sx={{ gap: 3, width: "100%" }}>
           <Stack
@@ -105,8 +93,7 @@ const InvestSection: React.FC = () => {
               borderRadius: "5px",
               width: "100%",
               gap: 2,
-              background:
-                "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
+              background: "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
             }}
           >
             <Stack
@@ -116,8 +103,8 @@ const InvestSection: React.FC = () => {
                 flexDirection: "row",
               }}
             >
-              <Typography variant="h4-bold">BTC/USDT</Typography>
-              <Typography variant="h4-bold" color="primary.main">
+              <Typography variant={isMobile ? "p2-bold" : "h6-bold"}>BTC/USDT</Typography>
+              <Typography variant={isMobile ? "p2-bold" : "h6-bold"} color="primary.main">
                 +$2,847
               </Typography>
             </Stack>
@@ -128,10 +115,10 @@ const InvestSection: React.FC = () => {
                 flexDirection: "row",
               }}
             >
-              <Typography variant="h4-regular" color="primary.main">
+              <Typography variant={isMobile ? "p2-regular" : "h6-regular"} color="primary.main">
                 ACTIVE SIGNAL
               </Typography>
-              <Typography variant="h5-regular">+12.4%</Typography>
+              <Typography variant={isMobile ? "p3-regular" : "p1-regular"}>+12.4%</Typography>
             </Stack>
           </Stack>
           <Stack
@@ -142,8 +129,7 @@ const InvestSection: React.FC = () => {
               borderRadius: "5px",
               width: "100%",
               gap: 2,
-              background:
-                "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
+              background: "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
             }}
           >
             <Stack
@@ -153,8 +139,8 @@ const InvestSection: React.FC = () => {
                 flexDirection: "row",
               }}
             >
-              <Typography variant="h4-bold">BTC/USDT</Typography>
-              <Typography variant="h4-bold" color="primary.main">
+              <Typography variant={isMobile ? "p2-bold" : "h6-bold"}>BTC/USDT</Typography>
+              <Typography variant={isMobile ? "p2-bold" : "h6-bold"} color="primary.main">
                 +$2,847
               </Typography>
             </Stack>
@@ -165,10 +151,10 @@ const InvestSection: React.FC = () => {
                 flexDirection: "row",
               }}
             >
-              <Typography variant="h4-regular" color="primary.main">
+              <Typography variant={isMobile ? "p2-regular" : "h6-regular"} color="primary.main">
                 ACTIVE SIGNAL
               </Typography>
-              <Typography variant="h5-regular">+12.4%</Typography>
+              <Typography variant={isMobile ? "p3-regular" : "p1-regular"}>+12.4%</Typography>
             </Stack>
           </Stack>
           <Stack
@@ -179,8 +165,7 @@ const InvestSection: React.FC = () => {
               borderRadius: "5px",
               width: "100%",
               gap: 2,
-              background:
-                "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
+              background: "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
             }}
           >
             <Stack
@@ -190,8 +175,8 @@ const InvestSection: React.FC = () => {
                 flexDirection: "row",
               }}
             >
-              <Typography variant="h4-bold">BTC/USDT</Typography>
-              <Typography variant="h4-bold" color="primary.main">
+              <Typography variant={isMobile ? "p2-bold" : "h6-bold"}>BTC/USDT</Typography>
+              <Typography variant={isMobile ? "p2-bold" : "h6-bold"} color="primary.main">
                 +$2,847
               </Typography>
             </Stack>
@@ -202,10 +187,10 @@ const InvestSection: React.FC = () => {
                 flexDirection: "row",
               }}
             >
-              <Typography variant="h4-regular" color="primary.main">
+              <Typography variant={isMobile ? "p2-regular" : "h6-regular"} color="primary.main">
                 ACTIVE SIGNAL
               </Typography>
-              <Typography variant="h5-regular">+12.4%</Typography>
+              <Typography variant={isMobile ? "p3-regular" : "p1-regular"}>+12.4%</Typography>
             </Stack>
           </Stack>
         </Stack>

@@ -1,5 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
-import PlanCard, { PlanCardProps } from "./PlanCard";
+import PlanCard, { type PlanCardProps } from "./PlanCard";
 import { useTranslations } from "next-intl";
 
 const SubscriptionPlansSection = () => {
@@ -20,18 +20,11 @@ const SubscriptionPlansSection = () => {
           sx={{
             width: "100%",
             height: 4,
-            background:
-              "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
+            background: "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
           }}
         ></Box>
       </Stack>
-      <Stack
-        flexDirection={"row"}
-        gap={10}
-        justifyContent={"center"}
-        alignItems={"start"}
-        px={6}
-      >
+      <Stack flexDirection={"row"} gap={10} justifyContent={"center"} alignItems={"start"} px={6}>
         <Stack
           sx={{
             justifyContent: "center",
@@ -61,13 +54,7 @@ const SubscriptionPlansSection = () => {
         </Stack>
         <Typography variant="h4-regular">{t("mainDescription")}</Typography>
       </Stack>
-      <Stack
-        direction={"row"}
-        gap={4}
-        justifyContent="space-between"
-        alignItems="end"
-        width={"100%"}
-      >
+      <Stack direction={"row"} gap={4} justifyContent="space-between" alignItems="end" width={"100%"}>
         {plans.map((plan: PlanCardProps) => (
           <PlanCard
             key={`subscription-plan-${plan.title}`}

@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import { FC } from "react";
+import type { FC } from "react";
 
 interface LearningCardProps {
   icon: string;
@@ -11,8 +11,8 @@ interface LearningCardProps {
 }
 
 const LearningCard: FC<LearningCardProps> = ({
-  icon,
-  level,
+  // icon,
+  // level,
   title,
   hour,
   complete,
@@ -37,13 +37,7 @@ const LearningCard: FC<LearningCardProps> = ({
         </Typography>
         <Typography variant="h4-medium">{description}</Typography>
       </Stack>
-      <Stack
-        direction={"row"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        gap={2}
-        width={"100%"}
-      >
+      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} gap={2} width={"100%"}>
         <Typography variant="h4-medium">{hour} hours</Typography>
         <Typography variant="h4-medium">{complete}% complete</Typography>
       </Stack>

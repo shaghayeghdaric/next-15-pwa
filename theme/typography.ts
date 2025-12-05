@@ -5,7 +5,6 @@ import { toNumber } from "../utils/number";
 declare module "@mui/material/styles" {
   interface TypographyVariants {
     // bold
-    "h0-bold": CSSProperties;
     "h1-bold": CSSProperties;
     "h2-bold": CSSProperties;
     "h3-bold": CSSProperties;
@@ -14,8 +13,9 @@ declare module "@mui/material/styles" {
     "h6-bold": CSSProperties;
     "p1-bold": CSSProperties;
     "p2-bold": CSSProperties;
+    "p3-bold": CSSProperties;
+    "p4-bold": CSSProperties;
     // medium
-    "h0-medium": CSSProperties;
     "h1-medium": CSSProperties;
     "h2-medium": CSSProperties;
     "h3-medium": CSSProperties;
@@ -24,8 +24,9 @@ declare module "@mui/material/styles" {
     "h6-medium": CSSProperties;
     "p1-medium": CSSProperties;
     "p2-medium": CSSProperties;
+    "p3-medium": CSSProperties;
+    "p4-medium": CSSProperties;
     // regular
-    "h0-regular": CSSProperties;
     "h1-regular": CSSProperties;
     "h2-regular": CSSProperties;
     "h3-regular": CSSProperties;
@@ -34,8 +35,9 @@ declare module "@mui/material/styles" {
     "h6-regular": CSSProperties;
     "p1-regular": CSSProperties;
     "p2-regular": CSSProperties;
+    "p3-regular": CSSProperties;
+    "p4-regular": CSSProperties;
     // light
-    "h0-light": CSSProperties;
     "h1-light": CSSProperties;
     "h2-light": CSSProperties;
     "h3-light": CSSProperties;
@@ -44,12 +46,13 @@ declare module "@mui/material/styles" {
     "h6-light": CSSProperties;
     "p1-light": CSSProperties;
     "p2-light": CSSProperties;
+    "p3-light": CSSProperties;
+    "p4-light": CSSProperties;
   }
 
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
     // bold
-    "h0-bold"?: CSSProperties;
     "h1-bold"?: CSSProperties;
     "h2-bold"?: CSSProperties;
     "h3-bold"?: CSSProperties;
@@ -58,8 +61,9 @@ declare module "@mui/material/styles" {
     "h6-bold"?: CSSProperties;
     "p1-bold"?: CSSProperties;
     "p2-bold"?: CSSProperties;
+    "p3-bold"?: CSSProperties;
+    "p4-bold"?: CSSProperties;
     // medium
-    "h0-medium"?: CSSProperties;
     "h1-medium"?: CSSProperties;
     "h2-medium"?: CSSProperties;
     "h3-medium"?: CSSProperties;
@@ -68,8 +72,9 @@ declare module "@mui/material/styles" {
     "h6-medium"?: CSSProperties;
     "p1-medium"?: CSSProperties;
     "p2-medium"?: CSSProperties;
+    "p3-medium"?: CSSProperties;
+    "p4-medium"?: CSSProperties;
     // regular
-    "h0-regular"?: CSSProperties;
     "h1-regular"?: CSSProperties;
     "h2-regular"?: CSSProperties;
     "h3-regular"?: CSSProperties;
@@ -78,8 +83,9 @@ declare module "@mui/material/styles" {
     "h6-regular"?: CSSProperties;
     "p1-regular"?: CSSProperties;
     "p2-regular"?: CSSProperties;
+    "p3-regular"?: CSSProperties;
+    "p4-regular"?: CSSProperties;
     // light
-    "h0-light"?: CSSProperties;
     "h1-light"?: CSSProperties;
     "h2-light"?: CSSProperties;
     "h3-light"?: CSSProperties;
@@ -88,6 +94,8 @@ declare module "@mui/material/styles" {
     "h6-light"?: CSSProperties;
     "p1-light"?: CSSProperties;
     "p2-light"?: CSSProperties;
+    "p3-light"?: CSSProperties;
+    "p4-light"?: CSSProperties;
   }
 }
 
@@ -118,6 +126,8 @@ declare module "@mui/material/Typography" {
     "h6-bold": true;
     "p1-bold": true;
     "p2-bold": true;
+    "p3-bold": true;
+    "p4-bold": true;
     // medium
     "h0-medium": true;
     "h1-medium": true;
@@ -128,6 +138,8 @@ declare module "@mui/material/Typography" {
     "h6-medium": true;
     "p1-medium": true;
     "p2-medium": true;
+    "p3-medium": true;
+    "p4-medium": true;
     // regular
     "h0-regular": true;
     "h1-regular": true;
@@ -138,6 +150,8 @@ declare module "@mui/material/Typography" {
     "h6-regular": true;
     "p1-regular": true;
     "p2-regular": true;
+    "p3-regular": true;
+    "p4-regular": true;
     // light
     "h0-light": true;
     "h1-light": true;
@@ -148,6 +162,8 @@ declare module "@mui/material/Typography" {
     "h6-light": true;
     "p1-light": true;
     "p2-light": true;
+    "p3-light": true;
+    "p4-light": true;
   }
 }
 
@@ -162,6 +178,8 @@ export type Variant =
   | "h6-bold"
   | "p1-bold"
   | "p2-bold"
+  | "p3-bold"
+  | "p4-bold"
   // medium
   | "h0-medium"
   | "h1-medium"
@@ -172,6 +190,8 @@ export type Variant =
   | "h6-medium"
   | "p1-medium"
   | "p2-medium"
+  | "p3-medium"
+  | "p4-medium"
   // regular
   | "h0-regular"
   | "h1-regular"
@@ -182,6 +202,8 @@ export type Variant =
   | "h6-regular"
   | "p1-regular"
   | "p2-regular"
+  | "p3-regular"
+  | "p4-regular"
   // light
   | "h0-light"
   | "h1-light"
@@ -191,7 +213,9 @@ export type Variant =
   | "h5-light"
   | "h6-light"
   | "p1-light"
-  | "p2-light";
+  | "p2-light"
+  | "p3-light"
+  | "p4-light";
 
 const pxToRem = (value: number): string => `${value / 16}rem`;
 
@@ -206,16 +230,36 @@ const weights: Record<FontWeight, string> = {
 interface Style {
   fontWeight: FontWeight;
   fontSize: string;
+  lineHeight: number | string;
 }
 
-const fontVariant = (name: string, fontSize: number): Record<string, Style> =>
-  Object.entries(weights).reduce<Record<string, Style>>((accumulator, [weight, label]) => {
+// Default, per-variant line-height ratios. Override by passing a custom value to fontVariant.
+const defaultLineHeights: Record<string, number> = {
+  // Headings
+  h1: 1,
+  h2: 1,
+  h3: 1,
+  h4: 1,
+  h5: 1,
+  h6: 1,
+  // Paragraphs
+  p1: 1.6,
+  p2: 1.6,
+  p3: 1.6,
+  p4: 1.6,
+};
+
+const fontVariant = (name: string, fontSize: number, lineHeight?: number): Record<string, Style> => {
+  const ratio = lineHeight ?? defaultLineHeights[name] ?? (name.startsWith("h") ? 1.25 : 1.5);
+  return Object.entries(weights).reduce<Record<string, Style>>((accumulator, [weight, label]) => {
     accumulator[`${name}-${label}`] = {
       fontWeight: toNumber(weight) as FontWeight,
       fontSize: pxToRem(fontSize),
+      lineHeight: ratio,
     };
     return accumulator;
   }, {});
+};
 
 const typography = {
   // fontFamily: primaryFont.style.fontFamily,
@@ -234,15 +278,26 @@ const typography = {
   subtitle2: undefined,
   overline: undefined,
 
-  ...fontVariant("h0", 60),
-  ...fontVariant("h1", 26),
-  ...fontVariant("h2", 24),
-  ...fontVariant("h3", 20),
-  ...fontVariant("h4", 18),
-  ...fontVariant("h5", 16),
-  ...fontVariant("h6", 14),
-  ...fontVariant("p1", 12),
-  ...fontVariant("p2", 10),
+  ...fontVariant("h1", 74),
+  ...fontVariant("h2", 60),
+  ...fontVariant("h3", 48),
+  ...fontVariant("h4", 32),
+  ...fontVariant("h5", 28),
+  ...fontVariant("h6", 20),
+  ...fontVariant("p1", 18),
+  ...fontVariant("p2", 16),
+  ...fontVariant("p3", 14),
+  ...fontVariant("p4", 12),
+
+  // ...fontVariant("h0", 60),
+  // ...fontVariant("h1", 26),
+  // ...fontVariant("h2", 24),
+  // ...fontVariant("h3", 20),
+  // ...fontVariant("h4", 18),
+  // ...fontVariant("h5", 16),
+  // ...fontVariant("h6", 14),
+  // ...fontVariant("p1", 12),
+  // ...fontVariant("p2", 10),
 } as const;
 
 export default typography;

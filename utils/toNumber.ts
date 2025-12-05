@@ -49,5 +49,4 @@ export const digits = (digit: string | number, locale: "fa" | "en" | "ar" = "fa"
     .replace(/[٠١٢٣٤٥٦٧٨٩]/g, (w) => numbers[locale][numbers.ar.indexOf(w)] as string);
 };
 
-// biome-ignore lint/style/noRestrictedGlobals: <explanation>
-export const isNumeric = (str: any) => !isNaN(str) && !isNaN(parseFloat(str));
+export const isNumeric = (str: string | number) => !Number.isNaN(Number(str)) && !Number.isNaN(parseFloat(String(str)));

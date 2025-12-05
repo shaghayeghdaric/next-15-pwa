@@ -27,12 +27,7 @@ const CalculatorSection = () => {
 
   return (
     <FormProvider {...methods}>
-      <Stack
-        direction={"row"}
-        justifyContent={"center"}
-        alignItems={"start"}
-        gap={10}
-      >
+      <Stack direction={"row"} justifyContent={"center"} alignItems={"start"} gap={10}>
         <Stack justifyContent={"center"} gap={24}>
           <Stack
             sx={{
@@ -66,9 +61,7 @@ const CalculatorSection = () => {
             label={t("investmentAmount") + " (USDT)"}
             placeholder="choose an amount"
             options={amounts}
-            value={
-              amounts.find((amount) => amount.id === selectedAmountId) || null
-            }
+            value={amounts.find((amount) => amount.id === selectedAmountId) || null}
             onChange={(_, newValue) => {
               const selectedAmount = newValue as Amount | null;
               setValue("amount", selectedAmount?.id || 0, {
@@ -79,9 +72,7 @@ const CalculatorSection = () => {
           />
         </Stack>
         <Stack justifyContent={"start"} alignItems={"center"} gap={4}>
-          <Typography variant="h3-regular">
-            SEE HOW YOUR INVESTMENT GROWS OVER 5 YEARS WITH COMPOUND RETURNS
-          </Typography>
+          <Typography variant="h3-regular">SEE HOW YOUR INVESTMENT GROWS OVER 5 YEARS WITH COMPOUND RETURNS</Typography>
           <Stack
             justifyContent={"center"}
             alignItems={"center"}
@@ -105,12 +96,7 @@ const CalculatorSection = () => {
             >
               $100.57
             </Typography>
-            <Stack
-              direction={"row"}
-              justifyContent={"space-between"}
-              alignItems={"center"}
-              gap={10}
-            >
+            <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} gap={10}>
               <Stack justifyContent={"center"} alignItems={"center"}>
                 <Typography variant="h1-bold" color="primary.dark">
                   $50.00

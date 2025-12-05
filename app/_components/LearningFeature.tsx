@@ -1,14 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 
-const LearningFeature = ({
-  icon,
-  title,
-  description,
-}: {
-  icon: string;
-  title: string;
-  description: string;
-}) => {
+const LearningFeature = ({ icon, title, description }: { icon: string; title: string; description: string }) => {
   return (
     <Stack direction={"row"} alignItems="flex-start" gap={4}>
       <img src={icon} alt={title} width={39} height={39} />

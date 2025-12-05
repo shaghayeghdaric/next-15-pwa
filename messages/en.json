@@ -1,309 +1,309 @@
 {
-    "common": {
-        "language": "Language",
-        "currency": "USDT",
-        "close": "Close",
-        "open": "Open",
-        "loading": "Loading...",
-        "error": "Error"
+  "common": {
+    "language": "Language",
+    "currency": "USDT",
+    "close": "Close",
+    "open": "Open",
+    "loading": "Loading...",
+    "error": "Error"
+  },
+  "navigation": {
+    "investments": "INVESTMENTS",
+    "payment": "PAYMENT",
+    "signals": "SIGNALS",
+    "education": "EDUCATION",
+    "signIn": "SIGN IN",
+    "signUp": "SIGN UP"
+  },
+  "hero": {
+    "smartMoney": "SMART MONEY",
+    "rightInYourPocket": "RIGHT IN YOUR POCKET",
+    "description": "JOIN THOUSANDS OF SUCCESSFUL TRADERS AND INVESTORS EARNING CONSISTENT PROFITS THROUGH OUR AI-POWERED TRADING SIGNALS, INVESTMENT PLANS, AND COMPREHENSIVE CRYPTO EDUCATION PLATFORM"
+  },
+  "invest": {
+    "smartInvesting": "SMART INVESTING",
+    "madeSimple": "MADE SIMPLE",
+    "totalInvested": "TOTAL INVESTED",
+    "activeInvestors": "ACTIVE INVESTORS",
+    "monthlyReturns": "MONTHLY RETURNS",
+    "guaranteedProfit": "GUARANTEED PROFIT",
+    "startInvesting": "START INVESTING",
+    "viewPlans": "VIEW PLANS",
+    "investmentCalculator": "INVESTMENT CALCULATOR",
+    "investmentAmount": "INVESTMENT AMOUNT",
+    "monthlyReturn": "MONTHLY RETURN",
+    "annual": "ANNUAL",
+    "totalAfter12Months": "TOTAL AFTER 12 MONTHS"
+  },
+  "features": {
+    "title": "WHY CHOOSE CRYPTOINVEST PRO",
+    "subtitle": "EVERYTHING",
+    "description": "YOU NEED TO SUCCEED IN CRYPTO",
+    "mainDescription": "OUR COMPREHENSIVE PLATFORM COMBINES PROFESSIONAL TRADING SIGNALS, GUARANTEED INVESTMENT RETURNS, AND WORLD-CLASS EDUCATION TO MAXIMIZE YOUR CRYPTO SUCCESS.",
+    "aiTradingSignals": {
+      "title": "AI-POWERED TRADING SIGNALS",
+      "description": "GET REAL-TIME TRADING SIGNALS POWERED BY ADVANCED AI ALGORITHMS AND MACHINE LEARNING, WITH 95%+ ACCURACY RATE.",
+      "features": [
+        "Real-time signal notifications",
+        "Entry, exit, and stop-loss prices",
+        "Risk management included",
+        "Performance tracking & analytics"
+      ]
     },
-    "navigation": {
-        "investments": "INVESTMENTS",
-        "payment": "PAYMENT",
-        "signals": "SIGNALS",
-        "education": "EDUCATION",
-        "signIn": "SIGN IN",
-        "signUp": "SIGN UP"
+    "guaranteedReturns": {
+      "title": "GUARANTEED INVESTMENT RETURNS",
+      "description": "SECURE INVESTMENT PLANS WITH GUARANTEED MONTHLY RETURNS AND FLEXIBLE WITHDRAWAL OPTIONS FOR PEACE OF MIND.",
+      "features": [
+        "5% guaranteed monthly returns",
+        "Smart contract security",
+        "Flexible withdrawal anytime",
+        "Principal amount protected"
+      ]
     },
-    "hero": {
-        "smartMoney": "SMART MONEY",
-        "rightInYourPocket": "RIGHT IN YOUR POCKET",
-        "description": "JOIN THOUSANDS OF SUCCESSFUL TRADERS AND INVESTORS EARNING CONSISTENT PROFITS THROUGH OUR AI-POWERED TRADING SIGNALS, INVESTMENT PLANS, AND COMPREHENSIVE CRYPTO EDUCATION PLATFORM"
+    "cryptoEducation": {
+      "title": "COMPLETE CRYPTO EDUCATION",
+      "description": "LEARN FROM BEGINNER TO ADVANCED LEVEL WITH OUR STRUCTURED LEARNING PATHS, VIDEO COURSES AND CERTIFICATIONS.",
+      "features": [
+        "Beginner to expert curriculum",
+        "Interactive video courses",
+        "Progress tracking and certifications",
+        "Live mentorship sessions"
+      ]
     },
-    "invest": {
-        "smartInvesting": "SMART INVESTING",
-        "madeSimple": "MADE SIMPLE",
-        "totalInvested": "TOTAL INVESTED",
-        "activeInvestors": "ACTIVE INVESTORS",
-        "monthlyReturns": "MONTHLY RETURNS",
-        "guaranteedProfit": "GUARANTEED PROFIT",
-        "startInvesting": "START INVESTING",
-        "viewPlans": "VIEW PLANS",
-        "investmentCalculator": "INVESTMENT CALCULATOR",
-        "investmentAmount": "INVESTMENT AMOUNT",
-        "monthlyReturn": "MONTHLY RETURN",
-        "annual": "ANNUAL",
-        "totalAfter12Months": "TOTAL AFTER 12 MONTHS"
+    "bankSecurity": {
+      "title": "BANK-GRADE SECURITY",
+      "description": "YOUR INVESTMENTS AND DATA ARE PROTECTED WITH ENTERPRISE-LEVEL SECURITY, MULTI-FACTOR AUTHENTICATION, AND INSURANCE COVERAGE.",
+      "features": [
+        "256-bit SSL encryption",
+        "Multi-factor authentication",
+        "Cold storage for funds",
+        "Insurance coverage included"
+      ]
+    },
+    "mobileFirst": {
+      "title": "MOBILE-FIRST EXPERIENCE",
+      "description": "TRADE AND INVEST ON-THE-GO WITH OUR RESPONSIVE WEB APP AND NATIVE MOBILE APPLICATIONS FOR IOS AND ANDROID.",
+      "features": [
+        "Progressive Web App (PWA)",
+        "Real-time push notifications",
+        "Offline functionality",
+        "Biometric authentication"
+      ]
+    },
+    "globalCommunity": {
+      "title": "GLOBAL COMMUNITY",
+      "description": "JOIN A THRIVING COMMUNITY OF CRYPTO INVESTORS, SHARE STRATEGIES, AND LEARN FROM SUCCESSFUL TRADERS WORLDWIDE.",
+      "features": [
+        "Private investor community",
+        "Expert Q&A sessions",
+        "Strategy sharing platform",
+        "24/7 community support"
+      ]
+    }
+  },
+  "investmentPlans": {
+    "title": "INVESTMENT PLANS",
+    "subtitle": "CHOOSE YOUR",
+    "description": "INVESTMENT STRATEGY",
+    "mainDescription": "WHETHER YOU PREFER GUARANTEED MONTHLY RETURNS OR LONG-TERM COMPOUND GROWTH, WE HAVE THE PERFECT INVESTMENT PLAN FOR YOUR GOALS.",
+    "shortTerm": {
+      "title": "SHORT-TERM INVESTMENT",
+      "description": "PERFECT FOR MONTHLY WITH FULL FLEXIBILITY",
+      "percent": "5%",
+      "returnType": "Guaranteed Monthly Returns",
+      "buttonName": "START MONTHLY RETURNS",
+      "features": [
+        "GUARANTEED 5% MONTHLY RETURNS",
+        "WITHDRAW ANYTIME WITHOUT PENALTY",
+        "SMART CONTRACT SECURITY",
+        "MINIMUM INVESTMENT: $100 USDT",
+        "COMPOUND OR WITHDRAW PROFITS",
+        "24/7 ACCOUNT MONITORING"
+      ]
+    },
+    "lifeInsurance": {
+      "title": "LIFE INSURANCE PLAN",
+      "description": "PERFECT FOR STUDY MONTHLY INCOME WITH FULL FLEXIBILITY",
+      "percent": "15%",
+      "returnType": "ANNUAL COMPOUND RETURNS",
+      "buttonName": "CALCULATE MY RETURNS",
+      "features": [
+        "15% ANNUAL COMPOUND RETURNS",
+        "INVESTMENT RANGE: $10 - $100 USDT",
+        "5-YEARS COMMITMENT PERIOD",
+        "LIFE INSURANCE COVERAGE INCLUDED",
+        "PRINCIPAL AMOUNT GUARANTEED",
+        "EARLY WITHDRAWAL OPTIONS AVAILABLE"
+      ]
+    }
+  },
+  "tradingSignals": {
+    "title": "TRADING SIGNALS",
+    "subtitle": "PROFESSIONAL",
+    "description": "TRADING SIGNALS",
+    "liveFeed": "LIVE SIGNAL FEED",
+    "mainDescription": "GET ACCESS TO PREMIUM TRADING SIGNALS POWERED BY AI ALGORITHMS AND EXPERT ANALYSIS, WITH REAL-TIME NOTIFICATIONS AND DETAILED ENTRY/EXIT STRATEGIES.",
+    "accuracy": "ACCURACY",
+    "signals": "SIGNALS",
+    "avgReturn": "AVG RETURN",
+    "entry": "Entry",
+    "takeProfit": "Take Profit",
+    "stopLoss": "Stop Loss",
+    "risk": "Risk",
+    "status": "Status",
+    "lastUpdated": "Last Updated",
+    "buy": "Buy",
+    "sell": "Sell"
+  },
+  "educationHub": {
+    "title": "EDUCATION HUB",
+    "subtitle": "MASTER CRYPTO",
+    "description": "TRADING & INVESTMENT",
+    "mainDescription": "OUR COMPREHENSIVE EDUCATION PLATFORM TAKES YOU FROM BEGINNER TO EXPERT WITH STRUCTURED LEARNING PATHS, PRACTICAL EXERCISES, AND EXPERT MENTORSHIP.",
+    "yourLearningJourney": "YOUR LEARNING JOURNEY",
+    "beginner": {
+      "title": "BEGINNER",
+      "complete": "8/12 COMPLETE",
+      "description": "LEARN CRYPTO BASICS, WALLET SECURITY, AND FUNDAMENTAL ANALYSIS"
+    },
+    "intermediate": {
+      "title": "INTERMEDIATE",
+      "complete": "3/10 COMPLETE",
+      "description": "TECHNICAL ANALYSIS, TRADING STRATEGIES, AND RISK MANAGEMENT"
+    },
+    "advanced": {
+      "title": "ADVANCED",
+      "complete": "0/8 COMPLETE",
+      "description": "ADVANCED STRATEGIES, PORTFOLIO MANAGEMENT, AND MARKET PSYCHOLOGY"
+    },
+    "expert": {
+      "title": "EXPERT",
+      "complete": "UNLOCKED AT 80%",
+      "description": "PROFESSIONAL TRADING, DeFi STRATEGIES, AND BLOCKCHAIN DEVELOPMENT"
     },
     "features": {
-        "title": "WHY CHOOSE CRYPTOINVEST PRO",
-        "subtitle": "EVERYTHING",
-        "description": "YOU NEED TO SUCCEED IN CRYPTO",
-        "mainDescription": "OUR COMPREHENSIVE PLATFORM COMBINES PROFESSIONAL TRADING SIGNALS, GUARANTEED INVESTMENT RETURNS, AND WORLD-CLASS EDUCATION TO MAXIMIZE YOUR CRYPTO SUCCESS.",
-        "aiTradingSignals": {
-            "title": "AI-POWERED TRADING SIGNALS",
-            "description": "GET REAL-TIME TRADING SIGNALS POWERED BY ADVANCED AI ALGORITHMS AND MACHINE LEARNING, WITH 95%+ ACCURACY RATE.",
-            "features": [
-                "Real-time signal notifications",
-                "Entry, exit, and stop-loss prices",
-                "Risk management included",
-                "Performance tracking & analytics"
-            ]
-        },
-        "guaranteedReturns": {
-            "title": "GUARANTEED INVESTMENT RETURNS",
-            "description": "SECURE INVESTMENT PLANS WITH GUARANTEED MONTHLY RETURNS AND FLEXIBLE WITHDRAWAL OPTIONS FOR PEACE OF MIND.",
-            "features": [
-                "5% guaranteed monthly returns",
-                "Smart contract security",
-                "Flexible withdrawal anytime",
-                "Principal amount protected"
-            ]
-        },
-        "cryptoEducation": {
-            "title": "COMPLETE CRYPTO EDUCATION",
-            "description": "LEARN FROM BEGINNER TO ADVANCED LEVEL WITH OUR STRUCTURED LEARNING PATHS, VIDEO COURSES AND CERTIFICATIONS.",
-            "features": [
-                "Beginner to expert curriculum",
-                "Interactive video courses",
-                "Progress tracking and certifications",
-                "Live mentorship sessions"
-            ]
-        },
-        "bankSecurity": {
-            "title": "BANK-GRADE SECURITY",
-            "description": "YOUR INVESTMENTS AND DATA ARE PROTECTED WITH ENTERPRISE-LEVEL SECURITY, MULTI-FACTOR AUTHENTICATION, AND INSURANCE COVERAGE.",
-            "features": [
-                "256-bit SSL encryption",
-                "Multi-factor authentication",
-                "Cold storage for funds",
-                "Insurance coverage included"
-            ]
-        },
-        "mobileFirst": {
-            "title": "MOBILE-FIRST EXPERIENCE",
-            "description": "TRADE AND INVEST ON-THE-GO WITH OUR RESPONSIVE WEB APP AND NATIVE MOBILE APPLICATIONS FOR IOS AND ANDROID.",
-            "features": [
-                "Progressive Web App (PWA)",
-                "Real-time push notifications",
-                "Offline functionality",
-                "Biometric authentication"
-            ]
-        },
-        "globalCommunity": {
-            "title": "GLOBAL COMMUNITY",
-            "description": "JOIN A THRIVING COMMUNITY OF CRYPTO INVESTORS, SHARE STRATEGIES, AND LEARN FROM SUCCESSFUL TRADERS WORLDWIDE.",
-            "features": [
-                "Private investor community",
-                "Expert Q&A sessions",
-                "Strategy sharing platform",
-                "24/7 community support"
-            ]
-        }
-    },
-    "investmentPlans": {
-        "title": "INVESTMENT PLANS",
-        "subtitle": "CHOOSE YOUR",
-        "description": "INVESTMENT STRATEGY",
-        "mainDescription": "WHETHER YOU PREFER GUARANTEED MONTHLY RETURNS OR LONG-TERM COMPOUND GROWTH, WE HAVE THE PERFECT INVESTMENT PLAN FOR YOUR GOALS.",
-        "shortTerm": {
-            "title": "SHORT-TERM INVESTMENT",
-            "description": "PERFECT FOR MONTHLY WITH FULL FLEXIBILITY",
-            "percent": "5%",
-            "returnType": "Guaranteed Monthly Returns",
-            "buttonName": "START MONTHLY RETURNS",
-            "features": [
-                "GUARANTEED 5% MONTHLY RETURNS",
-                "WITHDRAW ANYTIME WITHOUT PENALTY",
-                "SMART CONTRACT SECURITY",
-                "MINIMUM INVESTMENT: $100 USDT",
-                "COMPOUND OR WITHDRAW PROFITS",
-                "24/7 ACCOUNT MONITORING"
-            ]
-        },
-        "lifeInsurance": {
-            "title": "LIFE INSURANCE PLAN",
-            "description": "PERFECT FOR STUDY MONTHLY INCOME WITH FULL FLEXIBILITY",
-            "percent": "15%",
-            "returnType": "ANNUAL COMPOUND RETURNS",
-            "buttonName": "CALCULATE MY RETURNS",
-            "features": [
-                "15% ANNUAL COMPOUND RETURNS",
-                "INVESTMENT RANGE: $10 - $100 USDT",
-                "5-YEARS COMMITMENT PERIOD",
-                "LIFE INSURANCE COVERAGE INCLUDED",
-                "PRINCIPAL AMOUNT GUARANTEED",
-                "EARLY WITHDRAWAL OPTIONS AVAILABLE"
-            ]
-        }
-    },
-    "tradingSignals": {
-        "title": "TRADING SIGNALS",
-        "subtitle": "PROFESSIONAL",
-        "description": "TRADING SIGNALS",
-        "liveFeed": "LIVE SIGNAL FEED",
-        "mainDescription": "GET ACCESS TO PREMIUM TRADING SIGNALS POWERED BY AI ALGORITHMS AND EXPERT ANALYSIS, WITH REAL-TIME NOTIFICATIONS AND DETAILED ENTRY/EXIT STRATEGIES.",
-        "accuracy": "ACCURACY",
-        "signals": "SIGNALS",
-        "avgReturn": "AVG RETURN",
-        "entry": "Entry",
-        "takeProfit": "Take Profit",
-        "stopLoss": "Stop Loss",
-        "risk": "Risk",
-        "status": "Status",
-        "lastUpdated": "Last Updated",
-        "buy": "Buy",
-        "sell": "Sell"
-    },
-    "educationHub": {
-        "title": "EDUCATION HUB",
-        "subtitle": "MASTER CRYPTO",
-        "description": "TRADING & INVESTMENT",
-        "mainDescription": "OUR COMPREHENSIVE EDUCATION PLATFORM TAKES YOU FROM BEGINNER TO EXPERT WITH STRUCTURED LEARNING PATHS, PRACTICAL EXERCISES, AND EXPERT MENTORSHIP.",
-        "yourLearningJourney": "YOUR LEARNING JOURNEY",
-        "beginner": {
-            "title": "BEGINNER",
-            "complete": "8/12 COMPLETE",
-            "description": "LEARN CRYPTO BASICS, WALLET SECURITY, AND FUNDAMENTAL ANALYSIS"
-        },
-        "intermediate": {
-            "title": "INTERMEDIATE",
-            "complete": "3/10 COMPLETE",
-            "description": "TECHNICAL ANALYSIS, TRADING STRATEGIES, AND RISK MANAGEMENT"
-        },
-        "advanced": {
-            "title": "ADVANCED",
-            "complete": "0/8 COMPLETE",
-            "description": "ADVANCED STRATEGIES, PORTFOLIO MANAGEMENT, AND MARKET PSYCHOLOGY"
-        },
-        "expert": {
-            "title": "EXPERT",
-            "complete": "UNLOCKED AT 80%",
-            "description": "PROFESSIONAL TRADING, DeFi STRATEGIES, AND BLOCKCHAIN DEVELOPMENT"
-        },
-        "features": {
-            "structuredLearning": {
-                "title": "STRUCTURED LEARNING PATHS",
-                "description": "FOLLOW CAREFULLY DESIGNED CURRICULUMS THAT BUILD KNOWLEDGE PROGRESSIVELY FROM BASICS TO ADVANCED CONCEPTS."
-            },
-            "interactiveVideo": {
-                "title": "INTERACTIVE VIDEO CONTENT",
-                "description": "LEARN THROUGH HIGH-QUALITY VIDEO LESSONS, TUTORIALS, AND REAL-WORLD CASE STUDIES FROM INDUSTRY EXPERTS."
-            },
-            "progressTracking": {
-                "title": "PROGRESS TRACKING",
-                "description": "MONITOR YOUR LEARNING PROGRESS WITH DETAILED ANALYTICS, QUIZZES, AND MILESTONE ACHIEVEMENTS."
-            },
-            "certificates": {
-                "title": "CERTIFICATES & BADGES",
-                "description": "EARN VERIFIED CERTIFICATES AND SKILL BADGES THAT DEMONSTRATE YOUR CRYPTO TRADING EXPERTISE."
-            },
-            "expertMentorship": {
-                "title": "EXPERT MENTORSHIP",
-                "description": "GET GUIDANCE FROM PROFESSIONAL TRADERS AND CRYPTO EXPERTS THROUGH LIVE SESSIONS AND Q&A."
-            },
-            "communityLearning": {
-                "title": "COMMUNITY LEARNING",
-                "description": "CONNECT WITH FELLOW LEARNERS, SHARE STRATEGIES, AND LEARN FROM THE EXPERIENCES OF SUCCESSFUL TRADERS."
-            }
-        }
-    },
-    "startJourney": {
-        "title": "START YOUR CRYPTO JOURNEY TODAY",
-        "getStarted": "GET STARTED",
-        "learnMore": "LEARN MORE",
-        "ios": "iOS",
-        "android": "ANDROID",
-        "webApp": "WEB APP"
-    },
-    "successStories": {
-        "title": "SUCCESS STORIES",
-        "subtitle": "WHAT OUR INVESTORS SAY",
-        "description": "JOIN THOUSANDS OF SATISFIED INVESTORS WHO ARE ALREADY EARNING CONSISTENT PROFITS WITH CRYPTOINVEST PRO.",
-        "stories": [
-            {
-                "story": "CryptoInvest Pro changed my financial life. The guaranteed 5% monthly returns are real, and the trading signals have helped me make consistent profits. The education platform taught me everything I needed to know.",
-                "username": "Michael Rodriguez",
-                "title": "Software Developer, 8 months investor",
-                "logo": "M"
-            },
-            {
-                "story": "The trading signals are incredibly accurate. I've been following them for 6 months and my success rate is over 90%. The mobile app makes it so easy to stay updated and never miss an opportunity.",
-                "username": "Sarah Chen",
-                "title": "Marketing Manager, 6 months investor",
-                "logo": "S"
-            },
-            {
-                "story": "I started with the life insurance plan with just $50. After learning through their education platform, I now manage a much larger portfolio. The compound returns are building real wealth for my family.",
-                "username": "David Thompson",
-                "title": "Teacher, 1 year investor",
-                "logo": "D"
-            },
-            {
-                "story": "The security and transparency give me peace of mind. Smart contracts, insurance coverage, and 24/7 support - everything a serious investor needs. I've referred 12 friends and they're all happy.",
-                "username": "Lisa Park",
-                "title": "Financial Advisor, 10 months investor",
-                "logo": "L"
-            }
-        ]
-    },
-    "subscriptionPlans": {
-        "title": "SUBSCRIPTION PLANS",
-        "subtitle": "CHOOSE YOUR",
-        "description": "SUCCESS PLAN",
-        "mainDescription": "GET ACCESS TO PREMIUM TRADING SIGNALS, ADVANCED ANALYTICS, AND EXCLUSIVE FEATURES WITH OUR FLEXIBLE SUBSCRIPTION PLANS.",
-        "plans": [
-            {
-                "title": "MONTHLY PLAN",
-                "price": 29,
-                "per": "PER MONTH",
-                "features": [
-                    "DAILY TRADING SIGNAL",
-                    "REAL-TIME NOTIFICATIONS",
-                    "MARKET ANALYSIS REPORTS",
-                    "EMAIL & MOBILE ALERTS",
-                    "BASIC SUPPORT",
-                    "MOBILE APP ACCESS"
-                ],
-                "buttonName": "CHOOSE MONTHLY",
-                "isMostPopular": false
-            },
-            {
-                "title": "3 MONTH PLAN",
-                "price": 69,
-                "per": "PER 3 MONTHS (20% OFF)",
-                "features": [
-                    "EVERYTHING IN MONTHLY",
-                    "VIP TRADING SIGNALS",
-                    "EXCLUSIVE MARKET INSIGHTS",
-                    "PRIVATE TELEGRAM GROUP",
-                    "PRIORITY SUPPORT",
-                    "PERFORMANCE ANALYTICS",
-                    "ADVANCED TUTORIALS"
-                ],
-                "buttonName": "CHOOSE 3-MONTH",
-                "isMostPopular": true
-            },
-            {
-                "title": "6 MONTH PLAN",
-                "price": 129,
-                "per": "PER 6 MONTHS (25% OFF)",
-                "features": [
-                    "EVERYTHING IN 3-MONTH",
-                    "AI-POWERED SIGNALS",
-                    "PERSONAL TRADING MENTOR",
-                    "RISK MANAGEMENT TOOLS",
-                    "API ACCESS",
-                    "24/7 PREMIUM SUPPORT",
-                    "WHITE-LABEL SOLUTIONS"
-                ],
-                "buttonName": "CHOOSE 6-MONTH",
-                "isMostPopular": false
-            }
-        ]
-    },
-    "HomePage": {
-        "title": "Welcome to the HomePage",
-        "description": "This is the HomePage description"
+      "structuredLearning": {
+        "title": "STRUCTURED LEARNING PATHS",
+        "description": "FOLLOW CAREFULLY DESIGNED CURRICULUMS THAT BUILD KNOWLEDGE PROGRESSIVELY FROM BASICS TO ADVANCED CONCEPTS."
+      },
+      "interactiveVideo": {
+        "title": "INTERACTIVE VIDEO CONTENT",
+        "description": "LEARN THROUGH HIGH-QUALITY VIDEO LESSONS, TUTORIALS, AND REAL-WORLD CASE STUDIES FROM INDUSTRY EXPERTS."
+      },
+      "progressTracking": {
+        "title": "PROGRESS TRACKING",
+        "description": "MONITOR YOUR LEARNING PROGRESS WITH DETAILED ANALYTICS, QUIZZES, AND MILESTONE ACHIEVEMENTS."
+      },
+      "certificates": {
+        "title": "CERTIFICATES & BADGES",
+        "description": "EARN VERIFIED CERTIFICATES AND SKILL BADGES THAT DEMONSTRATE YOUR CRYPTO TRADING EXPERTISE."
+      },
+      "expertMentorship": {
+        "title": "EXPERT MENTORSHIP",
+        "description": "GET GUIDANCE FROM PROFESSIONAL TRADERS AND CRYPTO EXPERTS THROUGH LIVE SESSIONS AND Q&A."
+      },
+      "communityLearning": {
+        "title": "COMMUNITY LEARNING",
+        "description": "CONNECT WITH FELLOW LEARNERS, SHARE STRATEGIES, AND LEARN FROM THE EXPERIENCES OF SUCCESSFUL TRADERS."
+      }
     }
+  },
+  "startJourney": {
+    "title": "START YOUR CRYPTO JOURNEY TODAY",
+    "getStarted": "GET STARTED",
+    "learnMore": "LEARN MORE",
+    "ios": "iOS",
+    "android": "ANDROID",
+    "webApp": "WEB APP"
+  },
+  "successStories": {
+    "title": "SUCCESS STORIES",
+    "subtitle": "WHAT OUR INVESTORS SAY",
+    "description": "JOIN THOUSANDS OF SATISFIED INVESTORS WHO ARE ALREADY EARNING CONSISTENT PROFITS WITH CRYPTOINVEST PRO.",
+    "stories": [
+      {
+        "story": "CryptoInvest Pro changed my financial life. The guaranteed 5% monthly returns are real, and the trading signals have helped me make consistent profits. The education platform taught me everything I needed to know.",
+        "username": "Michael Rodriguez",
+        "title": "Software Developer, 8 months investor",
+        "logo": "M"
+      },
+      {
+        "story": "The trading signals are incredibly accurate. I've been following them for 6 months and my success rate is over 90%. The mobile app makes it so easy to stay updated and never miss an opportunity.",
+        "username": "Sarah Chen",
+        "title": "Marketing Manager, 6 months investor",
+        "logo": "S"
+      },
+      {
+        "story": "I started with the life insurance plan with just $50. After learning through their education platform, I now manage a much larger portfolio. The compound returns are building real wealth for my family.",
+        "username": "David Thompson",
+        "title": "Teacher, 1 year investor",
+        "logo": "D"
+      },
+      {
+        "story": "The security and transparency give me peace of mind. Smart contracts, insurance coverage, and 24/7 support - everything a serious investor needs. I've referred 12 friends and they're all happy.",
+        "username": "Lisa Park",
+        "title": "Financial Advisor, 10 months investor",
+        "logo": "L"
+      }
+    ]
+  },
+  "subscriptionPlans": {
+    "title": "SUBSCRIPTION PLANS",
+    "subtitle": "CHOOSE YOUR",
+    "description": "SUCCESS PLAN",
+    "mainDescription": "GET ACCESS TO PREMIUM TRADING SIGNALS, ADVANCED ANALYTICS, AND EXCLUSIVE FEATURES WITH OUR FLEXIBLE SUBSCRIPTION PLANS.",
+    "plans": [
+      {
+        "title": "MONTHLY PLAN",
+        "price": 29,
+        "per": "PER MONTH",
+        "features": [
+          "DAILY TRADING SIGNAL",
+          "REAL-TIME NOTIFICATIONS",
+          "MARKET ANALYSIS REPORTS",
+          "EMAIL & MOBILE ALERTS",
+          "BASIC SUPPORT",
+          "MOBILE APP ACCESS"
+        ],
+        "buttonName": "CHOOSE MONTHLY",
+        "isMostPopular": false
+      },
+      {
+        "title": "3 MONTH PLAN",
+        "price": 69,
+        "per": "PER 3 MONTHS (20% OFF)",
+        "features": [
+          "EVERYTHING IN MONTHLY",
+          "VIP TRADING SIGNALS",
+          "EXCLUSIVE MARKET INSIGHTS",
+          "PRIVATE TELEGRAM GROUP",
+          "PRIORITY SUPPORT",
+          "PERFORMANCE ANALYTICS",
+          "ADVANCED TUTORIALS"
+        ],
+        "buttonName": "CHOOSE 3-MONTH",
+        "isMostPopular": true
+      },
+      {
+        "title": "6 MONTH PLAN",
+        "price": 129,
+        "per": "PER 6 MONTHS (25% OFF)",
+        "features": [
+          "EVERYTHING IN 3-MONTH",
+          "AI-POWERED SIGNALS",
+          "PERSONAL TRADING MENTOR",
+          "RISK MANAGEMENT TOOLS",
+          "API ACCESS",
+          "24/7 PREMIUM SUPPORT",
+          "WHITE-LABEL SOLUTIONS"
+        ],
+        "buttonName": "CHOOSE 6-MONTH",
+        "isMostPopular": false
+      }
+    ]
+  },
+  "HomePage": {
+    "title": "Welcome to the HomePage",
+    "description": "This is the HomePage description"
+  }
 }

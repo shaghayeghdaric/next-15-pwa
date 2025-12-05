@@ -35,12 +35,7 @@ const SigninForm = () => {
 
   return (
     <FormProvider {...methods}>
-      <RHFTextField
-        name="username"
-        label="نام کاربری"
-        dir="ltr"
-        autoComplete="username"
-      />
+      <RHFTextField name="username" label="نام کاربری" dir="ltr" autoComplete="username" />
       <RHFTextField
         dir="ltr"
         name="password"
@@ -51,28 +46,14 @@ const SigninForm = () => {
           input: {
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton onClick={toggle}>
-                  {showPassword ? <span>show</span> : <span>hide </span>}
-                </IconButton>
+                <IconButton onClick={toggle}>{showPassword ? <span>show</span> : <span>hide </span>}</IconButton>
               </InputAdornment>
             ),
           },
         }}
       />
-      <Stack
-        direction={"row"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        sx={{ mt: 2 }}
-        gap={2}
-      >
-        <Button
-          color={"primary"}
-          fullWidth
-          size="large"
-          type="submit"
-          loading={loading}
-        >
+      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} sx={{ mt: 2 }} gap={2}>
+        <Button color={"primary"} fullWidth size="large" type="submit" loading={loading}>
           signin
         </Button>
       </Stack>

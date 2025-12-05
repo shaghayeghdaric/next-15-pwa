@@ -1,11 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import {
-  sendNotification,
-  subscribeUser,
-  unsubscribeUser,
-} from "../utils/actions";
+import { sendNotification, subscribeUser, unsubscribeUser } from "../utils/actions";
 
 function urlBase64ToUint8Array(base64String: string) {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
@@ -21,9 +17,7 @@ function urlBase64ToUint8Array(base64String: string) {
 }
 export default function PushNotificationManager() {
   const [isSupported, setIsSupported] = useState(false);
-  const [subscription, setSubscription] = useState<PushSubscription | null>(
-    null,
-  );
+  const [subscription, setSubscription] = useState<PushSubscription | null>(null);
   const [message, setMessage] = useState("");
   const [error, setError] = useState<string | null>(null);
 
@@ -68,15 +62,11 @@ export default function PushNotificationManager() {
       const permission = await Notification.requestPermission();
 
       if (permission === "denied") {
-        throw new Error(
-          "Notification permission denied. Please enable notifications in your browser settings.",
-        );
+        throw new Error("Notification permission denied. Please enable notifications in your browser settings.");
       }
 
       if (permission !== "granted") {
-        throw new Error(
-          "Notification permission is required for push notifications",
-        );
+        throw new Error("Notification permission is required for push notifications");
       }
 
       const registration = await navigator.serviceWorker.ready;
@@ -96,11 +86,7 @@ export default function PushNotificationManager() {
       await subscribeUser(serializedSub);
     } catch (err) {
       console.error("Failed to subscribe to push notifications:", err);
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Failed to subscribe to push notifications",
-      );
+      setError(err instanceof Error ? err.message : "Failed to subscribe to push notifications");
     }
   }
 
@@ -131,18 +117,9 @@ export default function PushNotificationManager() {
             <strong>Browser Support Check:</strong>
           </p>
           <ul>
-            <li>
-              Service Worker:{" "}
-              {hasServiceWorker ? "✅ Supported" : "❌ Not supported"}
-            </li>
-            <li>
-              Push Manager:{" "}
-              {hasPushManager ? "✅ Supported" : "❌ Not supported"}
-            </li>
-            <li>
-              Notifications:{" "}
-              {hasNotification ? "✅ Supported" : "❌ Not supported"}
-            </li>
+            <li>Service Worker: {hasServiceWorker ? "✅ Supported" : "❌ Not supported"}</li>
+            <li>Push Manager: {hasPushManager ? "✅ Supported" : "❌ Not supported"}</li>
+            <li>Notifications: {hasNotification ? "✅ Supported" : "❌ Not supported"}</li>
             <li>Secure Context (HTTPS): {isSecure ? "✅ Yes" : "❌ No"}</li>
             <li>Protocol: {window.location.protocol}</li>
           </ul>
@@ -158,8 +135,7 @@ export default function PushNotificationManager() {
           >
             <strong>⚠️ Not a secure context!</strong>
             <br />
-            Push notifications require HTTPS. The SSL certificate might not be
-            trusted by your browser.
+            Push notifications require HTTPS. The SSL certificate might not be trusted by your browser.
             <br />
             <br />
             <strong>Solutions:</strong>

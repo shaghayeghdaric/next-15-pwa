@@ -14,21 +14,15 @@ type Props = TextFieldProps & {
   isMobile?: boolean;
 };
 
-const handleMoneyChange = (
-  event: ChangeEvent<HTMLInputElement>,
-  onChange: (value: any) => void,
-) => {
+const handleMoneyChange = (event: ChangeEvent<HTMLInputElement>, onChange: (value: any) => void) => {
   const exactValue = toExactNumber(digits(event.target.value, "en"));
   onChange(exactValue);
 };
 
-const handleMobileChange = (
-  event: ChangeEvent<HTMLInputElement>,
-  onChange: (value: any) => void,
-) => {
+const handleMobileChange = (event: ChangeEvent<HTMLInputElement>, onChange: (value: any) => void) => {
   const input = event.target.value;
   const englishInput = digits(input, "en");
-  const regex = /^[0-9+\(\)]*$/; // Allow numbers, '+', '(', and ')'
+  const regex = /^[0-9+()]*$/; // Allow numbers, '+', '(', and ')'
 
   if (regex.test(englishInput)) {
     onChange(englishInput);
@@ -38,17 +32,11 @@ const handleMobileChange = (
   }
 };
 
-const handleNumberChange = (
-  event: ChangeEvent<HTMLInputElement>,
-  onChange: (value: any) => void,
-) => {
+const handleNumberChange = (event: ChangeEvent<HTMLInputElement>, onChange: (value: any) => void) => {
   onChange(Number(event.target.value));
 };
 
-const handleDefaultChange = (
-  event: ChangeEvent<HTMLInputElement>,
-  onChange: (value: any) => void,
-) => {
+const handleDefaultChange = (event: ChangeEvent<HTMLInputElement>, onChange: (value: any) => void) => {
   onChange(event.target.value);
 };
 
@@ -97,30 +85,17 @@ export default function RHFTextField({
           }
         };
 
-        const formattedValue = isMoney
-          ? formatMoneyValue(field.value)
-          : field.value;
+        const formattedValue = isMoney ? formatMoneyValue(field.value) : field.value;
         return (
           <Stack sx={{ width: "100%", flex: 1 }}>
             {label && (
-              <InputLabel
-                disabled={disabled}
-                required={required}
-                shrink
-                htmlFor={id || name}
-              >
+              <InputLabel disabled={disabled} required={required} shrink htmlFor={id || name}>
                 {label}
               </InputLabel>
             )}
 
             {subtitle && (
-              <Typography
-                variant="p2-regular"
-                color={disabled ? "grey.500" : "grey.700"}
-                mb="10px"
-                mt="-6px"
-                ml="12px"
-              >
+              <Typography variant="p2-regular" color={disabled ? "grey.500" : "grey.700"} mb="10px" mt="-6px" ml="12px">
                 {subtitle}
               </Typography>
             )}
@@ -133,9 +108,7 @@ export default function RHFTextField({
               onChange={handleOnChange}
               slotProps={{
                 htmlInput: {
-                  ...(type === "number"
-                    ? { inputMode: "numeric", pattern: "[0-9]*" }
-                    : {}),
+                  ...(type === "number" ? { inputMode: "numeric", pattern: "[0-9]*" } : {}),
                   ...other.slotProps?.htmlInput,
                 },
                 input: {

@@ -1,9 +1,13 @@
+"use client";
+
 import { Box, Stack, Typography } from "@mui/material";
 import FeaturesCard from "./FeaturesCard";
 import { useTranslations } from "next-intl";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const FeaturesSections = () => {
   const t = useTranslations("features");
+  const isMobile = useIsMobile();
 
   const features = [
     {
@@ -49,26 +53,24 @@ const FeaturesSections = () => {
         flexDirection={"row"}
         justifyContent={"center"}
         alignItems={"center"}
-        sx={{ width: "100%", gap: 4, mb: 10, px: 6 }}
+        sx={{ width: "100%", gap: { xs: 10, md: 15 }, mb: 10, p: { xs: 1, md: 5 } }}
       >
-        <Typography variant="h6-medium" sx={{ whiteSpace: "nowrap" }}>
+        <Typography variant="p4-medium" sx={{ whiteSpace: "nowrap" }}>
           {t("title")}
         </Typography>
         <Box
           sx={{
             width: "100%",
             height: 4,
-            background:
-              "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
+            background: "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
           }}
         ></Box>
       </Stack>
       <Stack
-        flexDirection={"row"}
-        gap={10}
+        flexDirection={isMobile ? "column" : "row"}
         justifyContent={"center"}
         alignItems={"start"}
-        px={6}
+        sx={{ gap: { xs: 5, md: 10 }, p: { xs: 1, md: 5 } }}
       >
         <Stack
           sx={{
@@ -77,35 +79,24 @@ const FeaturesSections = () => {
           }}
         >
           <Typography
+            variant={isMobile ? "h4-bold" : "h2-bold"}
             sx={{
-              fontSize: "78px",
-              fontWeight: 700,
-              lineHeight: "51px",
               whiteSpace: "nowrap",
             }}
           >
             {t("subtitle")}
           </Typography>
-          <Typography
-            sx={{
-              fontSize: "27px",
-              fontWeight: 700,
-              lineHeight: "51px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {t("description")}
-          </Typography>
+          <Typography variant={isMobile ? "h6-bold" : "h4-bold"}>{t("description")}</Typography>
         </Stack>
-        <Typography variant="h4-regular">{t("mainDescription")}</Typography>
+        <Typography variant={isMobile ? "p4-bold" : "h6-bold"}>{t("mainDescription")}</Typography>
       </Stack>
       <Stack
         sx={{
           width: "100%",
-          mt: 10,
+          mt: { xs: 5, md: 10 },
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
-          gap: 8,
+          gap: { xs: 5, md: 8 },
           "@media (max-width: 900px)": {
             gridTemplateColumns: "repeat(2, 1fr)",
           },

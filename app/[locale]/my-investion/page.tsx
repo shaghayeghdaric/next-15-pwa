@@ -33,18 +33,10 @@ const MyInvestmentsPage = () => {
       <Typography variant="h3-bold" color="primary.main">
         WELCOME BACK MARY
       </Typography>
-      <Typography variant="h4-regular">
-        HERE'S YOUR PORTFOLIO PERFORMANCE AND LATEST OPPORTUNITIES
-      </Typography>
+      <Typography variant="h4-regular">HERE'S YOUR PORTFOLIO PERFORMANCE AND LATEST OPPORTUNITIES</Typography>
       <InvestmentCard />
       <PortfolioPerformance />
-      <Stack
-        direction={"row"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        gap={4}
-        width={"100%"}
-      >
+      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} gap={4} width={"100%"}>
         {optionCardData.map((item, index) => (
           <OptionsCard
             key={`option-card-${index}-${item.title}`}

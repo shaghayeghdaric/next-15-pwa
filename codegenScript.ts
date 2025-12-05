@@ -22,7 +22,7 @@ const generateApiClient = () => {
     const openapiCommand = `bun run openapi-rq -i ${endpoint.url} -o src/services/${endpoint.name} ${endpoint.command} --request request.ts --format biome --lint biome --operationId --enums typescript --base ${baseUrl}`;
     try {
       execSync(openapiCommand, { stdio: "inherit" });
-      // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+      // biome-ignore lint/suspicious/noConsole: logging generation status
       console.log(`Successfully generated API client for ${endpoint.name}`);
     } catch (error) {
       console.error(`Error executing code generation script for ${endpoint.name}:`, error);

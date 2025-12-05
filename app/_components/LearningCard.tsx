@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import { FC } from "react";
+import type { FC } from "react";
 
 interface LearningCardProps {
   icon?: string;
@@ -7,12 +7,7 @@ interface LearningCardProps {
   description?: string;
   complete: string;
 }
-const LearningCard: FC<LearningCardProps> = ({
-  icon,
-  title,
-  description,
-  complete,
-}) => {
+const LearningCard: FC<LearningCardProps> = ({ icon, title, description, complete }) => {
   return (
     <Stack
       sx={{
@@ -22,17 +17,8 @@ const LearningCard: FC<LearningCardProps> = ({
         backgroundColor: "rgba(0, 165, 232, 0.2)",
       }}
     >
-      <Stack
-        direction={"row"}
-        justifyContent={"space-between"}
-        alignItems={"end"}
-      >
-        <Stack
-          direction={"row"}
-          gap={2}
-          justifyContent={"center"}
-          alignItems={"end"}
-        >
+      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"end"}>
+        <Stack direction={"row"} gap={2} justifyContent={"center"} alignItems={"end"}>
           <img src={icon} alt={title} />
           <Typography variant="h3-bold" sx={{ lineHeight: "16px" }}>
             {title}

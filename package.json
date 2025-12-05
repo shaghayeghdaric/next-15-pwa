@@ -19,7 +19,9 @@
     "codegen": "bun run scripts/codegenScript.ts && bun run format && bun run lint:fix",
     "release": "bun run scripts/release-changelog.mjs",
     "commit-check": "bunx --bun commitlint --from HEAD~1 --to HEAD --verbose",
-    "prepare": "husky || true"
+    "prepare": "husky || true",
+    "icongen": "bun scripts/convert-icons.ts && bun run format-lint",
+    "format-lint": "bun run format && bun run lint:fix"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -42,13 +44,17 @@
   },
   "devDependencies": {
     "@7nohe/openapi-react-query-codegen": "1.6.2",
-    "@biomejs/biome": "2.2.0",
+    "@biomejs/biome": "^2.3.8",
+    "@svgr/cli": "^8.1.0",
+    "@svgr/core": "^8.1.0",
     "@types/node": "^20",
     "@types/numeral": "^2.0.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/recharts": "^2.0.1",
+    "fs-extra": "^11.3.2",
     "openapi-typescript-codegen": "^0.29.0",
+    "svgo": "^4.0.0",
     "typescript": "^5"
   }
 }

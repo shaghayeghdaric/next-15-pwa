@@ -18,30 +18,15 @@ const InvestmentDetailsCard = () => {
       <Typography variant="h4-regular" color="white">
         INVESTMENT DETAILS
       </Typography>
-      <Stack
-        direction={"row"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        width={"100%"}
-      >
+      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} width={"100%"}>
         <Typography variant="h4-regular">AMOUNT (USDT)</Typography>
         <Typography variant="h4-regular">$100.00</Typography>
       </Stack>
-      <Stack
-        direction={"row"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        width={"100%"}
-      >
+      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} width={"100%"}>
         <Typography variant="h4-regular">NETWORK FEE</Typography>
         <Typography variant="h4-regular">$2.50</Typography>
       </Stack>
-      <Stack
-        direction={"row"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        width={"100%"}
-      >
+      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} width={"100%"}>
         <Typography variant="h4-regular">TOTAL PAYMENT</Typography>
         <Typography variant="h4-regular">$102.50</Typography>
       </Stack>

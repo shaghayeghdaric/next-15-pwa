@@ -60,17 +60,10 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const direction = locale === "ar" ? "rtl" : "ltr";
 
   const t = (key: string): string => {
-    return (
-      translations[locale][key as keyof (typeof translations)[typeof locale]] ||
-      key
-    );
+    return translations[locale][key as keyof (typeof translations)[typeof locale]] || key;
   };
 
-  return (
-    <LocaleContext.Provider value={{ locale, setLocale, direction, t }}>
-      {children}
-    </LocaleContext.Provider>
-  );
+  return <LocaleContext.Provider value={{ locale, setLocale, direction, t }}>{children}</LocaleContext.Provider>;
 }
 
 export function useLocale() {

@@ -26,7 +26,9 @@ export const MuiIconButton: Components<Theme>["MuiIconButton"] = {
         style: {
           backgroundColor: `var(--mui-palette-${color}-main)`,
           color: `var(--mui-palette-${color}-contrastText)`,
-          "svg path, svg circle": { stroke: `var(--mui-palette-${color}-contrastText)` },
+          "svg path, svg circle": {
+            stroke: `var(--mui-palette-${color}-contrastText)`,
+          },
           "&:hover": { backgroundColor: `var(--mui-palette-${color}-dark)` },
         },
       })),

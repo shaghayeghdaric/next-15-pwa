@@ -1,14 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 
-const OptionsCard = ({
-  title,
-  description,
-  icon,
-}: {
-  title: string;
-  description: string;
-  icon: string;
-}) => {
+const OptionsCard = ({ title, description, icon }: { title: string; description: string; icon: string }) => {
   return (
     <Stack
       justifyContent={"center"}
@@ -22,11 +14,7 @@ const OptionsCard = ({
       }}
     >
       <img src={icon} alt={title} />
-      <Typography
-        variant="h4-bold"
-        color="primary.main"
-        sx={{ whiteSpace: "nowrap" }}
-      >
+      <Typography variant="h4-bold" color="primary.main" sx={{ whiteSpace: "nowrap" }}>
         {description}
       </Typography>
       <Typography variant="h5-regular" sx={{ whiteSpace: "nowrap" }}>

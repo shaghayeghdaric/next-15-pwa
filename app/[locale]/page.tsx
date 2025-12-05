@@ -21,7 +21,7 @@ export default async function HomePage({ params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <Stack sx={{ width: "100%", gap: 30 }}>
+    <Stack sx={{ width: "100%", gap: { xs: 5, md: 30 } }}>
       <HeroSection />
       <InvestSection />
       <FeaturesSections />

@@ -20,15 +20,11 @@ const LanguageSwitcher: React.FC = () => {
   };
 
   const handleLanguageChange = (newLocale: string) => {
-    // Don't change if it's the same locale
     if (newLocale === locale) {
       handleClose();
       return;
     }
 
-    console.log("Switching from", locale, "to", newLocale, "on path", pathname);
-
-    // Use the next-intl router which handles locale switching automatically
     router.replace(pathname, { locale: newLocale });
     handleClose();
   };
@@ -38,7 +34,7 @@ const LanguageSwitcher: React.FC = () => {
         variant="outlined"
         color="info"
         onClick={handleClick}
-        sx={{ minWidth: "80px" }}
+        sx={{ fontSize: { xs: 10, md: 12, lg: 14 }, p: { xs: 1, md: 3, lg: 4 } }}
       >
         {locale.toUpperCase()}
       </Button>
@@ -55,16 +51,10 @@ const LanguageSwitcher: React.FC = () => {
           horizontal: "center",
         }}
       >
-        <MenuItem
-          onClick={() => handleLanguageChange("en")}
-          selected={locale === "en"}
-        >
+        <MenuItem onClick={() => handleLanguageChange("en")} selected={locale === "en"}>
           English
         </MenuItem>
-        <MenuItem
-          onClick={() => handleLanguageChange("ar")}
-          selected={locale === "ar"}
-        >
+        <MenuItem onClick={() => handleLanguageChange("ar")} selected={locale === "ar"}>
           العربية
         </MenuItem>
       </Menu>

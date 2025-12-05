@@ -11,8 +11,7 @@ const Learn = () => {
       title: "INTRODUCTION TO CRYPTOCURRENCY",
       hour: 1.5,
       complete: 75,
-      description:
-        "LEARN THE FUNDAMENTALS OF CRYPTOCURRENCY, BLOCKCHAIN TECHNOLOGY, AND HOW DIGITAL ASSETS WORK.",
+      description: "LEARN THE FUNDAMENTALS OF CRYPTOCURRENCY, BLOCKCHAIN TECHNOLOGY, AND HOW DIGITAL ASSETS WORK.",
     },
     {
       icon: "/images/icons/education/intermediate.svg",
@@ -20,8 +19,7 @@ const Learn = () => {
       title: "WALLET SECURITY BASICS",
       hour: 1.5,
       complete: 50,
-      description:
-        "MASTER THE ESSENTIAL SECURITY PRACTICES FOR PROTECTING YOUR CRYPTOCURRENCY INVESTMENTS.",
+      description: "MASTER THE ESSENTIAL SECURITY PRACTICES FOR PROTECTING YOUR CRYPTOCURRENCY INVESTMENTS.",
     },
     {
       icon: "/images/icons/education/advanced.svg",
@@ -29,8 +27,7 @@ const Learn = () => {
       title: "TRADING FUNDAMENTALS",
       hour: 1.5,
       complete: 100,
-      description:
-        "LEARN BASIC TRADING CONCEPTS, MARKET ANALYSIS, AND HOW TO MAKE YOUR FIRST TRADES SAFELY.",
+      description: "LEARN BASIC TRADING CONCEPTS, MARKET ANALYSIS, AND HOW TO MAKE YOUR FIRST TRADES SAFELY.",
     },
     {
       icon: "/images/icons/education/expert.svg",
@@ -38,8 +35,7 @@ const Learn = () => {
       title: "INVESTMENT STRATEGIES",
       hour: 1.5,
       complete: 0,
-      description:
-        "DISCOVER DIFFERENT INVESTMENT APPROACHES AND BUILD A DIVERSIFIED CRYPTO PORTFOLIO.",
+      description: "DISCOVER DIFFERENT INVESTMENT APPROACHES AND BUILD A DIVERSIFIED CRYPTO PORTFOLIO.",
     },
   ];
   return (
@@ -74,10 +70,7 @@ const Learn = () => {
                 {journey.level}
               </Typography>
             </Stack>
-            <LearningCard
-              key={`learning-journey-card-${index}-${journey.title}`}
-              {...journey}
-            />
+            <LearningCard key={`learning-journey-card-${index}-${journey.title}`} {...journey} />
           </Stack>
         ))}
       </Stack>

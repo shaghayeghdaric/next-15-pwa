@@ -9,10 +9,7 @@
   "theme_color": "#000000",
   "scope": ".",
   "lang": "en",
-  "categories": [
-    "productivity",
-    "utilities"
-  ],
+  "categories": ["productivity", "utilities"],
   "screenshots": [
     {
       "src": "/screenshot-narrow.png",

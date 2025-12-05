@@ -10,12 +10,7 @@ type LocaleLinkProps = {
   style?: React.CSSProperties;
 };
 
-const LocaleLink: React.FC<LocaleLinkProps> = ({
-  href,
-  children,
-  className,
-  style,
-}) => {
+const LocaleLink: React.FC<LocaleLinkProps> = ({ href, children, className, style }) => {
   return (
     <Link href={href} className={className} style={style}>
       {children}

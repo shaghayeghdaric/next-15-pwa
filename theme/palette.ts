@@ -58,18 +58,17 @@ export const TERTIARY = {
 
 export const BACKGROUND = {
   default: "#000000",
-  dark: "#2C2C2C"
-
+  dark: "#2C2C2C",
 };
 
 export const ERROR = {
   main: "#AB001C",
-}
+};
 
 export const INFO = {
   main: "#00A5E8",
   contrastText: "#FFFFFF",
-}
+};
 export const GRADIENTS = {
   primary: "linear-gradient(135deg, #50ED8D, #00A5E8)",
   secondary: "linear-gradient(135deg, #95BACA, #54595E)",

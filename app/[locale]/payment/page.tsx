@@ -4,11 +4,7 @@ import TraditionalPaymentSection from "./_components/TraditionalPaymentSection";
 
 const PaymentPage = () => {
   return (
-    <Stack
-      justifyContent={"start"}
-      alignItems={"start"}
-      sx={{ width: "100%", gap: 4 }}
-    >
+    <Stack justifyContent={"start"} alignItems={"start"} sx={{ width: "100%", gap: 4 }}>
       <Stack
         flexDirection={"row"}
         justifyContent={"start"}
@@ -19,14 +15,7 @@ const PaymentPage = () => {
           FLEXIBLE PAYMENT OPTIONS
         </Typography>
       </Stack>
-      <Stack
-        flexDirection={"row"}
-        gap={10}
-        justifyContent={"space-between"}
-        alignItems={"end"}
-        px={6}
-        width={"100%"}
-      >
+      <Stack flexDirection={"row"} gap={10} justifyContent={"space-between"} alignItems={"end"} px={6} width={"100%"}>
         <Stack
           sx={{
             justifyContent: "center",
@@ -55,17 +44,11 @@ const PaymentPage = () => {
           </Typography>
         </Stack>
         <Typography variant="h4-regular">
-          START INVESTING WITH CONFIDENCE USING CRYPTOCURRENCY OR TRADITIONAL
-          PAYMENT METHODS. SECURE, FAST, AND DESIGNED FOR GLOBAL ACCESSIBILITY.
+          START INVESTING WITH CONFIDENCE USING CRYPTOCURRENCY OR TRADITIONAL PAYMENT METHODS. SECURE, FAST, AND
+          DESIGNED FOR GLOBAL ACCESSIBILITY.
         </Typography>
       </Stack>
-      <Stack
-        width={"100%"}
-        direction={"row"}
-        gap={4}
-        justifyContent={"center"}
-        alignItems={"flex-start"}
-      >
+      <Stack width={"100%"} direction={"row"} gap={4} justifyContent={"center"} alignItems={"flex-start"}>
         <CryptoPaymentSection />
         <TraditionalPaymentSection />
         <Stack />

@@ -1,5 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
-import StoryCard, { StoryCardProps } from "./StoryCard";
+import StoryCard, { type StoryCardProps } from "./StoryCard";
 import { useTranslations } from "next-intl";
 
 const SuccessStoriesSection = () => {
@@ -20,18 +20,11 @@ const SuccessStoriesSection = () => {
           sx={{
             width: "100%",
             height: 4,
-            background:
-              "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
+            background: "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
           }}
         ></Box>
       </Stack>
-      <Stack
-        flexDirection={"row"}
-        gap={10}
-        justifyContent={"center"}
-        alignItems={"start"}
-        px={6}
-      >
+      <Stack flexDirection={"row"} gap={10} justifyContent={"center"} alignItems={"start"} px={6}>
         <Stack
           sx={{
             justifyContent: "center",

@@ -1,5 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { FC } from "react";
+import type { FC } from "react";
 
 export interface StoryCardProps {
   story: string;
@@ -28,8 +28,7 @@ const StoryCard: FC<StoryCardProps> = ({ story, title, username, logo }) => {
             borderRadius: "50%",
             width: 55,
             height: 55,
-            background:
-              "linear-gradient(180deg, #00336C 42.36%, #02264E 100%);",
+            background: "linear-gradient(180deg, #00336C 42.36%, #02264E 100%);",
             textAlign: "center",
           }}
         >

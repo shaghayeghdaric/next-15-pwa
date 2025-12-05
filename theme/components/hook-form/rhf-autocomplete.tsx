@@ -16,10 +16,7 @@ interface Props<
   Multiple extends boolean | undefined,
   DisableClearable extends boolean | undefined,
   FreeSolo extends boolean | undefined,
-> extends Omit<
-    AutocompleteProps<T, Multiple, DisableClearable, FreeSolo>,
-    "ListboxProps"
-  > {
+> extends Omit<AutocompleteProps<T, Multiple, DisableClearable, FreeSolo>, "ListboxProps"> {
   name: string;
   label?: string;
   placeholder?: string;
@@ -47,21 +44,13 @@ export default function RHFAutocomplete<
   required,
   ...other
 }: Omit<Props<T, Multiple, DisableClearable, FreeSolo>, "renderInput"> & {
-  renderInput?: AutocompleteProps<
-    T,
-    Multiple,
-    DisableClearable,
-    FreeSolo
-  >["renderInput"];
+  renderInput?: AutocompleteProps<T, Multiple, DisableClearable, FreeSolo>["renderInput"];
 }) {
   const { control, setValue } = useFormContext();
 
   const handleScroll = (event: React.SyntheticEvent) => {
     const target = event.target as HTMLElement;
-    if (
-      target.scrollTop + target.clientHeight >= target.scrollHeight - 200 &&
-      hasMore
-    ) {
+    if (target.scrollTop + target.clientHeight >= target.scrollHeight - 200 && hasMore) {
       loadMore?.();
     }
   };
@@ -102,9 +91,7 @@ export default function RHFAutocomplete<
                 padding: "4px 8px !important",
               },
             }}
-            onChange={(_, newValue) =>
-              setValue(name, newValue, { shouldValidate: true })
-            }
+            onChange={(_, newValue) => setValue(name, newValue, { shouldValidate: true })}
             noOptionsText="No options"
             slotProps={{
               listbox: {

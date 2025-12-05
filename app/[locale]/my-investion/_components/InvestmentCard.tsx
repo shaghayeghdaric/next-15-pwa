@@ -17,9 +17,7 @@ const InvestmentCard = () => {
       <Typography variant="h1-bold" color="primary.main">
         $12,847.50
       </Typography>
-      <Typography variant="h6-regular">
-        +5.67% from last month (+$715.30)
-      </Typography>
+      <Typography variant="h6-regular">+5.67% from last month (+$715.30)</Typography>
     </Stack>
   );
 };

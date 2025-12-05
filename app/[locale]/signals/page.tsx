@@ -40,10 +40,7 @@ const SignalsPage = () => {
       <Typography variant="h1-bold">PROFESSIONAL TRADING SIGNALS</Typography>
       <SignalsPieChart />
       {signals.map((signal, index) => (
-        <Stack
-          key={`trading-signal-${index}-${signal.signalName}`}
-          width={"100%"}
-        >
+        <Stack key={`trading-signal-${index}-${signal.signalName}`} width={"100%"}>
           <SignalCard
             signalName={signal.signalName}
             entry={signal.entry}

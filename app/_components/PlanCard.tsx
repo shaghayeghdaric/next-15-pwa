@@ -1,5 +1,5 @@
 import { Button, Stack, Typography } from "@mui/material";
-import { FC } from "react";
+import type { FC } from "react";
 
 export interface PlanCardProps {
   title: string;
@@ -10,14 +10,7 @@ export interface PlanCardProps {
   isMostPopular: boolean;
 }
 
-const PlanCard: FC<PlanCardProps> = ({
-  title,
-  price,
-  features,
-  per,
-  buttonName,
-  isMostPopular,
-}) => {
+const PlanCard: FC<PlanCardProps> = ({ title, price, features, per, buttonName, isMostPopular }) => {
   return (
     <Stack
       justifyContent={"center"}

@@ -1,5 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { FC } from "react";
+import type { FC } from "react";
 
 interface SignalCardProps {
   signalName: string;
@@ -44,13 +44,7 @@ const SignalCard: FC<SignalCardProps> = ({
         }}
       />
       <Stack sx={{ flex: 1, width: "100%", px: 4, py: 2 }} gap={4}>
-        <Stack
-          direction={"row"}
-          width={"100%"}
-          justifyContent={"space-between"}
-          alignItems={"center"}
-          sx={{ gap: 4 }}
-        >
+        <Stack direction={"row"} width={"100%"} justifyContent={"space-between"} alignItems={"center"} sx={{ gap: 4 }}>
           <Stack justifyContent={"start"} gap={2}>
             <Typography variant="h3-bold">{signalName}</Typography>
             <Box
@@ -60,8 +54,7 @@ const SignalCard: FC<SignalCardProps> = ({
                 textAlign: "center",
                 color: "primary.contrastText",
                 borderRadius: 1,
-                backgroundColor:
-                  status === "Buy" ? "primary.main" : "error.main",
+                backgroundColor: status === "Buy" ? "primary.main" : "error.main",
               }}
             >
               {status}
@@ -83,13 +76,7 @@ const SignalCard: FC<SignalCardProps> = ({
             </Box>
           </Stack>
         </Stack>
-        <Stack
-          direction={"row"}
-          justifyContent={"space-between"}
-          gap={12}
-          pb={6}
-          width={"100%"}
-        >
+        <Stack direction={"row"} justifyContent={"space-between"} gap={12} pb={6} width={"100%"}>
           <Stack
             sx={{
               py: 1,

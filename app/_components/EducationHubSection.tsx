@@ -80,18 +80,11 @@ const EducationHubSection = () => {
           sx={{
             width: "100%",
             height: 4,
-            background:
-              "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
+            background: "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
           }}
         ></Box>
       </Stack>
-      <Stack
-        flexDirection={"row"}
-        gap={10}
-        justifyContent={"center"}
-        alignItems={"start"}
-        px={6}
-      >
+      <Stack flexDirection={"row"} gap={10} justifyContent={"center"} alignItems={"start"} px={6}>
         <Stack
           sx={{
             justifyContent: "center",
@@ -121,12 +114,7 @@ const EducationHubSection = () => {
         </Stack>
         <Typography variant="h4-regular">{t("mainDescription")}</Typography>
       </Stack>
-      <Stack
-        direction={"row"}
-        gap={4}
-        justifyContent={"center"}
-        alignItems={"flex-start"}
-      >
+      <Stack direction={"row"} gap={4} justifyContent={"center"} alignItems={"flex-start"}>
         <Stack
           justifyContent={"center"}
           alignItems={"center"}
@@ -141,24 +129,13 @@ const EducationHubSection = () => {
           <Typography variant="h3-bold">{t("yourLearningJourney")}</Typography>
           <Stack justifyContent={"center"} gap={10}>
             {learningJourneys.map((journey, index) => (
-              <LearningCard
-                key={`journey-${index}-${journey.title}`}
-                {...journey}
-              />
+              <LearningCard key={`journey-${index}-${journey.title}`} {...journey} />
             ))}
           </Stack>
         </Stack>
-        <Stack
-          justifyContent={"center"}
-          alignItems={"center"}
-          gap={8}
-          sx={{ p: 5, width: "50%" }}
-        >
+        <Stack justifyContent={"center"} alignItems={"center"} gap={8} sx={{ p: 5, width: "50%" }}>
           {learningFeatures.map((feature, index) => (
-            <LearningFeature
-              key={`feature-${index}-${feature.title}`}
-              {...feature}
-            />
+            <LearningFeature key={`feature-${index}-${feature.title}`} {...feature} />
           ))}
         </Stack>
       </Stack>

@@ -43,12 +43,7 @@ const Footer = () => {
         background: "linear-gradient(180deg, #00336C 42.36%, #02264E 100%);",
       }}
     >
-      <Stack
-        flexDirection={"row"}
-        gap={10}
-        justifyContent={"center"}
-        alignItems={"start"}
-      >
+      <Stack flexDirection={"row"} gap={10} justifyContent={"center"} alignItems={"start"}>
         <Stack
           sx={{
             justifyContent: "center",
@@ -67,27 +62,17 @@ const Footer = () => {
           </Typography>
         </Stack>
         <Typography variant="h4-regular">
-          THE WORLD 'S MOST TRUSTED CRYPTOCURRENCY INVESTMENT AND TRADING
-          PLATFORM. JOIN MILLIONS OF INVESTORS EARNING CONSISTENT PROFITS
-          THROUGH OUR AL-POWERED SIGNALS AND GUARANTEED INVESTMENT PLANS.
+          THE WORLD 'S MOST TRUSTED CRYPTOCURRENCY INVESTMENT AND TRADING PLATFORM. JOIN MILLIONS OF INVESTORS EARNING
+          CONSISTENT PROFITS THROUGH OUR AL-POWERED SIGNALS AND GUARANTEED INVESTMENT PLANS.
         </Typography>
       </Stack>
-      <Stack
-        direction={"row"}
-        justifyContent={"flex-start"}
-        alignItems={"start"}
-        gap={10}
-      >
+      <Stack direction={"row"} justifyContent={"flex-start"} alignItems={"start"} gap={10}>
         {footerInfo.map((section, index) => (
           <Stack key={`footer-section-${index}-${section.title}`} gap={4}>
             <Typography variant="h5-regular">{section.title}</Typography>
             <Stack gap={2}>
               {section.items.map((item, itemIndex) => (
-                <Typography
-                  key={`footer-item-${itemIndex}-${item.name}`}
-                  variant="h5-light"
-                  sx={{ cursor: "pointer" }}
-                >
+                <Typography key={`footer-item-${itemIndex}-${item.name}`} variant="h5-light" sx={{ cursor: "pointer" }}>
                   {item.name}
                 </Typography>
               ))}
@@ -95,18 +80,9 @@ const Footer = () => {
           </Stack>
         ))}
       </Stack>
-      <Stack
-        direction={"row"}
-        gap={4}
-        alignItems={"center"}
-        justifyContent={"end"}
-      >
+      <Stack direction={"row"} gap={4} alignItems={"center"} justifyContent={"end"}>
         {socials.map((social, index) => (
-          <img
-            key={`social-icon-${index}-${social.name}`}
-            src={social.link}
-            alt={social.name}
-          />
+          <img key={`social-icon-${index}-${social.name}`} src={social.link} alt={social.name} />
         ))}
       </Stack>
     </Stack>

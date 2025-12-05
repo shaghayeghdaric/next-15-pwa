@@ -1,40 +1,108 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
   "vcs": {
-    "enabled": true,
+    "enabled": false,
     "clientKind": "git",
-    "useIgnoreFile": true
+    "useIgnoreFile": false
   },
   "files": {
-    "ignoreUnknown": true,
-    "includes": [
-      "**",
-      "!node_modules",
-      "!.next",
-      "!dist",
-      "!build"
-    ]
+    "ignoreUnknown": false,
+    "maxSize": 2000000
   },
   "formatter": {
     "enabled": true,
+    "useEditorconfig": true,
+    "formatWithErrors": false,
     "indentStyle": "space",
-    "indentWidth": 2
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "attributePosition": "auto",
+    "bracketSpacing": true,
+    "includes": [
+      "app/**",
+      "components/**",
+      "hooks/**",
+      "i18n/**",
+      "messages/**",
+      "public/**",
+      "scripts/**",
+      "theme/**",
+      "utils/**",
+      "middleware.ts",
+      "next.config.ts",
+      "codegenScript.ts",
+      "README.md",
+      "package.json",
+      "tsconfig.json"
+    ]
   },
   "linter": {
     "enabled": true,
+    "includes": [
+      "app/**",
+      "components/**",
+      "hooks/**",
+      "i18n/**",
+      "messages/**",
+      "public/**",
+      "scripts/**",
+      "theme/**",
+      "utils/**",
+      "middleware.ts",
+      "next.config.ts",
+      "codegenScript.ts",
+      "README.md",
+      "package.json",
+      "tsconfig.json"
+    ],
     "rules": {
-      "recommended": true
-    },
-    "domains": {
-      "next": "recommended",
-      "react": "recommended"
+      "recommended": false,
+      "a11y": {
+        "useValidAnchor": "off"
+      },
+      "complexity": {
+        "noUselessFragments": "warn"
+      },
+      "correctness": {
+        "noChildrenProp": "off",
+        "noInvalidUseBeforeDeclaration": "off",
+        "noUnusedImports": "warn",
+        "noUnusedVariables": "warn",
+        "noSelfAssign": "warn",
+        "noUnusedLabels": "error"
+      },
+      "style": {
+        "noParameterAssign": "off",
+        "useExportType": "warn",
+        "useImportType": "warn",
+        "useNamingConvention": {
+          "level": "off",
+          "options": {
+            "strictCase": false
+          }
+        },
+        "useBlockStatements": "error"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off",
+        "noConsole": "warn",
+        "noDuplicateJsxProps": "warn",
+        "noSelfCompare": "warn"
+      }
     }
   },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "es5",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "quoteStyle": "double",
+      "attributePosition": "auto",
+      "bracketSpacing": true
     }
   }
 }

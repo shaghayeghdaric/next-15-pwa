@@ -14,12 +14,7 @@ const ProfileCard = () => {
         width: "100%",
       }}
     >
-      <img
-        src={"/images/profile.png"}
-        width={"75px"}
-        height={"75px"}
-        alt="Profile"
-      />
+      <img src={"/images/profile.png"} width={"75px"} height={"75px"} alt="Profile" />
       <Stack alignItems={"start"} justifyContent={"start"} gap={4}>
         <Typography variant="h1-bold" color="primary.main">
           MARY HGSH

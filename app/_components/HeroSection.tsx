@@ -3,17 +3,20 @@
 import { Stack, Typography } from "@mui/material";
 import Image from "@/components/Image";
 import { useTranslations } from "next-intl";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const HeroSection: React.FC = () => {
   const t = useTranslations("hero");
+  const isMobile = useIsMobile();
+
   return (
     <Stack
       sx={{
         width: "100%",
-        minHeight: 590,
+        minHeight: { xs: 310, sm: 500, md: 400, lg: 550, xl: 590 },
         position: "relative",
-        py: 20,
-        px: 5,
+        py: { xs: 8, md: 20 },
+        px: { xs: 2, md: 5 },
         alignItems: "flex-start",
         justifyContent: "center",
       }}
@@ -29,13 +32,7 @@ const HeroSection: React.FC = () => {
           opacity: 0.54,
         }}
       >
-        <Image
-          src="/images/wave.png"
-          alt="Hero Wave Background"
-          fluid={true}
-          aspectWidth={1101}
-          aspectHeight={590}
-        />
+        <Image src="/images/wave.png" alt="Hero Wave Background" fluid={true} aspectWidth={1101} aspectHeight={590} />
       </Stack>
       <Stack
         sx={{
@@ -61,10 +58,10 @@ const HeroSection: React.FC = () => {
           position: "relative",
           zIndex: 2,
           height: "100%",
-          width: 2 / 3,
+          width: { xs: "100%", md: "60%" },
           justifyContent: "left",
           alignItems: "flex-start",
-          gap: 15,
+          gap: { xs: 5, md: 15 },
         }}
       >
         <Stack
@@ -75,27 +72,23 @@ const HeroSection: React.FC = () => {
           }}
         >
           <Typography
+            variant={isMobile ? "h4-bold" : "h1-bold"}
             sx={{
-              fontSize: "82px",
-              fontWeight: 700,
-              lineHeight: "51px",
               whiteSpace: "nowrap",
             }}
           >
             {t("smartMoney")}
           </Typography>
           <Typography
+            variant={isMobile ? "h6-bold" : "h3-bold"}
             sx={{
-              fontSize: "51px",
-              fontWeight: 700,
-              lineHeight: "51px",
               whiteSpace: "nowrap",
             }}
           >
             {t("rightInYourPocket")}
           </Typography>
         </Stack>
-        <Typography variant="h4-regular">{t("description")}</Typography>
+        <Typography variant={isMobile ? "p4-bold" : "h6-bold"}>{t("description")}</Typography>
       </Stack>
     </Stack>
   );

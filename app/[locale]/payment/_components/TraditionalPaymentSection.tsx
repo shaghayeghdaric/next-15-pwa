@@ -36,12 +36,7 @@ const TraditionalPaymentSection = () => {
           "linear-gradient(180deg, rgba(0, 27, 53, 0.71) 2.4%, rgba(153, 185, 216, 0.71) 50.48%, rgba(0, 34, 67, 0.71) 100%)",
       }}
     >
-      <img
-        src="/images/traditional-payment.png"
-        alt="Traditional Payment"
-        width={38}
-        height={38}
-      />
+      <img src="/images/traditional-payment.png" alt="Traditional Payment" width={38} height={38} />
       <Typography variant="h4-bold">PAY WITH CARD OR BANK TRANSFER</Typography>
       <Typography variant="h4-regular">
         ALL MAJOR CARDS ACCEPTED
@@ -74,9 +69,7 @@ const TraditionalPaymentSection = () => {
             label={"CURRENCY PAIR"}
             placeholder="choose a currency pair"
             options={amounts}
-            value={
-              amounts.find((amount) => amount.id === selectedAmountId) || null
-            }
+            value={amounts.find((amount) => amount.id === selectedAmountId) || null}
             onChange={(_, newValue) => {
               const selectedAmount = newValue as Option | null;
               setValue("amount", selectedAmount?.id || 0, {
@@ -87,40 +80,13 @@ const TraditionalPaymentSection = () => {
           />
           <RHFTextField name="FULL NAME" label="FULL NAME" />
           <RHFTextField name="CARD NUMBER" label="CARD NUMBER" />
-          <Stack
-            direction={"row"}
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            gap={4}
-            width={"100%"}
-          >
-            <img
-              src="/images/master-card.png"
-              alt="master card"
-              height={29}
-              width={102}
-            />
-            <img
-              src="/images/apple-pay.png"
-              alt="apple pay"
-              height={39}
-              width={45}
-            />
-            <img
-              src="/images/paypall.png"
-              alt="paypall"
-              height={29}
-              width={78}
-            />
+          <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} gap={4} width={"100%"}>
+            <img src="/images/master-card.png" alt="master card" height={29} width={102} />
+            <img src="/images/apple-pay.png" alt="apple pay" height={39} width={45} />
+            <img src="/images/paypall.png" alt="paypall" height={29} width={78} />
             <img src="/images/mc.png" alt="mc" height={29} width={31} />
           </Stack>
-          <Stack
-            direction={"row"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            gap={4}
-            width={"100%"}
-          >
+          <Stack direction={"row"} justifyContent={"center"} alignItems={"center"} gap={4} width={"100%"}>
             <RHFTextField name="EXPIRY DATE" label="EXPIRY DATE" />
             <RHFTextField name="CVV" label="CVV" />
           </Stack>
