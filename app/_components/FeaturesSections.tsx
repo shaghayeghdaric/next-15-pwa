@@ -53,7 +53,7 @@ const FeaturesSections = () => {
         flexDirection={"row"}
         justifyContent={"center"}
         alignItems={"center"}
-        sx={{ width: "100%", gap: { xs: 10, md: 15 }, mb: 10, p: { xs: 1, md: 5 } }}
+        sx={{ width: "100%", gap: { xs: 10, md: 15 }, mb: { xs: 5, md: 10 }, p: { xs: 1, md: 5 } }}
       >
         <Typography variant="p4-medium" sx={{ whiteSpace: "nowrap" }}>
           {t("title")}

@@ -46,19 +46,24 @@ const InvestmentPlansSections = () => {
     []
   );
   return (
-    <Stack justifyContent={"center"} alignItems="center" py={7} gap={10}>
+    <Stack justifyContent={"center"} alignItems="center" sx={{ py: { xs: 3, md: 7 } }}>
       <Stack
         flexDirection={"row"}
         justifyContent={"center"}
         alignItems={"center"}
-        sx={{ width: "100%", gap: 4, mb: 10, px: 6 }}
+        sx={{ width: "100%", gap: { xs: 10, md: 15 }, mb: { xs: 5, md: 10 } }}
       >
         <Typography variant="p4-medium" sx={{ whiteSpace: "nowrap" }}>
           {t("title")}
         </Typography>
         <Box sx={dividerGradient}></Box>
       </Stack>
-      <Stack flexDirection={"row"} gap={10} justifyContent={"center"} alignItems={"start"} px={6}>
+      <Stack
+        flexDirection={isMobile ? "column" : "row"}
+        justifyContent={"center"}
+        alignItems={"start"}
+        sx={{ gap: { xs: 5, md: 10 } }}
+      >
         <Stack
           sx={{
             justifyContent: "center",
@@ -80,10 +85,10 @@ const InvestmentPlansSections = () => {
       <Stack
         sx={{
           width: "100%",
-          mt: 10,
+          mt: { xs: 5, md: 10 },
           display: "grid",
           gridTemplateColumns: "repeat(2, 1fr)",
-          gap: 10,
+          gap: { xs: 5, md: 8 },
           "@media (max-width: 900px)": {
             gridTemplateColumns: "repeat(2, 1fr)",
           },

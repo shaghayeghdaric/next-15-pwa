@@ -1,10 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Stack, Typography } from "@mui/material";
 import { useForm, FormProvider } from "react-hook-form";
 import RHFAutocomplete from "@/theme/components/hook-form/rhf-autocomplete";
 import { getLabel } from "@/utils/get-label";
-import { useTranslations } from "next-intl";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const amounts = [
   { id: 100, fa_title: "100 USDT" },
@@ -24,36 +25,31 @@ const CalculatorSection = () => {
   const methods = useForm();
   const { setValue, watch } = methods;
   const selectedAmountId = watch("amount");
+  const isMobile = useIsMobile();
 
   return (
     <FormProvider {...methods}>
-      <Stack direction={"row"} justifyContent={"center"} alignItems={"start"} gap={10}>
-        <Stack justifyContent={"center"} gap={24}>
+      <Stack
+        direction={isMobile ? "column" : "row"}
+        justifyContent={"center"}
+        alignItems={"start"}
+        sx={{
+          gap: { xs: 5, md: 10 },
+          p: { xs: 5, md: 10 },
+          my: { xs: 5, md: 10 },
+          background: "linear-gradient(135deg, rgba(0, 165, 232, 0.5), rgba(6, 57, 77, 0.5))",
+          borderRadius: 2,
+        }}
+      >
+        <Stack sx={{ gap: { xs: 6, md: 24 } }}>
           <Stack
             sx={{
               justifyContent: "center",
               alignItems: "flex-start",
             }}
           >
-            <Typography
-              variant="h0-bold"
-              sx={{
-                lineHeight: "47px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {t("investmentCalculator")}
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "45px",
-                fontWeight: 400,
-                lineHeight: "47px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {t("investmentAmount")}
-            </Typography>
+            <Typography variant={isMobile ? "h5-bold" : "h3-bold"}>{t("investmentCalculator")}</Typography>
+            <Typography variant={isMobile ? "h6-regular" : "h5-regular"}>{t("investmentAmount")}</Typography>
           </Stack>
           <RHFAutocomplete
             name="INVESTMENT AMOUNT (USDT)"
@@ -72,52 +68,48 @@ const CalculatorSection = () => {
           />
         </Stack>
         <Stack justifyContent={"start"} alignItems={"center"} gap={4}>
-          <Typography variant="h3-regular">SEE HOW YOUR INVESTMENT GROWS OVER 5 YEARS WITH COMPOUND RETURNS</Typography>
+          <Typography variant={isMobile ? "p2-regular" : "h6-regular"}>
+            SEE HOW YOUR INVESTMENT GROWS OVER 5 YEARS WITH COMPOUND RETURNS
+          </Typography>
           <Stack
             justifyContent={"center"}
             alignItems={"center"}
-            gap={5}
             sx={{
               backgroundColor: "white",
               borderRadius: 1,
-              p: 4,
+              p: { xs: 2, md: 5 },
               width: "100%",
+              gap: { xs: 2, md: 5 },
             }}
           >
-            <Typography variant="h2-medium" color="primary.dark">
+            <Typography variant={isMobile ? "p2-regular" : "h6-medium"} color="primary.dark">
               {t("totalAfter12Months").replace("12", "5")}
             </Typography>
-            <Typography
-              color="primary.main"
-              sx={{
-                fontSize: "48px",
-                fontWeight: 700,
-              }}
-            >
+            <Typography color="primary.main" variant={isMobile ? "h5-bold" : "h3-bold"}>
               $100.57
             </Typography>
             <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} gap={10}>
               <Stack justifyContent={"center"} alignItems={"center"}>
-                <Typography variant="h1-bold" color="primary.dark">
+                <Typography variant={isMobile ? "p2-bold" : "h5-bold"} color="primary.dark">
                   $50.00
                 </Typography>
-                <Typography color="primary.dark" variant="h3-light">
+                <Typography color="primary.dark" variant={isMobile ? "p2-light" : "h6-light"}>
                   Initial
                 </Typography>
               </Stack>
               <Stack justifyContent={"center"} alignItems={"center"}>
-                <Typography variant="h1-bold" color="primary.dark">
+                <Typography variant={isMobile ? "p2-bold" : "h5-bold"} color="primary.dark">
                   $50.57
                 </Typography>
-                <Typography color="primary.dark" variant="h3-light">
+                <Typography color="primary.dark" variant={isMobile ? "p2-light" : "h6-light"}>
                   Profit
                 </Typography>
               </Stack>
               <Stack justifyContent={"center"} alignItems={"center"}>
-                <Typography variant="h1-bold" color="primary.dark">
+                <Typography variant={isMobile ? "p2-bold" : "h5-bold"} color="primary.dark">
                   101.14%
                 </Typography>
-                <Typography color="primary.dark" variant="h3-light">
+                <Typography color="primary.dark" variant={isMobile ? "p2-light" : "h6-light"}>
                   ROI
                 </Typography>
               </Stack>

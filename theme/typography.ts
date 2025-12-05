@@ -236,12 +236,12 @@ interface Style {
 // Default, per-variant line-height ratios. Override by passing a custom value to fontVariant.
 const defaultLineHeights: Record<string, number> = {
   // Headings
-  h1: 1,
-  h2: 1,
-  h3: 1,
-  h4: 1,
-  h5: 1,
-  h6: 1,
+  h1: 1.2,
+  h2: 1.2,
+  h3: 1.2,
+  h4: 1.2,
+  h5: 1.2,
+  h6: 1.2,
   // Paragraphs
   p1: 1.6,
   p2: 1.6,

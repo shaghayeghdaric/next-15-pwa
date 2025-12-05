@@ -1,3 +1,6 @@
+"use client";
+
+import { useIsMobile } from "@/hooks/use-responsive";
 import { Box, Stack, Typography } from "@mui/material";
 import type { FC } from "react";
 
@@ -22,6 +25,8 @@ const SignalCard: FC<SignalCardProps> = ({
   accuracy,
   lastUpdated,
 }) => {
+  const isMobile = useIsMobile();
+
   return (
     <Stack
       direction={"row"}
@@ -46,7 +51,7 @@ const SignalCard: FC<SignalCardProps> = ({
       <Stack sx={{ flex: 1, width: "100%", px: 4, py: 2 }} gap={4}>
         <Stack direction={"row"} width={"100%"} justifyContent={"space-between"} alignItems={"center"} sx={{ gap: 4 }}>
           <Stack justifyContent={"start"} gap={2}>
-            <Typography variant="h3-bold">{signalName}</Typography>
+            <Typography variant={isMobile ? "p2-bold" : "h6-bold"}>{signalName}</Typography>
             <Box
               sx={{
                 py: 1,
@@ -61,7 +66,7 @@ const SignalCard: FC<SignalCardProps> = ({
             </Box>
           </Stack>
           <Stack justifyContent={"end"} gap={2}>
-            <Typography variant="h4-light">{lastUpdated}</Typography>
+            <Typography variant={isMobile ? "p4-light" : "p1-light"}>{lastUpdated}</Typography>
             <Box
               sx={{
                 py: 1,
@@ -76,7 +81,11 @@ const SignalCard: FC<SignalCardProps> = ({
             </Box>
           </Stack>
         </Stack>
-        <Stack direction={"row"} justifyContent={"space-between"} gap={12} pb={6} width={"100%"}>
+        <Stack
+          direction={isMobile ? "column" : "row"}
+          justifyContent={"space-between"}
+          sx={{ width: "100%", gap: { xs: 6, md: 12 }, p: { xs: 2, md: 6 } }}
+        >
           <Stack
             sx={{
               py: 1,
@@ -88,10 +97,10 @@ const SignalCard: FC<SignalCardProps> = ({
               width: "100%",
             }}
           >
-            <Typography variant="h4-regular" color="primary.dark">
+            <Typography variant={isMobile ? "p4-regular" : "p1-regular"} color="primary.dark">
               ENTRY PRICE
             </Typography>
-            <Typography variant="h4-regular" color="primary.dark">
+            <Typography variant={isMobile ? "p4-regular" : "p1-regular"} color="primary.dark">
               {entry}
             </Typography>
           </Stack>
@@ -106,10 +115,10 @@ const SignalCard: FC<SignalCardProps> = ({
               width: "100%",
             }}
           >
-            <Typography variant="h4-regular" color="primary.dark">
+            <Typography variant={isMobile ? "p4-regular" : "p1-regular"} color="primary.dark">
               TAKE PROFIT
             </Typography>
-            <Typography variant="h4-regular" color="primary.dark">
+            <Typography variant={isMobile ? "p4-regular" : "p1-regular"} color="primary.dark">
               {takeProfit}
             </Typography>
           </Stack>
@@ -124,10 +133,10 @@ const SignalCard: FC<SignalCardProps> = ({
               width: "100%",
             }}
           >
-            <Typography variant="h4-regular" color="primary.dark">
+            <Typography variant={isMobile ? "p4-regular" : "p1-regular"} color="primary.dark">
               STOP LOSS
             </Typography>
-            <Typography variant="h4-regular" color="primary.dark">
+            <Typography variant={isMobile ? "p4-regular" : "p1-regular"} color="primary.dark">
               {stopLoss}
             </Typography>
           </Stack>
@@ -142,10 +151,10 @@ const SignalCard: FC<SignalCardProps> = ({
               width: "100%",
             }}
           >
-            <Typography variant="h4-regular" color="primary.dark">
+            <Typography variant={isMobile ? "p4-regular" : "p1-regular"} color="primary.dark">
               RISK
             </Typography>
-            <Typography variant="h4-regular" color="primary.dark">
+            <Typography variant={isMobile ? "p4-regular" : "p1-regular"} color="primary.dark">
               {risk}
             </Typography>
           </Stack>

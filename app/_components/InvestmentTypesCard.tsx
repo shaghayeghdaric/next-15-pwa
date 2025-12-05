@@ -3,6 +3,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useState, type FC } from "react";
 import InvestmentDialog from "./investmentDialog";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 interface InvestmentTypesCardProps {
   logo: string;
@@ -28,6 +29,8 @@ const InvestmentTypesCard: FC<InvestmentTypesCardProps> = ({
   modalKey,
 }) => {
   const [openDialog, setOpenDialog] = useState(false);
+  const isMobile = useIsMobile();
+
   return (
     <Stack
       sx={{
@@ -46,12 +49,12 @@ const InvestmentTypesCard: FC<InvestmentTypesCardProps> = ({
         }}
       >
         <img src={logo} alt={title} width={48} height={48} />
-        <Typography variant="h3-bold" color="primary.main" sx={{ lineHeight: "20px" }}>
+        <Typography variant={isMobile ? "p2-bold" : "h6-bold"} color="primary.main" sx={{ lineHeight: "20px" }}>
           {title}
         </Typography>
       </Stack>
       <Stack sx={{ gap: 1 }}>
-        <Typography variant="h5-regular">{description}</Typography>
+        <Typography variant={isMobile ? "p1-regular" : "p2-regular"}>{description}</Typography>
       </Stack>
       <Stack
         sx={{
@@ -63,10 +66,10 @@ const InvestmentTypesCard: FC<InvestmentTypesCardProps> = ({
           padding: 2,
         }}
       >
-        <Typography color="black" variant="h1-bold">
+        <Typography color="black" variant={isMobile ? "p1-bold" : "h5-bold"}>
           {percent}
         </Typography>
-        <Typography color="black" variant="h4-regular" sx={{ ml: 2 }}>
+        <Typography color="black" variant={isMobile ? "p2-regular" : "p1-regular"} sx={{ ml: 2 }}>
           {returnType}
         </Typography>
       </Stack>
@@ -81,7 +84,7 @@ const InvestmentTypesCard: FC<InvestmentTypesCardProps> = ({
                 backgroundColor: "white",
               }}
             />
-            <Typography variant="h5-light">{item}</Typography>
+            <Typography variant={isMobile ? "p4-light" : "p2-light"}>{item}</Typography>
           </Stack>
         ))}
       </Stack>

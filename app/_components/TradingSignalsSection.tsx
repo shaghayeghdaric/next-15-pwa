@@ -1,6 +1,9 @@
+"use client";
+
 import { Box, Stack, Typography } from "@mui/material";
 import SignalCard from "./SignalCard";
 import { useTranslations } from "next-intl";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const signals = [
   {
@@ -36,15 +39,17 @@ const signals = [
 ];
 const TradingSignalsSection = () => {
   const t = useTranslations("tradingSignals");
+  const isMobile = useIsMobile();
+
   return (
-    <Stack justifyContent={"center"} alignItems="center" py={7} gap={10}>
+    <Stack justifyContent={"center"} alignItems="center" sx={{ py: { xs: 3, md: 7 }, gap: { xs: 5, md: 10 } }}>
       <Stack
         flexDirection={"row"}
         justifyContent={"center"}
         alignItems={"center"}
-        sx={{ width: "100%", gap: 4, mb: 10, px: 6 }}
+        sx={{ width: "100%", gap: { xs: 10, md: 15 }, mb: { xs: 5, md: 10 } }}
       >
-        <Typography variant="h6-medium" sx={{ whiteSpace: "nowrap" }}>
+        <Typography variant="p4-medium" sx={{ whiteSpace: "nowrap" }}>
           {t("title")}
         </Typography>
         <Box
@@ -55,7 +60,12 @@ const TradingSignalsSection = () => {
           }}
         ></Box>
       </Stack>
-      <Stack flexDirection={"row"} gap={10} justifyContent={"center"} alignItems={"start"} px={6}>
+      <Stack
+        flexDirection={isMobile ? "column" : "row"}
+        justifyContent={"center"}
+        alignItems={"start"}
+        sx={{ gap: { xs: 5, md: 10 } }}
+      >
         <Stack
           sx={{
             justifyContent: "center",
@@ -63,41 +73,30 @@ const TradingSignalsSection = () => {
           }}
         >
           <Typography
+            variant={isMobile ? "h4-bold" : "h2-bold"}
             sx={{
-              fontSize: "78px",
-              fontWeight: 700,
-              lineHeight: "60px",
               whiteSpace: "nowrap",
             }}
           >
             {t("subtitle")}
           </Typography>
-          <Typography variant="h2-bold">{t("description")}</Typography>
-          <Typography
-            sx={{
-              fontSize: "27px",
-              fontWeight: 700,
-              lineHeight: "60px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {t("liveFeed")}
-          </Typography>
+          <Typography variant={isMobile ? "h6-bold" : "h4-bold"}>{t("description")}</Typography>
+          <Typography variant={isMobile ? "p4-bold" : "h6-bold"}>{t("liveFeed")}</Typography>
         </Stack>
-        <Stack>
-          <Typography variant="h4-regular">{t("mainDescription")}</Typography>
+        <Stack sx={{ gap: { xs: 2, md: 4 } }}>
+          <Typography variant={isMobile ? "p4-regular" : "h6-regular"}>{t("mainDescription")}</Typography>
           <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} gap={10}>
             <Stack justifyContent={"center"} alignItems={"center"}>
-              <Typography variant="h3-bold">95.7%</Typography>
-              <Typography variant="h4-light">{t("accuracy")}</Typography>
+              <Typography variant={isMobile ? "p2-bold" : "h6-bold"}>95.7%</Typography>
+              <Typography variant={isMobile ? "p4-light" : "p1-light"}>{t("accuracy")}</Typography>
             </Stack>
             <Stack justifyContent={"center"} alignItems={"center"}>
-              <Typography variant="h3-bold">2,847</Typography>
-              <Typography variant="h4-light">{t("signals")}</Typography>
+              <Typography variant={isMobile ? "p2-bold" : "h6-bold"}>2,847</Typography>
+              <Typography variant={isMobile ? "p4-light" : "p1-light"}>{t("signals")}</Typography>
             </Stack>
             <Stack justifyContent={"center"} alignItems={"center"}>
-              <Typography variant="h3-bold">+23.4%</Typography>
-              <Typography variant="h4-light">{t("avgReturn")}</Typography>
+              <Typography variant={isMobile ? "p2-bold" : "h6-bold"}>+23.4%</Typography>
+              <Typography variant={isMobile ? "p4-light" : "p1-light"}>{t("avgReturn")}</Typography>
             </Stack>
           </Stack>
         </Stack>
