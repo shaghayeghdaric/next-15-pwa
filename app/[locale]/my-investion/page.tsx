@@ -1,8 +1,11 @@
+"use client";
+
 import { Stack, Typography } from "@mui/material";
 import InvestmentCard from "./_components/InvestmentCard";
 import OptionsCard from "./_components/OptionsCard";
 import LastPremiumSignals from "./_components/LastPremiumSignals";
 import PortfolioPerformance from "./_components/ProtfolioPerformance";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const optionCardData = [
   {
@@ -27,16 +30,26 @@ const optionCardData = [
   },
 ];
 const MyInvestmentsPage = () => {
+  const isMobile = useIsMobile();
+
   return (
     <Stack justifyContent={"start"} alignItems={"start"} gap={6}>
-      <Typography variant="h1-bold">CRYPTO INVEST PRO</Typography>
-      <Typography variant="h3-bold" color="primary.main">
+      <Typography variant={isMobile ? "h4-bold" : "h1-bold"}>CRYPTO INVEST PRO</Typography>
+      <Typography variant={isMobile ? "p1-bold" : "h6-bold"} color="primary.main">
         WELCOME BACK MARY
       </Typography>
-      <Typography variant="h4-regular">HERE'S YOUR PORTFOLIO PERFORMANCE AND LATEST OPPORTUNITIES</Typography>
+      <Typography variant={isMobile ? "p4-regular" : "p1-regular"}>
+        HERE'S YOUR PORTFOLIO PERFORMANCE AND LATEST OPPORTUNITIES
+      </Typography>
       <InvestmentCard />
       <PortfolioPerformance />
-      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} gap={4} width={"100%"}>
+      <Stack
+        direction={isMobile ? "column" : "row"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        gap={4}
+        width={"100%"}
+      >
         {optionCardData.map((item, index) => (
           <OptionsCard
             key={`option-card-${index}-${item.title}`}

@@ -30,10 +30,10 @@ const TraditionalPaymentSection = () => {
       alignItems={"start"}
       gap={4}
       sx={{
-        width: "50%",
+        width: { xs: "100%", md: "50%" },
         borderRadius: 1,
-        py: 7,
-        px: 14,
+        py: { xs: 4, md: 12 },
+        px: { xs: 4, md: 14 },
         background:
           "linear-gradient(180deg, rgba(0, 27, 53, 0.71) 2.4%, rgba(153, 185, 216, 0.71) 50.48%, rgba(0, 34, 67, 0.71) 100%)",
       }}
@@ -57,8 +57,7 @@ const TraditionalPaymentSection = () => {
         gap={5}
         width={"100%"}
         sx={{
-          py: 5,
-          px: 14,
+          p: { xs: 2, md: 5 },
           borderRadius: 1,
           backgroundColor: "rgba(0, 165, 232, 0.2)",
         }}
@@ -82,7 +81,7 @@ const TraditionalPaymentSection = () => {
           />
           <RHFTextField name="FULL NAME" label="FULL NAME" />
           <RHFTextField name="CARD NUMBER" label="CARD NUMBER" />
-          <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} gap={4} width={"100%"}>
+          <Stack direction={"row"} justifyContent={"center"} alignItems={"center"} gap={4} width={"100%"}>
             <img src="/images/master-card.png" alt="master card" height={29} width={102} />
             <img src="/images/apple-pay.png" alt="apple pay" height={39} width={45} />
             <img src="/images/paypall.png" alt="paypall" height={29} width={78} />

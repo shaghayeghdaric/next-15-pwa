@@ -1,6 +1,9 @@
+"use client";
+
 import { Stack } from "@mui/material";
 // import ProfileCard from "./_components/ProfileCard";
 import ValueCard from "./_components/ValueCard";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const values = [
   { title: "DAYS ACTIVE", value: "73" },
@@ -9,8 +12,12 @@ const values = [
 ];
 
 const ProfilePage = () => {
+  const isMobile = useIsMobile();
   return (
-    <Stack direction={"row"} gap={16} sx={{ width: "100%", mt: 26 }}>
+    <Stack
+      direction={isMobile ? "column" : "row"}
+      sx={{ width: "100%", mt: { xs: 4, md: 14 }, gap: { xs: 4, md: 16 } }}
+    >
       {values.map((item) => (
         <ValueCard key={item.title} title={item.title} value={item.value} />
       ))}

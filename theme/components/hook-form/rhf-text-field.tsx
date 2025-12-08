@@ -89,7 +89,13 @@ export default function RHFTextField({
         return (
           <Stack sx={{ width: "100%", flex: 1 }}>
             {label && (
-              <InputLabel disabled={disabled} required={required} shrink htmlFor={id || name}>
+              <InputLabel
+                disabled={disabled}
+                required={required}
+                shrink
+                htmlFor={id || name}
+                sx={{ color: "white", mb: 0.5, fontSize: { xs: "12px", md: "16px" } }}
+              >
                 {label}
               </InputLabel>
             )}

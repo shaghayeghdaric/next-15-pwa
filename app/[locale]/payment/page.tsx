@@ -42,7 +42,13 @@ const PaymentPage = () => {
           DESIGNED FOR GLOBAL ACCESSIBILITY.
         </Typography>
       </Stack>
-      <Stack width={"100%"} direction={"row"} gap={4} justifyContent={"center"} alignItems={"flex-start"}>
+      <Stack
+        width={"100%"}
+        direction={isMobile ? "column" : "row"}
+        gap={4}
+        justifyContent={"center"}
+        alignItems={"flex-start"}
+      >
         <CryptoPaymentSection />
         <TraditionalPaymentSection />
         <Stack />

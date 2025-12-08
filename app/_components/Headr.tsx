@@ -6,7 +6,7 @@ import Image from "@/components/Image";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Icon } from "@/components/icons";
 import { useCallback, useMemo, useState } from "react";
-import { usePathname } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useRouter } from "next/navigation";
 
 const NAV_LABELS = {
@@ -66,7 +66,9 @@ const Header: React.FC = () => {
           display: { xs: "none", md: "flex" },
         }}
       >
-        <Image src="/images/logo/finova-blue.png" alt="Logo" width={121} height={18} />
+        <Link href="/">
+          <Image src="/images/logo/finova-blue.png" alt="Logo" width={121} height={18} />
+        </Link>
         <Stack
           sx={{
             justifyContent: "center",
@@ -114,6 +116,9 @@ const Header: React.FC = () => {
         sx={{ display: { xs: "flex", md: "none" } }}
       >
         <LanguageSwitcher />
+        <Link href="/">
+          <Image src="/images/logo/finova-blue.png" alt="Logo" width={121} height={18} />
+        </Link>
         <IconButton onClick={handleClick}>
           <Icon name="Menuoutlined" fillColor="white" size={30} />
         </IconButton>

@@ -3,6 +3,7 @@ export const iconMap = {
   StructuredLearningPathsoutlined: () =>
     import("./StructuredLearningPathsoutlined").then((mod) => mod.StructuredLearningPathsoutlined),
   ComunityLearningoutlined: () => import("./ComunityLearningoutlined").then((mod) => mod.ComunityLearningoutlined),
+  ArrowDownoutlined: () => import("./ArrowDownoutlined").then((mod) => mod.ArrowDownoutlined),
   Intermediateoutlined: () => import("./Intermediateoutlined").then((mod) => mod.Intermediateoutlined),
   Fileoutlined: () => import("./Fileoutlined").then((mod) => mod.Fileoutlined),
   CryptoPaymentoutlined: () => import("./CryptoPaymentoutlined").then((mod) => mod.CryptoPaymentoutlined),
@@ -18,6 +19,7 @@ export const iconMap = {
   Nextoutlined: () => import("./Nextoutlined").then((mod) => mod.Nextoutlined),
   Youtubeoutlined: () => import("./Youtubeoutlined").then((mod) => mod.Youtubeoutlined),
   Advancedoutlined: () => import("./Advancedoutlined").then((mod) => mod.Advancedoutlined),
+  ArrowUpoutlined: () => import("./ArrowUpoutlined").then((mod) => mod.ArrowUpoutlined),
   Linkedinoutlined: () => import("./Linkedinoutlined").then((mod) => mod.Linkedinoutlined),
   Globeoutlined: () => import("./Globeoutlined").then((mod) => mod.Globeoutlined),
   Windowoutlined: () => import("./Windowoutlined").then((mod) => mod.Windowoutlined),

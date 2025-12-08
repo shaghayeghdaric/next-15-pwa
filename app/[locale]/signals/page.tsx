@@ -1,6 +1,9 @@
+"use client";
+
 import { Stack, Typography } from "@mui/material";
 import SignalsPieChart from "./_components/SignalsPieChart";
 import SignalCard from "@/app/_components/SignalCard";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const signals = [
   {
@@ -35,9 +38,11 @@ const signals = [
   },
 ];
 const SignalsPage = () => {
+  const isMobile = useIsMobile();
+
   return (
     <Stack justifyContent={"start"} alignItems={"start"} gap={7}>
-      <Typography variant="h1-bold">PROFESSIONAL TRADING SIGNALS</Typography>
+      <Typography variant={isMobile ? "h4-bold" : "h1-bold"}>PROFESSIONAL TRADING SIGNALS</Typography>
       <SignalsPieChart />
       {signals.map((signal, index) => (
         <Stack key={`trading-signal-${index}-${signal.signalName}`} width={"100%"}>

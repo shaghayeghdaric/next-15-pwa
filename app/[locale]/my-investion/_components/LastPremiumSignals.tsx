@@ -1,4 +1,5 @@
 import SignalCard from "@/app/_components/SignalCard";
+import { useIsMobile } from "@/hooks/use-responsive";
 import { Stack, Typography } from "@mui/material";
 
 const signals = [
@@ -35,9 +36,11 @@ const signals = [
 ];
 
 const LastPremiumSignals = () => {
+  const isMobile = useIsMobile();
+
   return (
     <Stack width={"100%"} gap={4} alignItems="start" py={7}>
-      <Typography variant="h3-medium" sx={{ mb: 3 }}>
+      <Typography variant={isMobile ? "p2-medium" : "h6-medium"} sx={{ mb: 3 }}>
         LATST PREMIUM SIGNALS
       </Typography>
       {signals.map((signal, index) => (

@@ -1,6 +1,8 @@
+import { useIsMobile } from "@/hooks/use-responsive";
 import { Stack, Typography } from "@mui/material";
 
 const OptionsCard = ({ title, description, icon }: { title: string; description: string; icon: string }) => {
+  const isMobile = useIsMobile();
   return (
     <Stack
       justifyContent={"center"}
@@ -14,10 +16,10 @@ const OptionsCard = ({ title, description, icon }: { title: string; description:
       }}
     >
       <img src={icon} alt={title} />
-      <Typography variant="h4-bold" color="primary.main" sx={{ whiteSpace: "nowrap" }}>
+      <Typography variant={isMobile ? "p4-bold" : "p1-bold"} color="primary.main" sx={{ whiteSpace: "nowrap" }}>
         {description}
       </Typography>
-      <Typography variant="h5-regular" sx={{ whiteSpace: "nowrap" }}>
+      <Typography variant={isMobile ? "p4-regular" : "p2-regular"} sx={{ whiteSpace: "nowrap" }}>
         {title}
       </Typography>
     </Stack>

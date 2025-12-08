@@ -5,6 +5,7 @@ import { getLabel } from "@/utils/get-label";
 import { Stack, Typography } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import SignalsPieChartComponent from "@/components/SignalsPieChart";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 // Sample data for the pie chart - you can modify this based on your filters
 const sampleData = [
@@ -48,6 +49,7 @@ type Option = {
 };
 
 const SignalsPieChart = () => {
+  const isMobile = useIsMobile();
   const methods = useForm();
   const { setValue, watch } = methods;
   const selectedAmountId = watch("amount");
@@ -66,7 +68,7 @@ const SignalsPieChart = () => {
     <Stack justifyContent={"center"} alignItems={"center"} sx={{ width: "100%" }} gap={4}>
       {/* Filters Section */}
       <Stack
-        direction={"row"}
+        direction={isMobile ? "column" : "row"}
         justifyContent={"center"}
         alignItems={"center"}
         gap={5}
@@ -79,6 +81,7 @@ const SignalsPieChart = () => {
       >
         <FormProvider {...methods}>
           <RHFAutocomplete
+            fullWidth
             name="CURRENCY PAIR"
             sx={{ padding: 0 }}
             label={"CURRENCY PAIR"}
@@ -94,6 +97,7 @@ const SignalsPieChart = () => {
             getOptionLabel={(option) => getLabel(option, "fa_title")}
           />
           <RHFAutocomplete
+            fullWidth
             name="RISK LEVEL"
             sx={{ padding: 0 }}
             label={"RISK LEVEL"}
@@ -109,6 +113,7 @@ const SignalsPieChart = () => {
             getOptionLabel={(option) => getLabel(option, "fa_title")}
           />
           <RHFAutocomplete
+            fullWidth
             name="SIGNAL TYPE"
             sx={{ padding: 0 }}
             label={"SIGNAL TYPE"}
@@ -124,6 +129,7 @@ const SignalsPieChart = () => {
             getOptionLabel={(option) => getLabel(option, "fa_title")}
           />
           <RHFAutocomplete
+            fullWidth
             name="TIME FRAME"
             sx={{ padding: 0 }}
             label={"TIME FRAME"}
@@ -150,8 +156,8 @@ const SignalsPieChart = () => {
           padding: 6,
         }}
       >
-        <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} mb={4}>
-          <Typography variant="h4-bold" sx={{ mb: 3 }} color="primary.main">
+        <Stack direction={isMobile ? "column" : "row"} justifyContent={"space-between"} alignItems={"center"} mb={4}>
+          <Typography variant={isMobile ? "p4-bold" : "p1-bold"} sx={{ mb: 3 }} color="primary.main">
             SIGNAL PERFORMANCE ANALYSIS
           </Typography>
           <Stack direction={"row"} justifyContent={"center"} alignItems={"center"} gap={10}>
@@ -159,23 +165,23 @@ const SignalsPieChart = () => {
               <Typography variant="h6-bold" color="primary.main">
                 94.7%
               </Typography>
-              <Typography variant="h4-bold" color="primary.main">
+              <Typography variant={isMobile ? "p4-bold" : "p1-bold"} color="primary.main">
                 SUCCESS RATE
               </Typography>
             </Stack>
             <Stack justifyContent={"center"} alignItems={"center"} gap={1}>
               <Typography variant="h6-bold">847</Typography>
-              <Typography variant="h4-bold">TOTAL SIGNALS</Typography>
+              <Typography variant={isMobile ? "p4-bold" : "p1-bold"}>TOTAL SIGNALS</Typography>
             </Stack>
             <Stack justifyContent={"center"} alignItems={"center"} gap={1}>
               <Typography variant="h6-bold">+23.5%</Typography>
-              <Typography variant="h4-bold">AVG. RETURN</Typography>
+              <Typography variant={isMobile ? "p4-bold" : "p1-bold"}>AVG. RETURN</Typography>
             </Stack>
           </Stack>
         </Stack>
         <SignalsPieChartComponent
           data={getFilteredData()}
-          height={600}
+          height={isMobile ? 300 : 600}
           showLegend={true}
           showTooltip={true}
           outerRadius={200}

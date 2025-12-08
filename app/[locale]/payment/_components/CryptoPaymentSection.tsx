@@ -17,8 +17,8 @@ const CryptoPaymentSection = () => {
       sx={{
         width: { xs: "100%", md: "50%" },
         borderRadius: 1,
-        py: 7,
-        px: 14,
+        py: { xs: 4, md: 12 },
+        px: { xs: 4, md: 14 },
         background:
           "linear-gradient(180deg, rgba(0, 27, 53, 0.71) 2.4%, rgba(153, 185, 216, 0.71) 50.48%, rgba(0, 34, 67, 0.71) 100%)",
       }}
@@ -37,15 +37,19 @@ const CryptoPaymentSection = () => {
         alignItems={"start"}
         gap={6}
         sx={{
-          py: 5,
-          px: 5,
+          p: { xs: 2, md: 5 },
           borderRadius: 1,
           backgroundColor: "rgba(0, 165, 232, 0.2)",
           width: "100%",
         }}
       >
         <Typography variant={isMobile ? "p4-bold" : "p1-bold"}>SELECT BLOCKCHAIN NETWORK</Typography>
-        <Stack direction={"row"} gap={3} justifyContent={"space-between"} alignItems={"center"} width={"100%"}>
+        <Stack
+          direction={"row"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          sx={{ width: "100%", gap: { xs: 2, md: 3 } }}
+        >
           <BlockChainCard icon={"/images/trx.png"} name={"TRX SCAN"} />
           <BlockChainCard icon={"/images/eth.png"} name={"ETH SCAN"} />
           <BlockChainCard icon={"/images/sol.png"} name={"SOL SCAN"} />

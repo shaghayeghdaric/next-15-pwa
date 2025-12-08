@@ -42,6 +42,7 @@ export default function RHFAutocomplete<
   renderInput,
   id,
   required,
+  fullWidth,
   ...other
 }: Omit<Props<T, Multiple, DisableClearable, FreeSolo>, "renderInput"> & {
   renderInput?: AutocompleteProps<T, Multiple, DisableClearable, FreeSolo>["renderInput"];
@@ -60,14 +61,14 @@ export default function RHFAutocomplete<
       name={name}
       control={control}
       render={({ field, fieldState: { error } }) => (
-        <Stack sx={{ flex: 1, gap: 0.5 }}>
+        <Stack sx={{ flex: 1, gap: 0.5, width: fullWidth ? "100%" : "auto" }}>
           {label && (
             <InputLabel
               disabled={field.disabled}
               shrink
               htmlFor={id || name}
               required={required}
-              sx={{ color: "white", mb: 0.5 }}
+              sx={{ color: "white", mb: 0.5, fontSize: { xs: "12px", md: "16px" } }}
             >
               {label}
             </InputLabel>
@@ -78,8 +79,8 @@ export default function RHFAutocomplete<
             sx={{
               "& .MuiInputBase-sizeSmall": {
                 borderRadius: "10px",
-                minHeight: "42px",
-                height: "42px",
+                minHeight: "58px",
+                height: "58px",
               },
               "& .MuiChip-deleteIcon": {
                 color: "red",

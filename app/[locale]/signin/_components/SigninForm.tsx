@@ -3,7 +3,7 @@
 import useToggleState from "@/hooks/use-toggleState";
 import RHFTextField from "@/theme/components/hook-form/rhf-text-field";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, IconButton, InputAdornment, Stack } from "@mui/material";
+import { Button, IconButton, InputAdornment, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import * as Yup from "yup";
@@ -34,30 +34,39 @@ const SigninForm = () => {
   });
 
   return (
-    <FormProvider {...methods}>
-      <RHFTextField name="username" label="نام کاربری" dir="ltr" autoComplete="username" />
-      <RHFTextField
-        dir="ltr"
-        name="password"
-        label="رمز عبور"
-        type={showPassword ? "text" : "password"}
-        autoComplete="current-password"
-        slotProps={{
-          input: {
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton onClick={toggle}>{showPassword ? <span>show</span> : <span>hide </span>}</IconButton>
-              </InputAdornment>
-            ),
-          },
-        }}
-      />
-      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} sx={{ mt: 2 }} gap={2}>
-        <Button color={"primary"} fullWidth size="large" type="submit" loading={loading}>
+    <Stack
+      justifyContent={"center"}
+      alignItems={"center"}
+      sx={{ width: { xs: "100%", sm: "400px" }, gap: { xs: 5, md: 10 } }}
+      component="form"
+      onSubmit={onSubmit}
+    >
+      <FormProvider {...methods}>
+        <RHFTextField name="username" label="username" dir="ltr" autoComplete="username" />
+        <RHFTextField
+          dir="ltr"
+          name="password"
+          label="password"
+          type={showPassword ? "text" : "password"}
+          autoComplete="current-password"
+          slotProps={{
+            input: {
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton onClick={toggle}>{showPassword ? <span>show</span> : <span>hide </span>}</IconButton>
+                </InputAdornment>
+              ),
+            },
+          }}
+        />
+        <Button color={"primary"} fullWidth size="large" type="submit" loading={loading} sx={{ mt: 2 }}>
           signin
         </Button>
-      </Stack>
-    </FormProvider>
+        <Typography variant="p4-regular" color="primary.light" sx={{ cursor: "pointer" }}>
+          forgot password?
+        </Typography>
+      </FormProvider>
+    </Stack>
   );
 };
 

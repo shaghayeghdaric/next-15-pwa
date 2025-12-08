@@ -1,6 +1,9 @@
+import { useIsMobile } from "@/hooks/use-responsive";
 import { Stack, Typography } from "@mui/material";
 
 const InvestmentCard = () => {
+  const isMobile = useIsMobile();
+
   return (
     <Stack
       gap={2}
@@ -13,11 +16,11 @@ const InvestmentCard = () => {
         width: "100%",
       }}
     >
-      <Typography variant="h4-bold">Total Portfolio Balance</Typography>
-      <Typography variant="h1-bold" color="primary.main">
+      <Typography variant={isMobile ? "p4-bold" : "p1-bold"}>Total Portfolio Balance</Typography>
+      <Typography variant={isMobile ? "p1-bold" : "h6-bold"} color="primary.main">
         $12,847.50
       </Typography>
-      <Typography variant="h6-regular">+5.67% from last month (+$715.30)</Typography>
+      <Typography variant={isMobile ? "p4-regular" : "p1-regular"}>+5.67% from last month (+$715.30)</Typography>
     </Stack>
   );
 };
