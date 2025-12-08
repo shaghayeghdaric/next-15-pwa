@@ -1,9 +1,13 @@
+"use client";
+
 import { Stack, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 import LearningCard from "./_components/LearningCard";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const Learn = () => {
   const t = useTranslations("educationHub");
+  const isMobile = useIsMobile();
   const learningJourneys = [
     {
       icon: "/images/icons/education/beginner.svg",
@@ -38,14 +42,15 @@ const Learn = () => {
       description: "DISCOVER DIFFERENT INVESTMENT APPROACHES AND BUILD A DIVERSIFIED CRYPTO PORTFOLIO.",
     },
   ];
+
   return (
     <Stack justifyContent={"start"} alignItems={"start"} gap={7}>
-      <Typography variant="h1-bold">CRYPTO LEARNING HUB</Typography>
+      <Typography variant={isMobile ? "h4-bold" : "h1-bold"}>CRYPTO LEARNING HUB</Typography>
       <Stack
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(2, 1fr)",
-          gap: 18,
+          gap: { xs: 10, md: 18 },
           "@media (max-width: 900px)": {
             gridTemplateColumns: "repeat(2, 1fr)",
           },
@@ -66,7 +71,7 @@ const Learn = () => {
                 backgroundColor: "secondary.main",
               }}
             >
-              <Typography variant="h3-bold" color="primary.main">
+              <Typography variant={isMobile ? "p2-bold" : "h6-bold"} color="primary.main">
                 {journey.level}
               </Typography>
             </Stack>

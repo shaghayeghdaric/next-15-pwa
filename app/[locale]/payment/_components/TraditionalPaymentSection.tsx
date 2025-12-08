@@ -1,5 +1,6 @@
 "use client";
 
+import { useIsMobile } from "@/hooks/use-responsive";
 import RHFAutocomplete from "@/theme/components/hook-form/rhf-autocomplete";
 import RHFTextField from "@/theme/components/hook-form/rhf-text-field";
 import { getLabel } from "@/utils/get-label";
@@ -21,6 +22,7 @@ const TraditionalPaymentSection = () => {
   const { ...methods } = useForm();
   const { setValue, watch } = methods;
   const selectedAmountId = watch("amount");
+  const isMobile = useIsMobile();
 
   return (
     <Stack
@@ -37,8 +39,8 @@ const TraditionalPaymentSection = () => {
       }}
     >
       <img src="/images/traditional-payment.png" alt="Traditional Payment" width={38} height={38} />
-      <Typography variant="h4-bold">PAY WITH CARD OR BANK TRANSFER</Typography>
-      <Typography variant="h4-regular">
+      <Typography variant={isMobile ? "p4-bold" : "p1-bold"}>PAY WITH CARD OR BANK TRANSFER</Typography>
+      <Typography variant={isMobile ? "p4-regular" : "p1-regular"}>
         ALL MAJOR CARDS ACCEPTED
         <br />
         BANK TRANSFER SUPPORT
@@ -56,13 +58,13 @@ const TraditionalPaymentSection = () => {
         width={"100%"}
         sx={{
           py: 5,
-          px: 20,
+          px: 14,
           borderRadius: 1,
           backgroundColor: "rgba(0, 165, 232, 0.2)",
         }}
       >
         <FormProvider {...methods}>
-          <Typography variant="h4-bold">INVESTMENT PLAN & AMOUNT</Typography>
+          <Typography variant={isMobile ? "p4-bold" : "p1-bold"}>INVESTMENT PLAN & AMOUNT</Typography>
           <RHFAutocomplete
             name="CURRENCY PAIR"
             fullWidth

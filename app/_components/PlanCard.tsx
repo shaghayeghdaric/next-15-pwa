@@ -24,7 +24,7 @@ const PlanCard: FC<PlanCardProps> = ({ title, price, features, per, buttonName, 
         width: { xs: "100%", md: "auto" },
         py: { xs: 3, md: 6 },
         px: { xs: 3, lg: 10 },
-        gap: { xs: 2, md: 4 },
+        gap: 4,
         borderRadius: 1,
         background:
           "linear-gradient(180deg, rgba(0, 27, 53, 0.71) 2.4%, rgba(153, 185, 216, 0.71) 50.48%, rgba(0, 34, 67, 0.71) 100%);",
@@ -47,10 +47,10 @@ const PlanCard: FC<PlanCardProps> = ({ title, price, features, per, buttonName, 
         </Typography>
       </Stack>
       <Stack
-        flexDirection={isMobile ? "row" : "column"}
+        flexDirection={"column"}
         justifyContent={isMobile ? "space-between" : "center"}
         alignItems={"center"}
-        sx={{ width: "100%", gap: { xs: 2, md: 4 } }}
+        sx={{ width: "100%", gap: 4 }}
       >
         <Stack>
           {features.map((feature, index) => (
@@ -59,7 +59,7 @@ const PlanCard: FC<PlanCardProps> = ({ title, price, features, per, buttonName, 
               variant={isMobile ? "p4-light" : "p1-light"}
               color="white"
               sx={{
-                textAlign: "start",
+                textAlign: { xs: "center", md: "start" },
                 lineHeight: "24px",
                 whiteSpace: "nowrap",
               }}

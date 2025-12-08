@@ -278,7 +278,7 @@ const typography = {
   subtitle2: undefined,
   overline: undefined,
 
-  ...fontVariant("h1", 74),
+  ...fontVariant("h1", 70),
   ...fontVariant("h2", 60),
   ...fontVariant("h3", 48),
   ...fontVariant("h4", 32),

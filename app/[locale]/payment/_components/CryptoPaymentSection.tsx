@@ -1,16 +1,21 @@
+"use client";
+
 import { Button, Stack, Typography } from "@mui/material";
 import BlockChainCard from "./BlockChainCard";
 import ConnectWalletCard from "./ConnectWalletCard";
 import InvestmentDetailsCard from "./InvestmentDetailsCard";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const CryptoPaymentSection = () => {
+  const isMobile = useIsMobile();
+
   return (
     <Stack
       justifyContent={"center"}
       alignItems={"start"}
       gap={4}
       sx={{
-        width: "50%",
+        width: { xs: "100%", md: "50%" },
         borderRadius: 1,
         py: 7,
         px: 14,
@@ -19,8 +24,8 @@ const CryptoPaymentSection = () => {
       }}
     >
       <img src="/images/crypto-payment.png" alt="Crypto Payment" width={38} height={38} />
-      <Typography variant="h4-bold">PAY DIRECTLY WITH CRYPTOCURRENCY</Typography>
-      <Typography variant="h4-regular">
+      <Typography variant={isMobile ? "p4-bold" : "p1-bold"}>PAY DIRECTLY WITH CRYPTOCURRENCY</Typography>
+      <Typography variant={isMobile ? "p4-regular" : "p1-regular"}>
         CONNECT YOUR WALLET SECURELY
         <br /> MULTIPLE BLOCKCHAIN NETWORKS
         <br /> LOWER TRANSACTION FEES
@@ -33,13 +38,13 @@ const CryptoPaymentSection = () => {
         gap={6}
         sx={{
           py: 5,
-          px: 20,
+          px: 5,
           borderRadius: 1,
           backgroundColor: "rgba(0, 165, 232, 0.2)",
           width: "100%",
         }}
       >
-        <Typography variant="h4-bold">SELECT BLOCKCHAIN NETWORK</Typography>
+        <Typography variant={isMobile ? "p4-bold" : "p1-bold"}>SELECT BLOCKCHAIN NETWORK</Typography>
         <Stack direction={"row"} gap={3} justifyContent={"space-between"} alignItems={"center"} width={"100%"}>
           <BlockChainCard icon={"/images/trx.png"} name={"TRX SCAN"} />
           <BlockChainCard icon={"/images/eth.png"} name={"ETH SCAN"} />

@@ -1,3 +1,4 @@
+import { useIsMobile } from "@/hooks/use-responsive";
 import { Box, Stack, Typography } from "@mui/material";
 import type { FC } from "react";
 
@@ -8,19 +9,21 @@ export interface StoryCardProps {
   logo: string;
 }
 const StoryCard: FC<StoryCardProps> = ({ story, title, username, logo }) => {
+  const isMobile = useIsMobile();
+
   return (
     <Stack
       justifyContent={"space-between"}
       sx={{
-        height: "378px",
+        height: { xs: "auto", md: "378px" },
         padding: 5,
         gap: 6,
         borderRadius: 1,
         backgroundColor: "rgba(0, 165, 232, 0.2)",
       }}
     >
-      <Typography variant="h6-regular">{story}</Typography>
-      <Stack gap={10}>
+      <Typography variant={isMobile ? "p4-regular" : "p3-regular"}>{story}</Typography>
+      <Stack sx={{ gap: { xs: 5, md: 10 } }}>
         <Stack
           justifyContent={"center"}
           alignItems={"center"}
@@ -36,10 +39,10 @@ const StoryCard: FC<StoryCardProps> = ({ story, title, username, logo }) => {
         </Stack>
 
         <Stack alignItems={"start"}>
-          <Typography variant="h6-regular" sx={{ lineHeight: "16px" }}>
+          <Typography variant={isMobile ? "p4-regular" : "p3-regular"} sx={{ lineHeight: "16px" }}>
             {username}
           </Typography>
-          <Typography variant="h6-regular" sx={{ lineHeight: "16px" }}>
+          <Typography variant={isMobile ? "p4-regular" : "p3-regular"} sx={{ lineHeight: "16px" }}>
             {title}
           </Typography>
         </Stack>

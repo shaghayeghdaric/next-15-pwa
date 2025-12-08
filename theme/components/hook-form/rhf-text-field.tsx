@@ -95,7 +95,7 @@ export default function RHFTextField({
             )}
 
             {subtitle && (
-              <Typography variant="p2-regular" color={disabled ? "grey.500" : "grey.700"} mb="10px" mt="-6px" ml="12px">
+              <Typography variant="p4-regular" color={disabled ? "grey.500" : "grey.700"} mb="10px" mt="-6px" ml="12px">
                 {subtitle}
               </Typography>
             )}

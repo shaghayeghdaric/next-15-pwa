@@ -1,3 +1,6 @@
+"use client";
+
+import { useIsMobile } from "@/hooks/use-responsive";
 import { Stack, Typography } from "@mui/material";
 import type { FC } from "react";
 
@@ -18,6 +21,8 @@ const LearningCard: FC<LearningCardProps> = ({
   complete,
   description,
 }) => {
+  const isMobile = useIsMobile();
+
   return (
     <Stack
       justifyContent={"space-between"}
@@ -28,18 +33,18 @@ const LearningCard: FC<LearningCardProps> = ({
         borderRadius: 1,
         backgroundColor: "rgba(0, 165, 232, 0.2)",
         width: "100%",
-        height: "288px",
+        height: { xs: "auto", md: "288px" },
       }}
     >
       <Stack justifyContent={"start"} alignItems={"start"} gap={7}>
-        <Typography variant="h2-bold" color="primary.main">
+        <Typography variant={isMobile ? "p2-bold" : "h6-bold"} color="primary.main">
           {title}
         </Typography>
-        <Typography variant="h4-medium">{description}</Typography>
+        <Typography variant={isMobile ? "p4-medium" : "p1-medium"}>{description}</Typography>
       </Stack>
       <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"} gap={2} width={"100%"}>
-        <Typography variant="h4-medium">{hour} hours</Typography>
-        <Typography variant="h4-medium">{complete}% complete</Typography>
+        <Typography variant={isMobile ? "p4-medium" : "p1-medium"}>{hour} hours</Typography>
+        <Typography variant={isMobile ? "p4-medium" : "p1-medium"}>{complete}% complete</Typography>
       </Stack>
     </Stack>
   );

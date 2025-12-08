@@ -94,11 +94,6 @@ const InvestmentTypesCard: FC<InvestmentTypesCardProps> = ({
         onClick={() => {
           setOpenDialog(true);
         }}
-        sx={{
-          fontWeight: 600,
-          fontSize: "12px",
-          alignSelf: "center",
-        }}
       >
         {buttonName}
       </Button>

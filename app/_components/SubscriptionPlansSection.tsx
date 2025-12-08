@@ -56,7 +56,7 @@ const SubscriptionPlansSection = () => {
         direction={isMobile ? "column" : "row"}
         justifyContent="space-between"
         alignItems="end"
-        sx={{ width: "100%", gap: { xs: 2, lg: 6 } }}
+        sx={{ width: "100%", gap: { xs: 4, lg: 6 } }}
       >
         {plans.map((plan: PlanCardProps) => (
           <PlanCard

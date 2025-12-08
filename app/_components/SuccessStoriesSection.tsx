@@ -1,19 +1,24 @@
+"use client";
+
 import { Box, Stack, Typography } from "@mui/material";
 import StoryCard, { type StoryCardProps } from "./StoryCard";
 import { useTranslations } from "next-intl";
+import { useIsMobile } from "@/hooks/use-responsive";
 
 const SuccessStoriesSection = () => {
   const t = useTranslations("successStories");
   const stories = t.raw("stories");
+  const isMobile = useIsMobile();
+
   return (
-    <Stack justifyContent={"center"} alignItems="center" py={7} gap={10}>
+    <Stack justifyContent={"center"} alignItems="center" sx={{ py: { xs: 3, md: 7 }, gap: { xs: 5, md: 10 } }}>
       <Stack
         flexDirection={"row"}
         justifyContent={"center"}
         alignItems={"center"}
-        sx={{ width: "100%", gap: 4, mb: 10, px: 6 }}
+        sx={{ width: "100%", gap: { xs: 10, md: 15 }, mb: { xs: 5, md: 10 } }}
       >
-        <Typography variant="h6-medium" sx={{ whiteSpace: "nowrap" }}>
+        <Typography variant="p4-medium" sx={{ whiteSpace: "nowrap" }}>
           {t("title")}
         </Typography>
         <Box
@@ -24,27 +29,18 @@ const SuccessStoriesSection = () => {
           }}
         ></Box>
       </Stack>
-      <Stack flexDirection={"row"} gap={10} justifyContent={"center"} alignItems={"start"} px={6}>
+      <Stack flexDirection={"column"} justifyContent={"center"} alignItems={"start"} sx={{ gap: { xs: 5, md: 10 } }}>
         <Stack
           sx={{
             justifyContent: "center",
             alignItems: "flex-start",
           }}
         >
-          <Typography
-            sx={{
-              fontSize: "44px",
-              fontWeight: 700,
-              lineHeight: "51px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {t("subtitle")}
-          </Typography>
+          <Typography variant={isMobile ? "h4-bold" : "h2-bold"}>{t("subtitle")}</Typography>
         </Stack>
-        <Typography variant="h4-regular">{t("description")}</Typography>
+        <Typography variant={isMobile ? "p4-regular" : "h6-regular"}>{t("description")}</Typography>
       </Stack>
-      <Stack direction={"row"} gap={9}>
+      <Stack direction={isMobile ? "column" : "row"} gap={isMobile ? 5 : 10}>
         {stories.map((story: StoryCardProps) => (
           <StoryCard
             key={`success-story-${story.username}`}
